@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4418582592525088658, guid: 05f8c145ccc346e48a7220f9efb06404, type: 3}
+      propertyPath: m_ScoreValue
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6490252543200254617, guid: 05f8c145ccc346e48a7220f9efb06404, type: 3}
       propertyPath: m_Name
       value: InverseEnemy

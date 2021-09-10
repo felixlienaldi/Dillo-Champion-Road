@@ -30,7 +30,8 @@ namespace Enumerator
     {
         SCORE,
         HPGAIN,
-        FEVER,
+        FEVERTIME,
+        FEVERGAIN,
         BARRIER,
         REVIVE,
         ACCURACY

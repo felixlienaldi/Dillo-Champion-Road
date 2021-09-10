@@ -45,7 +45,7 @@ public class PostGameManager_Manager : MonoBehaviour{
 
     public void f_Retry() {
         m_EndGameUI.SetActive(false);
-        MainMenuManager_Manager.m_Instance.f_StartGame();
+        MainMenuManager_Manager.m_Instance.f_ShowHTP();
     }
     public void f_MainMenu() {
         m_EndGameUI.SetActive(false);

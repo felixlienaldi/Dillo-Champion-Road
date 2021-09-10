@@ -119,10 +119,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 2644170153987022219}
   m_Collider: {fileID: 0}
+  m_ListBuff: []
   m_HealthPoint: 1
   m_Attack: 1
   m_Type: 0
+  m_SpawnPositionIndex: 0
+  m_ListGrids: []
   m_Speed: 3
+  m_ScoreValue: 1
 --- !u!61 &9020532900949166967
 BoxCollider2D:
   m_ObjectHideFlags: 0

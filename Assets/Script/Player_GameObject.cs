@@ -5,15 +5,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using MEC;
+using UnityEngine.Events;
 /*Score multiplier (2x) V
-HP gain up (+1) (reduce minimum combo to obtain HP) 
+HP gain up (+1) (reduce minimum combo to obtain HP) V
 Fever time up (x300%) V
 
 
-Barrier (1x)
+Barrier (1x) V
 Fever gain up (x150%) V
-Accuracy (x2) (certain hit / cannot miss)
-Revive (1x)
+Accuracy (x2) (certain hit / cannot miss)  V
+Revive (1x) V
 */
 public class Player_GameObject : Character_GameObject{
     //=====================================================================
@@ -29,6 +30,7 @@ public class Player_GameObject : Character_GameObject{
     [Header("Combo System")]
     public int m_Combo;
     public bool m_IsCombo;
+    public float m_MinimumCombo;
 
     [Header("Fever System")]
     public int m_MinimumHit;
@@ -49,6 +51,13 @@ public class Player_GameObject : Character_GameObject{
 
     [Header("Other System")]
     public float m_BarrierCount;
+    public float m_ReviveCount;
+    public float m_AbsoluteHitCount;
+    public GameObject m_Barrier;
+    public GameObject m_Revive;
+    public ShadowPlayer_GameObject m_AbsoluteHitObject;
+    public UnityEvent m_OnRevived;
+    public UnityEvent<float> m_OnAbsoluteHit;
 
     //===== PRIVATES =====
     bool m_IsTakeDamageCoroutineRunning;
@@ -61,6 +70,7 @@ public class Player_GameObject : Character_GameObject{
     }
 
     void OnEnable(){
+        m_EnemyKilled = 0;
         m_IsCombo = false;
         m_IsFever = false;
         m_CurrentHealthPoint = f_GetMaxHealth();
@@ -75,8 +85,20 @@ public class Player_GameObject : Character_GameObject{
 
     void Update(){
         if(f_GetCurrentHealth() <= 0) {
-            GameManager_Manager.m_Instance.f_PostGameManager();
-            m_CurrentHealthPoint = f_GetMaxHealth();
+            if(m_ReviveCount > 0) {
+                m_ReviveCount--;
+                m_OnRevived?.Invoke();
+                m_CurrentHealthPoint++;
+                UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
+            }
+            else {
+                m_FeverGainMultiplier = 1;
+                m_BarrierCount = 0;
+                m_ReviveCount = 0;
+                m_AbsoluteHitCount = 0;
+                GameManager_Manager.m_Instance.f_PostGameManager();
+                m_CurrentHealthPoint = f_GetMaxHealth();
+            }
         }
         f_CheckTimer();
         f_Move();
@@ -87,6 +109,8 @@ public class Player_GameObject : Character_GameObject{
     //=====================================================================
     //				        OTHER METHOD
     //=====================================================================
+    
+
     public float f_GetFeverTimer() {
         return m_FeverTimer * m_FeverTimeMultiplier;
     }
@@ -123,19 +147,26 @@ public class Player_GameObject : Character_GameObject{
                 m_IsFever = false;
                 m_SpriteRenderer.color = Color.white;
             }
-            UIManager_Manager.m_Instance.f_SetFeverFillBar(m_CurrentFeverTimer, m_FeverTimer);
+            UIManager_Manager.m_Instance.f_SetFeverFillBar(m_CurrentFeverTimer, f_GetFeverTimer());
         }
 
     }
 
     public void f_CheckTimer() {
         m_CurrentTimer -= Time.deltaTime;
-        UIManager_Manager.m_Instance.f_SetTimerFillBar(m_CurrentTimer, m_Timer, GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+        if(GameManager_Manager.m_Instance.m_ListActiveEnemies.Count > 0) UIManager_Manager.m_Instance.f_SetTimerFillBar(m_CurrentTimer, m_Timer, GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
         if (m_CurrentTimer <= 0) {
-            f_TakeDamage();
+            if(m_BarrierCount > 0) {
+                m_BarrierCount--;
+            }
+            else {
+                f_TakeDamage();
+            }
             m_CurrentTimer = m_Timer;
         }
-    
+        if (m_BarrierCount > 0) m_Barrier.SetActive(true);
+        else m_Barrier.SetActive(false);
+
     }
 
   
@@ -145,7 +176,7 @@ public class Player_GameObject : Character_GameObject{
             m_PerfectHit += f_GainFever();
         }
 
-        if (m_Combo % 100 == 0) {
+        if (m_Combo % m_MinimumCombo == 0) {
             if (f_GetCurrentHealth() < f_GetMaxHealth()) {
                 m_CurrentHealthPoint++;
                 UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
@@ -175,7 +206,6 @@ public class Player_GameObject : Character_GameObject{
     }
 
     public void f_Attack() {
-        m_CurrentTimer = m_Timer;
         m_Animator.Play(m_AttackAnimation);
     }
 
@@ -190,6 +220,31 @@ public class Player_GameObject : Character_GameObject{
         GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
     }
 
+    public void f_OnAbsoluteHit(float p_TransformScaleX) {
+        m_AbsoluteHitObject.f_Attack(GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x);
+      
+    }
+
+    public void f_OnRevived() {
+        Timing.RunCoroutine(ie_Revive());
+    }
+
+    public IEnumerator<float> ie_Revive() {
+        m_Revive.gameObject.SetActive(true);
+        float m_InvisTimer = 0;
+        Debug.Log("TEST");
+        do {
+            m_SpriteRenderer.color = new Color(1, 1, 1, 0);
+            yield return Timing.WaitForSeconds(0.05f);
+            m_SpriteRenderer.color = new Color(1, 1, 1, 1);
+            yield return Timing.WaitForSeconds(0.05f);
+            m_InvisTimer += 0.2f;
+        } while (m_InvisTimer < 1f);
+        m_SpriteRenderer.color = new Color(1, 1, 1, 1);
+        yield return Timing.WaitForSeconds(1f);
+        m_Revive.gameObject.SetActive(false);
+    }
+
     public override void f_Move() {
     }
 
@@ -198,6 +253,7 @@ public class Player_GameObject : Character_GameObject{
     }
 
     public void f_Attack(bool p_Right) {
+        m_CurrentTimer = m_Timer;
         if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) {
             if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].m_Type == Enumerator.ENEMY_TYPE.INVERSE) {
                 if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x - transform.position.x >= 0) {
@@ -206,9 +262,16 @@ public class Player_GameObject : Character_GameObject{
                         f_Attack();
                     }
                     else {
-                        if (m_IsFever) {
-                            f_Flip(true);
-                            f_Attack();
+                        if (m_IsFever || m_AbsoluteHitCount > 0) {
+                            if (m_AbsoluteHitCount > 0) {
+                                m_AbsoluteHitCount--;
+                                m_OnAbsoluteHit?.Invoke(transform.localScale.x);
+                            }
+                            else {
+                                f_Flip(true);
+                                f_Attack();
+                            }
+                           
                         }
                         else f_TakeDamage();
                     }
@@ -219,9 +282,15 @@ public class Player_GameObject : Character_GameObject{
                         f_Attack();
                     }
                     else {
-                        if (m_IsFever) {
-                            f_Flip(false);
-                            f_Attack();
+                        if (m_IsFever || m_AbsoluteHitCount > 0) {
+                            if (m_AbsoluteHitCount > 0) {
+                                m_AbsoluteHitCount--;
+                                m_OnAbsoluteHit?.Invoke(transform.localScale.x);
+                            }
+                            else {
+                                f_Flip(false);
+                                f_Attack();
+                            }
                         }
                         else {
                             f_TakeDamage();
@@ -237,9 +306,16 @@ public class Player_GameObject : Character_GameObject{
                         f_Attack();
                     }
                     else {
-                        if (m_IsFever) {
-                            f_Flip(true);
-                            f_Attack();
+                        if (m_IsFever || m_AbsoluteHitCount > 0) {
+                            if (m_AbsoluteHitCount > 0) {
+                                m_AbsoluteHitCount--;
+                                m_OnAbsoluteHit?.Invoke(transform.localScale.x);
+                            }
+                            else {
+                                f_Flip(true);
+                                f_Attack();
+                            }
+                           
                         }
                         else {
                             f_TakeDamage();
@@ -252,9 +328,16 @@ public class Player_GameObject : Character_GameObject{
                         f_Attack();
                     }
                     else {
-                        if (m_IsFever) {
-                            f_Flip(false);
-                            f_Attack();
+                        if (m_IsFever || m_AbsoluteHitCount > 0) {
+                            if (m_AbsoluteHitCount > 0) {
+                                m_AbsoluteHitCount--;
+                                m_OnAbsoluteHit?.Invoke(transform.localScale.x);
+                            }
+                            else {
+                                f_Flip(false);
+                                f_Attack();
+                            }
+                            
                         }
                         else {
                             f_TakeDamage();
