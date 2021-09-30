@@ -15,11 +15,11 @@ E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53294
+60625
 Successfully changed project path to: E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
 E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 45.68 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 45.36 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -35,89 +35,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56340
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56904
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001699 seconds.
+Registered in 0.001682 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 41.88 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 44.63 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.083 seconds
+- Completed reload, in  1.106 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1084ms)
-		BeginReloadAssembly (54ms)
+	ReloadAssembly (1106ms)
+		BeginReloadAssembly (55ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (423ms)
-			LoadAssemblies (52ms)
+		EndReloadAssembly (426ms)
+			LoadAssemblies (53ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (154ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (31ms)
-			SetupLoadedEditorAssemblies (165ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (167ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (42ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (45ms)
 				BeforeProcessingInitializeOnLoad (8ms)
-				ProcessInitializeOnLoadAttributes (81ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
+				ProcessInitializeOnLoadAttributes (78ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003054 seconds.
+Registered in 0.003464 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 41.41 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 43.10 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.151 seconds
+- Completed reload, in  1.181 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1152ms)
-		BeginReloadAssembly (142ms)
+	ReloadAssembly (1182ms)
+		BeginReloadAssembly (145ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (946ms)
-			LoadAssemblies (88ms)
+		EndReloadAssembly (975ms)
+			LoadAssemblies (89ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (294ms)
+			SetupTypeCache (301ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (394ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (412ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (41ms)
-				BeforeProcessingInitializeOnLoad (61ms)
-				ProcessInitializeOnLoadAttributes (269ms)
-				ProcessInitializeOnLoadMethodAttributes (12ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				RefreshPlugins (43ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (280ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2119 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 96.8 MB.
 System memory in use after: 96.9 MB.
 
 Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2562.
-Total: 3.309300 ms (FindLiveObjects: 0.190700 ms CreateObjectMapping: 0.080500 ms MarkObjects: 2.921700 ms  DeleteObjects: 0.115300 ms)
+Total: 3.641600 ms (FindLiveObjects: 0.181500 ms CreateObjectMapping: 0.076500 ms MarkObjects: 3.248100 ms  DeleteObjects: 0.134400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -132,33 +132,241 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Font/Cubano SDF_plain 1.asset
-  artifactKey: Guid(2c07f69d452857243918713fc20f0777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_plain 1.asset using Guid(2c07f69d452857243918713fc20f0777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48bc6a5d4889bc84d2cec1387499c50f') in 0.173065 seconds 
-  Import took 0.177111 seconds .
+  path: Assets/2D_Assets/FX/Particle/FX_PU2_Precision/sprite_FX_PU_precision2.png
+  artifactKey: Guid(4e4668a84e9f68a4b9498e42c860b74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU2_Precision/sprite_FX_PU_precision2.png using Guid(4e4668a84e9f68a4b9498e42c860b74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e86449e73940ccc0db501d6691ab7e7f') in 0.140456 seconds 
+  Import took 0.143884 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.064899 seconds.
-  path: Assets/Font/Cubano SDF.asset
-  artifactKey: Guid(6e0684b23f609bc47a399df5a9991e13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF.asset using Guid(6e0684b23f609bc47a399df5a9991e13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb4e1489290f90c687859a79e63228b5') in 0.035000 seconds 
-  Import took 0.039181 seconds .
+  Time since last request: 371.524431 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU2_Precision/sprite_FX_PU_precision.png
+  artifactKey: Guid(4e4668a84e9f68a4b9498e42c860b74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU2_Precision/sprite_FX_PU_precision.png using Guid(4e4668a84e9f68a4b9498e42c860b74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5f55e93fe6530015258b18a822cc5df') in 0.024061 seconds 
+  Import took 0.028225 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.488766 seconds.
-  path: Assets/Font/Cubano SDF_plain.asset
-  artifactKey: Guid(50a8d58b6bd0891438d830b7e15a86bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_plain.asset using Guid(50a8d58b6bd0891438d830b7e15a86bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9abafbf6a5f6c1b04c4d26460348afc7') in 0.032558 seconds 
-  Import took 0.036316 seconds .
+  Time since last request: 366.451429 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU2_Precision/sprite_FX_PU_precisionL.png
+  artifactKey: Guid(4e4668a84e9f68a4b9498e42c860b74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU2_Precision/sprite_FX_PU_precisionL.png using Guid(4e4668a84e9f68a4b9498e42c860b74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92f173d91bad554cd9fff2f55754977b') in 0.019427 seconds 
+  Import took 0.023532 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.661202 seconds.
-  path: Assets/Font/Cubano SDF_Pop up.asset
-  artifactKey: Guid(2c07f69d452857243918713fc20f0777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_Pop up.asset using Guid(2c07f69d452857243918713fc20f0777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caee0c019e98b6f185e05d8dcbd62529') in 0.035618 seconds 
-  Import took 0.039228 seconds .
+  Time since last request: 190.503943 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier/FX_Barrier.anim
+  artifactKey: Guid(25fcaba2111c6644ea99cfe202bfbf50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier/FX_Barrier.anim using Guid(25fcaba2111c6644ea99cfe202bfbf50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c56db0e5891bb243264d1e63b66314c8') in 0.012821 seconds 
+  Import took 0.018342 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005378 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier/FX_Barrier.anim
+  artifactKey: Guid(25fcaba2111c6644ea99cfe202bfbf50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier/FX_Barrier.anim using Guid(25fcaba2111c6644ea99cfe202bfbf50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c56db0e5891bb243264d1e63b66314c8') in 0.002670 seconds 
+  Import took 0.006425 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.907151 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier/FX_Barrier_Idle.anim
+  artifactKey: Guid(25fcaba2111c6644ea99cfe202bfbf50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier/FX_Barrier_Idle.anim using Guid(25fcaba2111c6644ea99cfe202bfbf50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5758acfd49160d7a31d9b210f7d262df') in 0.010178 seconds 
+  Import took 0.013563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3624.481798 seconds.
+  path: Assets/2D_Assets/FX/Animation/Hit_02_Fever/Hit_02_fever.controller
+  artifactKey: Guid(b35b6f1c7801d4645b210f82423700ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/Hit_02_Fever/Hit_02_fever.controller using Guid(b35b6f1c7801d4645b210f82423700ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc7f79b32be8ab4120cd8ba03498c97d') in 0.046236 seconds 
+  Import took 0.050261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.519019 seconds.
+  path: Assets/2D_Assets/FX/Animation/Hit_01_Normal/FX_SkinDefault_EnemyHit_Normal.prefab
+  artifactKey: Guid(a0f57cfd4525ab142b2b7be24e6597cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/Hit_01_Normal/FX_SkinDefault_EnemyHit_Normal.prefab using Guid(a0f57cfd4525ab142b2b7be24e6597cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf57901536c3363e2e5d736629b88792') in 0.056808 seconds 
+  Import took 0.061371 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.869560 seconds.
+  path: Assets/2D_Assets/FX/Animation/Hit_02_Fever/FX_SkinDefault_EnemyHit_Fever.prefab
+  artifactKey: Guid(55192071a46e7aa479d5d7ddfe977246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/Hit_02_Fever/FX_SkinDefault_EnemyHit_Fever.prefab using Guid(55192071a46e7aa479d5d7ddfe977246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c14046cfe8d82c2c338f98e3140e53c3') in 0.016756 seconds 
+  Import took 0.021529 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 262.763492 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle
+  artifactKey: Guid(972f538dd63ad5a40a88c779d71528ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle using Guid(972f538dd63ad5a40a88c779d71528ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '131329e495e4c0ea22703103fd92c1bf') in 0.008146 seconds 
+  Import took 0.012182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.248896 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle 1
+  artifactKey: Guid(008e86586497c0c4eac836dec7f22495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle 1 using Guid(008e86586497c0c4eac836dec7f22495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ece6ef160a3f9bcc35ffc2d3a71b089') in 0.009479 seconds 
+  Import took 0.012959 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.692400 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Break
+  artifactKey: Guid(008e86586497c0c4eac836dec7f22495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Break using Guid(008e86586497c0c4eac836dec7f22495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e5ea5a0767b52ea403c11d9268980a1') in 0.008915 seconds 
+  Import took 0.012611 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.839047 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU1_Barrier_Break/sprite_FX_PU_barrier.png
+  artifactKey: Guid(1f25e8c66d37f094dbccde05fa950163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU1_Barrier_Break/sprite_FX_PU_barrier.png using Guid(1f25e8c66d37f094dbccde05fa950163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60d60691d539011be2ca9fd0dce65844') in 0.065860 seconds 
+  Import took 0.070181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.259762 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU1_Barrier_Break/FX_PU_Barrier.controller
+  artifactKey: Guid(e91033d2be13f4d41889d3fe82bb03e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU1_Barrier_Break/FX_PU_Barrier.controller using Guid(e91033d2be13f4d41889d3fe82bb03e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c3dd12dfa51abb8b443020d6a53749c') in 0.009665 seconds 
+  Import took 0.031184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2637.365674 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Line/MAT_Line_trail_alphablend.mat
+  artifactKey: Guid(caf8e774226616343a25f6125745fc98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Line/MAT_Line_trail_alphablend.mat using Guid(caf8e774226616343a25f6125745fc98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35c40c11929e79b4d3deb2b294564bca') in 0.083858 seconds 
+  Import took 0.088452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5729.895739 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU1_Barrier_Break/FX_PU_Barrier_Idle.prefab
+  artifactKey: Guid(a93c93ff995e48046a7b6985bd26e4b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU1_Barrier_Break/FX_PU_Barrier_Idle.prefab using Guid(a93c93ff995e48046a7b6985bd26e4b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e775290406c53251dc4a65359c157f9') in 0.056150 seconds 
+  Import took 0.062295 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.374314 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU1_Barrier_Break/FX_PU_Barrier_Break.prefab
+  artifactKey: Guid(568b56482551a50489171dd70a8bac08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU1_Barrier_Break/FX_PU_Barrier_Break.prefab using Guid(568b56482551a50489171dd70a8bac08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b03516400fcbc50693dd77a2256e14e') in 0.019220 seconds 
+  Import took 0.023748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.579671 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU2_Precision/FX_PU_Precision_active_left.prefab
+  artifactKey: Guid(d4b639cec72497249826081c20461d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU2_Precision/FX_PU_Precision_active_left.prefab using Guid(d4b639cec72497249826081c20461d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38ee7f4f47f5ed3d9ba3b2195f0e0c92') in 0.014035 seconds 
+  Import took 0.018086 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.375735 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU2_Precision/FX_PU_Precision_active_right.prefab
+  artifactKey: Guid(e3a9aef48e4319a4290c5367e903b767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU2_Precision/FX_PU_Precision_active_right.prefab using Guid(e3a9aef48e4319a4290c5367e903b767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e3d22aa8f4e45a366456125b70fbbd4') in 0.016113 seconds 
+  Import took 0.020507 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.865213 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU3_FeverGain/FX_PU_FeverGain.prefab
+  artifactKey: Guid(b6184f4798ce46541856b8ced7134d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU3_FeverGain/FX_PU_FeverGain.prefab using Guid(b6184f4798ce46541856b8ced7134d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11bcd11588426a532bda6e5ae3e6703e') in 0.034171 seconds 
+  Import took 0.039548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.754626 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_attack/FX_Skin01_attack.prefab
+  artifactKey: Guid(577c0341e7bc38c47920ad68aa48ade4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_attack/FX_Skin01_attack.prefab using Guid(577c0341e7bc38c47920ad68aa48ade4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65eba8e62a1223539cab97fa72fe0ae4') in 0.014480 seconds 
+  Import took 0.022628 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.149920 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_EnemyHit/FX_Skin01_EnemyHit.prefab
+  artifactKey: Guid(35733f2102184414d8f94da8dd804e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_EnemyHit/FX_Skin01_EnemyHit.prefab using Guid(35733f2102184414d8f94da8dd804e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f08f7b03e9201abce18b05a80d79681') in 0.013856 seconds 
+  Import took 0.017952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.119685 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_idle/FX_Skin01_idle.prefab
+  artifactKey: Guid(3759f3929df935f4697db0dd5073fc55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_idle/FX_Skin01_idle.prefab using Guid(3759f3929df935f4697db0dd5073fc55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bac630fa673f61dbc74c8beb4a2196ba') in 0.017022 seconds 
+  Import took 0.022085 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 121.201066 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab
+  artifactKey: Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab using Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27af5967de51a05a412b6f15432fa6ad') in 0.027431 seconds 
+  Import took 0.031956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002596 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab
+  artifactKey: Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab using Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27af5967de51a05a412b6f15432fa6ad') in 0.015424 seconds 
+  Import took 0.021148 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.350123 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier.prefab
+  artifactKey: Guid(6113503a0e4be6749bff8baa08526b0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier.prefab using Guid(6113503a0e4be6749bff8baa08526b0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9357f6f68930e2759be330b1b5d519ab') in 0.021608 seconds 
+  Import took 0.025398 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003853 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier.prefab
+  artifactKey: Guid(6113503a0e4be6749bff8baa08526b0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier.prefab using Guid(6113503a0e4be6749bff8baa08526b0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9357f6f68930e2759be330b1b5d519ab') in 0.016537 seconds 
+  Import took 0.019948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 288.004826 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier.controller
+  artifactKey: Guid(b9a252c3959edb74680aafddb85eb250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier.controller using Guid(b9a252c3959edb74680aafddb85eb250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b242c7d649c5101dfd42134280c5b8ad') in 0.006849 seconds 
+  Import took 0.010758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1171.629660 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier_Idle.prefab
+  artifactKey: Guid(879ce32ccdb3fba46a0d44be943496f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier_Idle.prefab using Guid(879ce32ccdb3fba46a0d44be943496f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cffdc1eba73eed6efed992bb9a037fe') in 0.029376 seconds 
+  Import took 0.034072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003023 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier_Idle.prefab
+  artifactKey: Guid(879ce32ccdb3fba46a0d44be943496f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU1_Barrier_Idle/FX_PU_Barrier_Idle.prefab using Guid(879ce32ccdb3fba46a0d44be943496f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cffdc1eba73eed6efed992bb9a037fe') in 0.018075 seconds 
+  Import took 0.022877 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
