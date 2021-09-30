@@ -113,6 +113,12 @@ TextureImporter:
   - first:
       213: -8001604209466672657
     second: atlas_4k_82
+  - first:
+      213: -5775113379565593752
+    second: atlas_4k_83
+  - first:
+      213: 2978527246824859
+    second: atlas_4k_84
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1914,7 +1920,7 @@ TextureImporter:
         width: 123
         height: 124
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1922,6 +1928,48 @@ TextureImporter:
       bones: []
       spriteID: fe9f775ad5794f090800000000000000
       internalID: -8001604209466672657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_4k_83
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 3343
+        width: 286
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b1369aafcaadfa0800000000000000
+      internalID: -5775113379565593752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_4k_84
+      rect:
+        serializedVersion: 2
+        x: 2938
+        y: 3401
+        width: 67
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95308a64f49a0000800000000000000
+      internalID: 2978527246824859
       vertices: []
       indices: 
       edges: []
