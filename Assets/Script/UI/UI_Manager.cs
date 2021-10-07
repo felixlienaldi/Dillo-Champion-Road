@@ -14,6 +14,7 @@ public class UI_Manager : MonoBehaviour{
     //===== STRUCT =====
     //===== PUBLIC =====
     public List<StartMenu_Gameobject> m_StartMenu_Object;
+    public List<GameObject> m_HTPTitle;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -42,6 +43,17 @@ public class UI_Manager : MonoBehaviour{
     public void f_CloseMenu() {
         for (int i = 0; i < m_StartMenu_Object.Count; i++) {
             m_StartMenu_Object[i].gameObject.SetActive(true);
+        }
+    }
+
+    public void f_OnChangeHTPPageNumber(int p_Page) {
+        for (int i = 0; i < m_HTPTitle.Count; i++) {
+            if (i == p_Page) {
+                m_HTPTitle[i].SetActive(true);
+            }
+            else {
+                m_HTPTitle[i].SetActive(false);
+            }
         }
     }
 }
