@@ -35,5 +35,6 @@ public class Start_Gameobject : MonoBehaviour{
     //=====================================================================
     public void f_CountdownDone() {
         m_Parent.gameObject.SetActive(false);
+        GameManager_Manager.m_Instance.f_Initialize();
     }
 }

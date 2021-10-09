@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using MEC;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 /*Score multiplier (2x) V
 HP gain up (+1) (reduce minimum combo to obtain HP) V
 Fever time up (x300%) V
@@ -26,10 +27,17 @@ public class Player_GameObject : Character_GameObject{
 
     //===== PUBLIC =====
     public SpriteRenderer m_SpriteRenderer;
+    [Header("Audio")]
+    public AudioClip[] m_PlayerHitClip;
+    public AudioClip[] m_EnemyHitClip;
+    public AudioClip m_PlayerDamaged;
+    public AudioClip m_NormalBGM;
+    public AudioClip m_FeverBGM;
 
     [Header("Combo System")]
     public int m_Combo;
     public bool m_IsCombo;
+    public float m_DefaultMinimumCombo;
     public float m_MinimumCombo;
 
     [Header("Fever System")]
@@ -54,12 +62,22 @@ public class Player_GameObject : Character_GameObject{
     public float m_ReviveCount;
     public float m_AbsoluteHitCount;
     public GameObject m_Barrier;
+    public GameObject m_BarrierAfterEffect;
     public GameObject m_Revive;
-    public ShadowPlayer_GameObject m_AbsoluteHitObject;
+    public GameObject m_PrecisionLeft;
+    public GameObject m_PrecisionRight;
+    public GameObject m_FeverGainEffect;
     public UnityEvent m_OnRevived;
     public UnityEvent<float> m_OnAbsoluteHit;
-
+    public GameObject m_NormalEnviorment;
+    public GameObject m_FeverEnviorment;
+    public GameObject m_FeverEffect;
+    public GameObject m_HitEffectLeft;
+    public GameObject m_HitEffectRight;
+    public GameObject m_FeverHitEffectLeft;
+    public GameObject m_FeverHitEffectRight;
     //===== PRIVATES =====
+    private int m_HitCount;
     bool m_IsTakeDamageCoroutineRunning;
     float m_CurrentTimer;
     //=====================================================================
@@ -78,41 +96,89 @@ public class Player_GameObject : Character_GameObject{
         m_Timer = 5;
         m_Combo = 0;
         m_CurrentTimer = m_Timer;
-        m_SpriteRenderer.color = Color.white;
+       // m_SpriteRenderer.color = Color.white;
         UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
         UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
     }
 
     void Update(){
-        if(f_GetCurrentHealth() <= 0) {
-            if(m_ReviveCount > 0) {
-                m_ReviveCount--;
-                m_OnRevived?.Invoke();
-                m_CurrentHealthPoint++;
-                UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
+        if (GameManager_Manager.m_Instance.m_GameState == Enumerator.GAME_STATE.GAME) {
+            if (f_GetCurrentHealth() <= 0) {
+                if (m_ReviveCount > 0) {
+                    m_ReviveCount--;
+                    m_OnRevived?.Invoke();
+                    m_CurrentHealthPoint++;
+                    UIManager_Manager.m_Instance.f_AddHP(m_CurrentHealthPoint);
+                    //UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
+                }
+                else {
+                    m_FeverGainMultiplier = 1;
+                    m_BarrierCount = 0;
+                    m_ReviveCount = 0;
+                    m_AbsoluteHitCount = 0;
+                    GameManager_Manager.m_Instance.f_PostGameManager();
+                    m_CurrentHealthPoint = f_GetMaxHealth();
+                }
             }
-            else {
-                m_FeverGainMultiplier = 1;
-                m_BarrierCount = 0;
-                m_ReviveCount = 0;
-                m_AbsoluteHitCount = 0;
-                GameManager_Manager.m_Instance.f_PostGameManager();
-                m_CurrentHealthPoint = f_GetMaxHealth();
-            }
+
+            f_CheckTimer();
+            f_Move();
+            f_CheckCombo();
+            f_CheckFever();
+            f_CheckBuff();
         }
-        f_CheckTimer();
-        f_Move();
-        f_CheckCombo();
-        f_CheckFever();
     }
 
     //=====================================================================
     //				        OTHER METHOD
     //=====================================================================
-    
+    public void f_Reset() {
+        m_EnemyKilled = 0;
+        m_IsCombo = false;
+        m_IsFever = false;
+        m_CurrentHealthPoint = f_GetMaxHealth();
+        m_PerfectHit = 0;
+        m_Timer = 5;
+        m_Combo = 0;
+        m_FeverGainMultiplier = 1;
+        m_BarrierCount = 0;
+        m_ReviveCount = 0;
+        m_AbsoluteHitCount = 0;
+        m_CurrentTimer = m_Timer;
+        Audio_Manager.m_Instance.f_ChangeBgm(m_NormalBGM);
+        // m_SpriteRenderer.color = Color.white;
+        UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
+        UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
+        f_CheckTimer();
+        f_Move();
+        f_CheckCombo();
+        f_CheckFever();
+        f_CheckBuff();
+    }
+
+    public override void f_Flip(bool p_Right) {
+        if (p_Right == true) {
+            m_SpriteRenderer.flipX = true;
+        }
+        else {
+            m_SpriteRenderer.flipX = false;
+        }
+    }
+
+    public void f_CheckBuff() {
+        if (m_AbsoluteHitCount > 0) {
+            m_Animator.SetBool("Potion", true);
+        }
+        else {
+            m_Animator.SetBool("Potion", false);
+        }
+
+        if (f_GainFever() <= 1) m_FeverGainEffect.SetActive(false);
+        else m_FeverGainEffect.SetActive(true);
+    }
 
     public float f_GetFeverTimer() {
-        return m_FeverTimer * m_FeverTimeMultiplier;
+        return m_FeverTimer + (m_FeverTimer * m_FeverTimeMultiplier);
     }
 
     public float f_GainFever() {
@@ -121,10 +187,11 @@ public class Player_GameObject : Character_GameObject{
 
     public IEnumerator<float> ie_TakeDamage() {
         m_IsTakeDamageCoroutineRunning = true;
-        m_SpriteRenderer.color = Color.red;
+        // m_SpriteRenderer.color = Color.red;
+        m_Animator.SetTrigger("Damage");
         yield return Timing.WaitForSeconds(0.2f);
         m_IsTakeDamageCoroutineRunning = false;
-        m_SpriteRenderer.color = Color.white;
+       // m_SpriteRenderer.color = Color.white;
     }
 
     public void f_CheckCombo() {
@@ -134,18 +201,28 @@ public class Player_GameObject : Character_GameObject{
         else {
             m_IsCombo = false;
         }
-        if (m_IsCombo) UIManager_Manager.m_Instance.f_SetComboText("x" + m_Combo);
-        else UIManager_Manager.m_Instance.f_SetComboText("");
+        if (m_IsCombo) {
+            UIManager_Manager.m_Instance.m_Combo.SetActive(true);
+            UIManager_Manager.m_Instance.f_SetComboText(m_Combo.ToString());
+        }
+        else {
+            UIManager_Manager.m_Instance.m_Combo.SetActive(false);
+            UIManager_Manager.m_Instance.f_SetComboText("");
+        }
     }
 
     public void f_CheckFever() {
         if (m_IsFever) {
-            m_SpriteRenderer.color = Color.blue;
+            //m_SpriteRenderer.color = Color.blue;
             m_CurrentFeverTimer -= Time.deltaTime;
             if(m_CurrentFeverTimer<= 0f) {
                 m_CurrentFeverTimer = 0f;
                 m_IsFever = false;
-                m_SpriteRenderer.color = Color.white;
+                m_NormalEnviorment.gameObject.SetActive(true);
+                m_FeverEnviorment.gameObject.SetActive(false);
+                Audio_Manager.m_Instance.f_ChangeBgm(m_NormalBGM);
+                m_FeverEffect.gameObject.SetActive(false);
+                //m_SpriteRenderer.color = Color.white;
             }
             UIManager_Manager.m_Instance.f_SetFeverFillBar(m_CurrentFeverTimer, f_GetFeverTimer());
         }
@@ -165,7 +242,12 @@ public class Player_GameObject : Character_GameObject{
             m_CurrentTimer = m_Timer;
         }
         if (m_BarrierCount > 0) m_Barrier.SetActive(true);
-        else m_Barrier.SetActive(false);
+        else {
+            if (m_Barrier.activeInHierarchy) {
+                m_Barrier.SetActive(false);
+                m_BarrierAfterEffect.SetActive(true);
+            }
+        }
 
     }
 
@@ -179,7 +261,7 @@ public class Player_GameObject : Character_GameObject{
         if (m_Combo % m_MinimumCombo == 0) {
             if (f_GetCurrentHealth() < f_GetMaxHealth()) {
                 m_CurrentHealthPoint++;
-                UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
+                UIManager_Manager.m_Instance.f_AddHP(f_GetCurrentHealth());
             }
         }
 
@@ -193,6 +275,10 @@ public class Player_GameObject : Character_GameObject{
             if (m_PerfectHit >= m_MinimumHit) {
                 m_PerfectHit = 0;
                 m_IsFever = true;
+                m_NormalEnviorment.gameObject.SetActive(false);
+                m_FeverEnviorment.gameObject.SetActive(true);
+                m_FeverEffect.gameObject.SetActive(true);
+                Audio_Manager.m_Instance.f_ChangeBgm(m_FeverBGM);
                 m_CurrentFeverTimer = f_GetFeverTimer();
             }
             Timing.RunCoroutine(CameraGameObject_GameObject.m_Instance.ie_Shake(0.2f, 1f));
@@ -206,23 +292,35 @@ public class Player_GameObject : Character_GameObject{
     }
 
     public void f_Attack() {
-        m_Animator.Play(m_AttackAnimation);
+        m_HitCount++;
+        Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerHitClip[ Random.Range(0, m_PlayerHitClip.Length)]);
+        if (m_HitCount > 4) m_HitCount = 1;
+        m_Animator.SetInteger("Hit",m_HitCount);
+        m_Animator.SetTrigger("Punch");
     }
 
     public void f_TakeDamage() {
         m_Combo = 0;
         m_PerfectHit = 0;
+        Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerDamaged);
         Timing.RunCoroutine(CameraGameObject_GameObject.m_Instance.ie_Shake(0.2f, 3f));
         UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
+        GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
         f_TakeDamage(1);
         if (!m_IsTakeDamageCoroutineRunning) Timing.RunCoroutine(ie_TakeDamage());
-        UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
-        GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+        UIManager_Manager.m_Instance.f_MinHp(f_GetCurrentHealth());
     }
 
     public void f_OnAbsoluteHit(float p_TransformScaleX) {
-        m_AbsoluteHitObject.f_Attack(GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x);
-      
+        m_PrecisionLeft.gameObject.SetActive(false);
+        m_PrecisionRight.gameObject.SetActive(false);
+        if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x > transform.position.x) {
+            m_PrecisionRight.gameObject.SetActive(true);
+        }
+        else {
+            m_PrecisionLeft.gameObject.SetActive(true);
+        }
+        f_SetColliderAttack();
     }
 
     public void f_OnRevived() {
@@ -232,29 +330,40 @@ public class Player_GameObject : Character_GameObject{
     public IEnumerator<float> ie_Revive() {
         m_Revive.gameObject.SetActive(true);
         float m_InvisTimer = 0;
-        Debug.Log("TEST");
         do {
-            m_SpriteRenderer.color = new Color(1, 1, 1, 0);
+           // m_SpriteRenderer.color = new Color(1, 1, 1, 0);
             yield return Timing.WaitForSeconds(0.05f);
-            m_SpriteRenderer.color = new Color(1, 1, 1, 1);
+           // m_SpriteRenderer.color = new Color(1, 1, 1, 1);
             yield return Timing.WaitForSeconds(0.05f);
             m_InvisTimer += 0.2f;
         } while (m_InvisTimer < 1f);
-        m_SpriteRenderer.color = new Color(1, 1, 1, 1);
+        //m_SpriteRenderer.color = new Color(1, 1, 1, 1);
         yield return Timing.WaitForSeconds(1f);
-        m_Revive.gameObject.SetActive(false);
     }
 
     public override void f_Move() {
     }
 
     public void f_SetColliderAttack() {
+        Audio_Manager.m_Instance.f_PlayOneShot(m_EnemyHitClip[Random.Range(0, m_EnemyHitClip.Length)]);
+        m_HitEffectLeft.gameObject.SetActive(false);
+        m_HitEffectRight.gameObject.SetActive(false);
+        m_FeverHitEffectLeft.gameObject.SetActive(false);
+        m_FeverHitEffectRight.gameObject.SetActive(false);
+        if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {
+           if(!m_IsFever) m_HitEffectLeft.gameObject.SetActive(true);
+            else m_FeverHitEffectLeft.gameObject.SetActive(true);
+        }
+        else {
+            if (!m_IsFever) m_HitEffectRight.gameObject.SetActive(true);
+            else m_FeverHitEffectRight.gameObject.SetActive(true);
+        }
         f_CheckTiming(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
     }
 
     public void f_Attack(bool p_Right) {
-        m_CurrentTimer = m_Timer;
-        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) {
+        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") || m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle_Potion")) {
+            m_CurrentTimer = m_Timer;
             if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].m_Type == Enumerator.ENEMY_TYPE.INVERSE) {
                 if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x - transform.position.x >= 0) {
                     if (p_Right == false) {

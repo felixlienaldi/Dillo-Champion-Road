@@ -18,14 +18,17 @@ public class UIManager_Manager : MonoBehaviour{
     public TextMeshProUGUI m_ComboCount;
     public TextMeshProUGUI m_TextImage;
     public TextMeshProUGUI m_Score;
-    public Image[] m_HPIcon;
-    public Image m_HpAdded;
+    public Animator[] m_HPIcon;
+    public Sprite[] m_TimerType; //0 = green, 1= yellow,2 = red
     public Image m_TimerFillBar;
-    public Image m_TimerFillBG;
+    public Image m_ContinueTimerFill;
+    public GameObject m_TimerFill;
     public GameObject m_Position1;
     public GameObject m_Position2;
+    public GameObject m_Combo;
+    public Camera m_UICam;
     //===== PRIVATES =====
-
+    Vector3 t_Vector;
     //=====================================================================
     //				MONOBEHAVIOUR METHOD 
     //=====================================================================
@@ -53,34 +56,60 @@ public class UIManager_Manager : MonoBehaviour{
     }
 
     public void f_SetTimerFillBar(float p_FillAmount, float p_MaxAmount, Enemy_GameObject p_Enemy) {
-        m_TimerFillBar.fillAmount = p_FillAmount / p_MaxAmount;
-        if (p_Enemy.m_ListGrids == GameManager_Manager.m_Instance.m_LeftGrids) {
-            m_TimerFillBar.transform.position = m_Position1.transform.position;
-            m_TimerFillBG.transform.position = m_Position1.transform.position;
+        if ((p_FillAmount / p_MaxAmount) >= .67f) {
+            m_TimerFillBar.sprite = m_TimerType[0];
+        }
+        else if ((p_FillAmount / p_MaxAmount) >= .33f) {
+            m_TimerFillBar.sprite = m_TimerType[1];
         }
         else {
-            m_TimerFillBar.transform.position = m_Position2.transform.position;
-            m_TimerFillBG.transform.position = m_Position2.transform.position;
+            m_TimerFillBar.sprite = m_TimerType[2];
+        }
+
+        m_TimerFillBar.fillAmount = p_FillAmount / p_MaxAmount;
+        if (p_Enemy.m_ListGrids == GameManager_Manager.m_Instance.m_LeftGrids) {
+            t_Vector = Camera.main.WorldToScreenPoint(m_Position1.transform.position);
+            t_Vector = m_UICam.ScreenToWorldPoint(t_Vector);
+            t_Vector.z = 100;
+            m_TimerFill.transform.position = t_Vector;
+        }
+        else {
+            t_Vector = Camera.main.WorldToScreenPoint(m_Position2.transform.position);
+            t_Vector = m_UICam.ScreenToWorldPoint(t_Vector);
+            t_Vector.z = 100;
+            m_TimerFill.transform.position = t_Vector;
         }
     }
 
     public void f_SetHpBar(float p_Health) {
-        for(int i = 0; i < m_HPIcon.Length; i++) {
-            if(i < p_Health) m_HPIcon[i].gameObject.SetActive(true);
-            else m_HPIcon[i].gameObject.SetActive(false);
+        for (int i = 0; i < m_HPIcon.Length; i++) {
+            m_HPIcon[i].Play("Gain");
         }
     }
+
+    public void f_SetContinueTimerFill(float m_CurrentTimer,float m_MaxTimer =5) {
+        m_ContinueTimerFill.fillAmount = (m_MaxTimer-m_CurrentTimer) / m_MaxTimer; 
+    }
+
+    public void f_MinHp(float p_Health) {
+        m_HPIcon[(int) p_Health].Play("Loss");
+    }
+
+    public void f_AddHP(float p_Health) {
+        m_HPIcon[(int)p_Health-1].Play("Gain");
+    }
+
     public void f_SetScoreText(string p_Score) {
-        m_Score.text = "Score : " + p_Score;
+        m_Score.text =  p_Score;
     }
     public void f_SetPopUpHpBar() {
-        m_HpAdded.gameObject.SetActive(false);
-        m_HpAdded.gameObject.SetActive(true);
+        //m_HpAdded.gameObject.SetActive(false);
+        //m_HpAdded.gameObject.SetActive(true);
     }
 
     public IEnumerator<float> f_SetAccuracyText(string p_Text) {
-        m_TextImage.text = p_Text;
+        //m_TextImage.text = p_Text;
         yield return Timing.WaitForSeconds(0.75f);
-        m_TextImage.text = "";
+        //m_TextImage.text = "";
     }
 }

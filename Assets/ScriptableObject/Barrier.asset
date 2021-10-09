@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Barrier
   m_EditorClassIdentifier: 
   m_UpgradeType: 4
+  m_Price:
+  - 100
   m_Value: 1
   m_UpgradeValue: 0
   m_Level: 0
   m_MaxLevel: 0
+  m_Applied: 0
+  m_BuffSprite: {fileID: 7522661891350979020, guid: 40ec8e48be9e988448f7b2c155a8d80a, type: 3}
+  m_Desc: GIVES BARRIER TO PROTECT YOU BY 1X HIT
+  m_Names: SOUL BARRIER

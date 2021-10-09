@@ -10636,7 +10636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1101090937
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16928,7 +16928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1940305778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16949,6 +16949,7 @@ MonoBehaviour:
   m_SpriteRenderer: {fileID: 1940305779}
   m_Combo: 0
   m_IsCombo: 0
+  m_DefaultMinimumCombo: 0
   m_MinimumCombo: 100
   m_MinimumHit: 25
   m_PerfectHit: 0

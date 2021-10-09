@@ -16,6 +16,7 @@ public class GameManager_Manager : MonoBehaviour{
 
     //===== PUBLIC =====
     public GAME_STATE m_GameState;
+    public bool m_ContinueChance = true;
 
     [Header("List Upgrade")]
     public List<Buff_GameObject> m_ListUpgrade;
@@ -28,6 +29,10 @@ public class GameManager_Manager : MonoBehaviour{
     [Header("GameObject")]
     public Player_GameObject m_Player;
     public GameObject m_GamePlayUI;
+    public GameObject m_HpUI;
+    public GameObject m_GameOverUI;
+    public GameObject m_ContinueMenu;
+    public GameObject m_PostGame;
 
     [Header("List Enemies")]
     public List<Transform> m_LeftGrids;
@@ -54,7 +59,9 @@ public class GameManager_Manager : MonoBehaviour{
         m_Score = 0;
         UIManager_Manager.m_Instance.f_SetScoreText("" + m_Score);
         m_GameState = GAME_STATE.GAME;
-        m_Player.gameObject.SetActive(true);
+        m_HpUI.gameObject.SetActive(true);
+        m_Player.f_Reset();
+        m_ContinueChance = true;
         f_ApplyBuff();
         for (int i = 0; i < 4; i++) {
             f_Spawn(i);
@@ -65,7 +72,7 @@ public class GameManager_Manager : MonoBehaviour{
     public void f_ApplyBuff() {
         for (int i = 0; i < m_ListUpgrade.Count; i++) {
             if (m_ListUpgrade[i].m_UpgradeType == UPGRADE_TYPE.SCORE) m_ScoreMultiplier = m_ListUpgrade[i].f_GetTotalMultiplier();
-            else if (m_ListUpgrade[i].m_UpgradeType == UPGRADE_TYPE.HPGAIN) m_Player.m_MinimumCombo -= m_ListUpgrade[i].f_GetTotalMultiplier();
+            else if (m_ListUpgrade[i].m_UpgradeType == UPGRADE_TYPE.HPGAIN) m_Player.m_MinimumCombo = m_Player.m_DefaultMinimumCombo-m_ListUpgrade[i].f_GetTotalMultiplier();
             else if (m_ListUpgrade[i].m_UpgradeType == UPGRADE_TYPE.FEVERTIME) m_Player.m_FeverTimeMultiplier = m_ListUpgrade[i].f_GetTotalMultiplier();
         }
 
@@ -86,13 +93,45 @@ public class GameManager_Manager : MonoBehaviour{
     }
 
     public void f_PostGameManager() {
-        Timing.KillCoroutines();
-        PostGameManager_Manager.m_Instance.f_EndGame();
-        m_Player.gameObject.SetActive(false);
-        for(int i = 0; i < SpawnManager_Manager.m_Instance.m_ListEnemy.Count; i++) {
+        //Timing.KillCoroutines();
+        m_HpUI.gameObject.SetActive(false);
+        m_GameState = GAME_STATE.ENDGAME;
+        m_GameOverUI.gameObject.SetActive(true);
+        m_GamePlayUI.SetActive(false);
+    }
+
+    public void f_GameOver() {
+        if (m_ContinueChance) {
+            m_ContinueMenu.gameObject.SetActive(true);
+            m_ContinueChance = false;
+            Timing.RunCoroutine(ie_ContinueTimer(),"Continue");
+        }
+        else {
+            Timing.KillCoroutines("Continue");
+            f_EndGame();
+        }
+    }
+
+    public void f_EndGame() {
+        m_ContinueMenu.gameObject.SetActive(false);
+        m_GameOverUI.gameObject.SetActive(false);
+        for (int i = 0; i < SpawnManager_Manager.m_Instance.m_ListEnemy.Count; i++) {
             SpawnManager_Manager.m_Instance.m_ListEnemy[i].gameObject.SetActive(false);
         }
-        m_GamePlayUI.SetActive(false);
+        for (int i = 0; i < m_ListPotion.Count; i++) m_ListPotion[i].m_Applied = false;
+        m_ListPotion.Clear();
+        PostGameManager_Manager.m_Instance.f_EndGame();
+        m_ListActiveEnemies.Clear();
+    }
+
+    public void f_Continue() {
+        Timing.KillCoroutines("Continue");
+        m_HpUI.gameObject.SetActive(true);
+        Player_GameObject.m_Instance.f_Reset();
+        m_GameState = GAME_STATE.GAME;
+        m_GameOverUI.gameObject.SetActive(false);
+        m_ContinueMenu.gameObject.SetActive(false);        
+        m_GamePlayUI.SetActive(true);
     }
 
     public void f_AssignLine(Enemy_GameObject p_Enemy, int p_Index) {
@@ -114,10 +153,56 @@ public class GameManager_Manager : MonoBehaviour{
 
     public void f_NextLine(Enemy_GameObject p_Enemy) {
         m_ListActiveEnemies.Remove(p_Enemy);
-        p_Enemy.gameObject.SetActive(false);
+        //p_Enemy.gameObject.SetActive(false);
+        p_Enemy.m_Animator.SetTrigger("Damage");
+        Timing.RunCoroutine(ie_NextLine());
+    }
+
+    IEnumerator<float> ie_NextLine() {
+        yield return Timing.WaitForSeconds(.25f);
         for (int i = 0; i < m_ListActiveEnemies.Count; i++) {
             m_ListActiveEnemies[i].f_Move();
         }
         f_Spawn(m_LeftGrids.Count - 1);
+    }
+
+    public void f_Pause() {
+        Time.timeScale = 0;
+        m_GameState = GAME_STATE.PAUSED;
+        m_GamePlayUI.gameObject.SetActive(false);
+    }
+
+    public void f_Unpause() {
+        Time.timeScale = 1;
+        m_GameState = GAME_STATE.GAME;
+        m_GamePlayUI.gameObject.SetActive(true);
+    }
+
+    public void f_BackToHome() {
+        Player_GameObject.m_Instance.m_FeverEffect.SetActive(false);
+        Player_GameObject.m_Instance.f_Reset();
+        Player_GameObject.m_Instance.m_FeverEnviorment.gameObject.SetActive(false);
+        Player_GameObject.m_Instance.m_NormalEnviorment.gameObject.SetActive(true);
+
+        Time.timeScale = 1;
+        m_GameState = GAME_STATE.MENU;
+        m_HpUI.gameObject.SetActive(false);
+
+        for (int i = 0; i < SpawnManager_Manager.m_Instance.m_ListEnemy.Count; i++) {
+            SpawnManager_Manager.m_Instance.m_ListEnemy[i].gameObject.SetActive(false);
+        }
+
+        m_ListActiveEnemies.Clear();
+    }
+
+    IEnumerator<float> ie_ContinueTimer() {
+        float m_ContinueTimer = 5f;
+        do {
+            yield return Timing.WaitForSeconds(Time.deltaTime);
+            m_ContinueTimer -= Time.deltaTime;
+            UIManager_Manager.m_Instance.f_SetContinueTimerFill(m_ContinueTimer);
+        } while (m_ContinueTimer > 0);
+        m_ContinueMenu.gameObject.SetActive(false);
+        f_EndGame();
     }
 }

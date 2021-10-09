@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: FeverTime
   m_EditorClassIdentifier: 
   m_UpgradeType: 2
-  m_Value: 3
-  m_UpgradeValue: 0.01
+  m_Price:
+  - 100
+  - 500
+  - 1500
+  - 5000
+  - 20000
+  - 50000
+  - 150000
+  - 500000
+  - 750000
+  m_Value: 0
+  m_UpgradeValue: 0.3
   m_Level: 0
-  m_MaxLevel: 0
+  m_MaxLevel: 9
+  m_Applied: 0
+  m_BuffSprite: {fileID: -9007775270091370208, guid: 40ec8e48be9e988448f7b2c155a8d80a, type: 3}
+  m_Desc: INCREASE YOUR FEVER DURATION BY
+  m_Names: FEVER TIME UP

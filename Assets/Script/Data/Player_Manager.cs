@@ -15,7 +15,7 @@ public class Player_Manager : MonoBehaviour{
     //===== PUBLIC =====
     public int m_Berry;
     public int m_HighScore;
-    public string m_Name;
+    public string m_Names;
     public string m_Pos;
     //===== PRIVATES =====
 

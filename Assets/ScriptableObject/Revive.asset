@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Revive
   m_EditorClassIdentifier: 
   m_UpgradeType: 5
+  m_Price:
+  - 100
   m_Value: 1
   m_UpgradeValue: 0
   m_Level: 0
   m_MaxLevel: 0
+  m_Applied: 0
+  m_BuffSprite: {fileID: 3597856220674701796, guid: 40ec8e48be9e988448f7b2c155a8d80a, type: 3}
+  m_Desc: GIVES YOU ANOTHER CHANCE TO CONTINUE THE BATTLE
+  m_Names: UNDYING WILL

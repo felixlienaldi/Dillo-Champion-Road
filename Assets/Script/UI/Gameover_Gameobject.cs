@@ -34,4 +34,7 @@ public class Gameover_Gameobject : MonoBehaviour{
     //=====================================================================
     //				    OTHER METHOD
     //=====================================================================
+    public void f_Gameover() {
+        GameManager_Manager.m_Instance.f_GameOver();
+    }
 }

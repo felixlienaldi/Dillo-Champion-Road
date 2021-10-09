@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Accuracy
   m_EditorClassIdentifier: 
   m_UpgradeType: 6
+  m_Price:
+  - 100
   m_Value: 2
   m_UpgradeValue: 0
   m_Level: 0
   m_MaxLevel: 0
+  m_Applied: 0
+  m_BuffSprite: {fileID: -3152154388385319841, guid: 40ec8e48be9e988448f7b2c155a8d80a, type: 3}
+  m_Desc: ' YOUR ATTACK CANNOT MISS BY X2 TIMES'
+  m_Names: PRECISION

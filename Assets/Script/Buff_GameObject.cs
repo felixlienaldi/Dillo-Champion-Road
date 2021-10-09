@@ -17,10 +17,15 @@ public class Buff_GameObject : ScriptableObject {
 
     //===== PUBLIC =====
     public UPGRADE_TYPE m_UpgradeType;
+    public float[] m_Price;
     public float m_Value;
     public float m_UpgradeValue;
     public int m_Level;
     public int m_MaxLevel;
+    public bool m_Applied;
+    public Sprite m_BuffSprite;
+    public string m_Desc;
+    public string m_Names;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -41,12 +46,34 @@ public class Buff_GameObject : ScriptableObject {
     public void f_SetLevel(int p_LevelValue) {
         m_Level = p_LevelValue;
     }
-    
+
+    public float f_GetPrice() {
+        return m_Price[m_Level];
+    }
+
+    public string f_GetDesc() {
+        if (f_IsPotion()) return m_Desc;
+        else {
+            if (m_Level != m_MaxLevel) {
+                if (m_UpgradeType == UPGRADE_TYPE.SCORE) return m_Desc + " " + (f_GetNextTotalMultiplier()).ToString() + "X";
+                else if (m_UpgradeType == UPGRADE_TYPE.HPGAIN) return m_Desc + " -" + f_GetNextTotalMultiplier();
+                else return m_Desc + " " + (f_GetNextTotalMultiplier() * 10).ToString() + "%";
+            }
+            else return "MAX LEVEL";
+        }
+    }
+
+    public float f_GetNextTotalMultiplier() {
+        return m_Value + (m_UpgradeValue * m_Level+1);
+    }
+
     public float f_GetTotalMultiplier() {
         return m_Value + (m_UpgradeValue * m_Level);
     }
-    public void f_Upgrade() {
-        
+
+    public bool f_IsPotion() {
+        if (m_UpgradeType == UPGRADE_TYPE.SCORE || m_UpgradeType == UPGRADE_TYPE.FEVERTIME || m_UpgradeType == UPGRADE_TYPE.HPGAIN) return false;
+        else return true;
     }
 
 }

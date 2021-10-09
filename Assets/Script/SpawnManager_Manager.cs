@@ -17,7 +17,7 @@ public class SpawnManager_Manager : MonoBehaviour{
     [Header("Enemy Information")]
     public List<Enemy_GameObject> m_ListEnemyPrefabs;
     public List<Transform> m_SpawnPosition;
-
+    public Transform m_Parents;
     [Header("List Active Enemy")]
     public List<Enemy_GameObject> m_ListEnemy;
     //===== PRIVATES =====
@@ -60,9 +60,10 @@ public class SpawnManager_Manager : MonoBehaviour{
             m_EnemyIndex = m_ListEnemy.Count - 1;
         }
 
-        m_ListEnemy[m_EnemyIndex].transform.SetParent(transform);
+        m_ListEnemy[m_EnemyIndex].transform.SetParent(m_Parents);
         m_ListEnemy[m_EnemyIndex].transform.position = m_SpawnPosition[m_EnemyPosition].position;
         f_AdditionalRequirement();
+        m_ListEnemy[m_EnemyIndex].f_Init();
         m_ListEnemy[m_EnemyIndex].gameObject.SetActive(true);
 
         return m_ListEnemy[m_EnemyIndex];
@@ -81,7 +82,7 @@ public class SpawnManager_Manager : MonoBehaviour{
     public void f_AdditionalRequirement() {
         if ((m_ListEnemy[m_EnemyIndex].transform.position.x < Player_GameObject.m_Instance.transform.position.x && m_ListEnemy[m_EnemyIndex].transform.localScale.x < 0)
             || (m_ListEnemy[m_EnemyIndex].transform.position.x >= Player_GameObject.m_Instance.transform.position.x && m_ListEnemy[m_EnemyIndex].transform.localScale.x > 0)) {
-            m_ListEnemy[m_EnemyIndex].transform.localScale = new Vector3(m_ListEnemy[m_EnemyIndex].transform.localScale.x * -1, m_ListEnemy[m_EnemyIndex].transform.localScale.y, m_ListEnemy[m_EnemyIndex].transform.localScale.z);
+
         }
         m_ListEnemy[m_EnemyIndex].m_SpawnPositionIndex = m_EnemyPosition;
     }

@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: FeverGain
   m_EditorClassIdentifier: 
   m_UpgradeType: 3
+  m_Price:
+  - 100
   m_Value: 1.5
   m_UpgradeValue: 0
   m_Level: 0
   m_MaxLevel: 0
+  m_Applied: 0
+  m_BuffSprite: {fileID: 8931862427250350033, guid: 40ec8e48be9e988448f7b2c155a8d80a, type: 3}
+  m_Desc: SPEEDS UP YOUR FEVER GAIN BY +2 HIT
+  m_Names: FEVER GAIN UP

@@ -13,7 +13,21 @@ MonoBehaviour:
   m_Name: HpGain
   m_EditorClassIdentifier: 
   m_UpgradeType: 1
-  m_Value: 1
-  m_UpgradeValue: 1
+  m_Price:
+  - 100
+  - 500
+  - 1500
+  - 5000
+  - 20000
+  - 50000
+  - 150000
+  - 500000
+  - 750000
+  m_Value: 0
+  m_UpgradeValue: 2
   m_Level: 0
-  m_MaxLevel: 0
+  m_MaxLevel: 9
+  m_Applied: 0
+  m_BuffSprite: {fileID: 8096320106415822699, guid: 40ec8e48be9e988448f7b2c155a8d80a, type: 3}
+  m_Desc: REDUCE MINIMUM COMBO TO OBTAIN HP BY
+  m_Names: HP GAIN UP

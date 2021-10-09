@@ -29,7 +29,7 @@ public class Character_GameObject : MonoBehaviour {
     //=====================================================================
     //				    OTHER METHOD
     //=====================================================================
-    public void f_Flip(bool p_Right) {
+    public virtual void f_Flip(bool p_Right) {
         if ((transform.localScale.x < 0 && p_Right == true) || (transform.localScale.x > 0 && p_Right == false)) {
             transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, transform.localScale.z);
         }

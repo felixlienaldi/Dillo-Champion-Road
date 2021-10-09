@@ -16,6 +16,8 @@ public class PostGameManager_Manager : MonoBehaviour{
     //===== PUBLIC =====
     public GameObject m_EndGameUI;
     public TextMeshProUGUI m_TotalScore;
+    public TextMeshProUGUI m_BerryScore;
+    public GameObject m_Highscore;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -38,17 +40,18 @@ public class PostGameManager_Manager : MonoBehaviour{
     public void f_EndGame() {
         GameManager_Manager.m_Instance.m_GameState = GAME_STATE.ENDGAME;
         GameManager_Manager.m_Instance.m_ListActiveEnemies.Clear();
-        m_TotalScore.text = "Total Score : " + GameManager_Manager.m_Instance.m_Score;
-        UIManager_Manager.m_Instance.m_TextImage.text = "";
+
+        m_Highscore.SetActive(GameManager_Manager.m_Instance.m_Score > Player_Manager.m_Instance.m_HighScore);
+
+        m_TotalScore.text = GameManager_Manager.m_Instance.m_Score.ToString("00") + "pt";
+        m_BerryScore.text = "+"+Mathf.RoundToInt((GameManager_Manager.m_Instance.m_Score/100)).ToString();
         m_EndGameUI.SetActive(true);
     }
 
     public void f_Retry() {
-        m_EndGameUI.SetActive(false);
-        MainMenuManager_Manager.m_Instance.f_ShowHTP();
+        
     }
     public void f_MainMenu() {
-        m_EndGameUI.SetActive(false);
-        MainMenuManager_Manager.m_Instance.f_Initialize();
+
     }
 }
