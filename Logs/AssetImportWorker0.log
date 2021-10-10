@@ -15,11 +15,11 @@ E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50248
+62877
 Successfully changed project path to: E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
 E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 60.75 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 59.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -35,37 +35,37 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56924
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56884
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002410 seconds.
+Registered in 0.002695 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 51.31 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 50.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.187 seconds
+- Completed reload, in  1.180 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1188ms)
-		BeginReloadAssembly (58ms)
+	ReloadAssembly (1181ms)
+		BeginReloadAssembly (57ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (447ms)
-			LoadAssemblies (56ms)
+		EndReloadAssembly (442ms)
+			LoadAssemblies (55ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (157ms)
+			SetupTypeCache (164ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (31ms)
-			SetupLoadedEditorAssemblies (173ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (170ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (51ms)
 				BeforeProcessingInitializeOnLoad (8ms)
-				ProcessInitializeOnLoadAttributes (80ms)
+				ProcessInitializeOnLoadAttributes (78ms)
 				ProcessInitializeOnLoadMethodAttributes (29ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -73,10 +73,10 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005044 seconds.
+Registered in 0.005057 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 49.84 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 50.91 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 GPGSUpgrader start
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -101,29 +101,29 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 (Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.464 seconds
+- Completed reload, in  1.507 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1465ms)
-		BeginReloadAssembly (151ms)
+	ReloadAssembly (1508ms)
+		BeginReloadAssembly (160ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (1250ms)
-			LoadAssemblies (94ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (1281ms)
+			LoadAssemblies (99ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (329ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (60ms)
-			SetupLoadedEditorAssemblies (583ms)
+			SetupTypeCache (338ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (572ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (50ms)
-				BeforeProcessingInitializeOnLoad (68ms)
-				ProcessInitializeOnLoadAttributes (438ms)
-				ProcessInitializeOnLoadMethodAttributes (15ms)
+				RefreshPlugins (51ms)
+				BeforeProcessingInitializeOnLoad (69ms)
+				ProcessInitializeOnLoadAttributes (425ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
 				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -131,15 +131,15 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2569 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 114.6 MB.
-System memory in use after: 114.8 MB.
+System memory in use before: 114.7 MB.
+System memory in use after: 114.9 MB.
 
 Unloading 72 unused Assets to reduce memory usage. Loaded Objects now: 2980.
-Total: 4.684000 ms (FindLiveObjects: 0.347600 ms CreateObjectMapping: 0.194600 ms MarkObjects: 4.041700 ms  DeleteObjects: 0.098500 ms)
+Total: 3.455200 ms (FindLiveObjects: 0.301600 ms CreateObjectMapping: 0.132300 ms MarkObjects: 2.907700 ms  DeleteObjects: 0.112300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -154,81 +154,97 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/2D_Assets/Character/Enemies/enemy_default/enemy_01_defult.png
-  artifactKey: Guid(b2260c0a364ed144393c7117afcabca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Enemies/enemy_default/enemy_01_defult.png using Guid(b2260c0a364ed144393c7117afcabca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e60decebd423f736f6af12b4b5417b04') in 0.158157 seconds 
-  Import took 0.163929 seconds .
+  path: Assets/2D_Assets/In-Game/30FPS/background_bush_1_sprite.png
+  artifactKey: Guid(84d28d055bf725c428678118ac1b353c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/background_bush_1_sprite.png using Guid(84d28d055bf725c428678118ac1b353c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adf10ac8c68ef1503ed14c0b8cb08db1') in 0.286657 seconds 
+  Import took 0.291072 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 89.183172 seconds.
-  path: Assets/2D_Assets/Character/Enemies/enemy_default/enemy_01_defult.png
-  artifactKey: Guid(b2260c0a364ed144393c7117afcabca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Enemies/enemy_default/enemy_01_defult.png using Guid(b2260c0a364ed144393c7117afcabca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b4fade6b1e1eb3c596acafee51ac873') in 0.031102 seconds 
-  Import took 0.053518 seconds .
+  Time since last request: 0.000279 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/background_bush_fever_2_fever.png
+  artifactKey: Guid(d2cc725728ca1344c84162222939984c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/background_bush_fever_2_fever.png using Guid(d2cc725728ca1344c84162222939984c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09f59838db8da76007ae07dd27db2773') in 0.148224 seconds 
+  Import took 0.153020 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.618725 seconds.
-  path: Assets/2D_Assets/Character/Enemies/enemy_inverted/enemy_02_inverted.png
-  artifactKey: Guid(1b47b615c115c944880cfe40b05f7bd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Enemies/enemy_inverted/enemy_02_inverted.png using Guid(1b47b615c115c944880cfe40b05f7bd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '597383d3dad864d94a184bdcd34ed7a4') in 0.024588 seconds 
-  Import took 0.028976 seconds .
+  Time since last request: 0.000224 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/background_bush_fever_1_sprite.png
+  artifactKey: Guid(f4bbfa73f1dfbdc459d5de72e5de7686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/background_bush_fever_1_sprite.png using Guid(f4bbfa73f1dfbdc459d5de72e5de7686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f15a9845762a972f56f8816768549d1f') in 0.139555 seconds 
+  Import took 0.144136 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 4679.871621 seconds.
-  path: Assets/2D_Assets/FX/Particle/FX_Hit_wood
-  artifactKey: Guid(9e263b3e7793ae1479890de2fc46bb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/FX/Particle/FX_Hit_wood using Guid(9e263b3e7793ae1479890de2fc46bb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c075fa3fa9d610348321b49ba089a468') in 0.010529 seconds 
-  Import took 0.016248 seconds .
+  Time since last request: 0.000286 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/midground_bush_fever_2_sprite.png
+  artifactKey: Guid(d0f3a935ea1dfa8408b2caad3ec05eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/midground_bush_fever_2_sprite.png using Guid(d0f3a935ea1dfa8408b2caad3ec05eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c4b261c415406d3eea9fc1b3446013b') in 0.133606 seconds 
+  Import took 0.138258 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.789821 seconds.
-  path: Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png
-  artifactKey: Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png using Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9ccfee032a3ed3be1369104a39b0786') in 0.032332 seconds 
-  Import took 0.036790 seconds .
+  Time since last request: 0.000197 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/midground_bush_2_sprite.png
+  artifactKey: Guid(163a3e5203c6a79408a57301d77fb9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/midground_bush_2_sprite.png using Guid(163a3e5203c6a79408a57301d77fb9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66452fb8223ba0712f0a8ccb55ad842b') in 0.140699 seconds 
+  Import took 0.145791 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.644336 seconds.
-  path: Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png
-  artifactKey: Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png using Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99e452509e79bc83a3d54328935f5e9d') in 0.015408 seconds 
-  Import took 0.021511 seconds .
+  Time since last request: 0.000222 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/background_bush_2_sprite.png
+  artifactKey: Guid(4db46eb8a59daf64ea9af243a990535b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/background_bush_2_sprite.png using Guid(4db46eb8a59daf64ea9af243a990535b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01effc9f114b8296c0b4f38f16112835') in 0.157673 seconds 
+  Import took 0.162679 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.572175 seconds.
-  path: Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png
-  artifactKey: Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png using Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67d9657dac02a3c8b13097bb5faef323') in 0.027198 seconds 
-  Import took 0.032153 seconds .
+  Time since last request: 0.000205 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/midground_bush_fever_1_sprite.png
+  artifactKey: Guid(e56ab88fdd21a1f4c88d53bea333a6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/midground_bush_fever_1_sprite.png using Guid(e56ab88fdd21a1f4c88d53bea333a6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '033fb13dc89bbb9389a93b58611b2a7f') in 0.136898 seconds 
+  Import took 0.141671 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2920.269673 seconds.
-  path: Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png
-  artifactKey: Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png using Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d6bd0e69cca45652fb752eb9be1f54a') in 0.037698 seconds 
-  Import took 0.044172 seconds .
+  Time since last request: 0.000331 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/midground_bush_1_sprite.png
+  artifactKey: Guid(8747d1737614c7c458a73e2996355264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/midground_bush_1_sprite.png using Guid(8747d1737614c7c458a73e2996355264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c989a945c4b687186217ac9c5e17ca4') in 0.137714 seconds 
+  Import took 0.142436 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 202.092996 seconds.
-  path: Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png
-  artifactKey: Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/FX/Particle/FX_Hit_wood/sprite_FX_woods.png using Guid(795abf678e1d9ed4b8518be84ca59ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b4bcc22c13d5f3a50699eb08174bfcf') in 0.034251 seconds 
-  Import took 0.038782 seconds .
+  Time since last request: 983.866126 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/midground_bush_1_sprite.png
+  artifactKey: Guid(8747d1737614c7c458a73e2996355264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/midground_bush_1_sprite.png using Guid(8747d1737614c7c458a73e2996355264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3daddeac989198075c9d8ff35fd17993') in 0.191553 seconds 
+  Import took 0.198469 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 685.733376 seconds.
-  path: Assets/2D_Assets/FX/Particle/FX_Hit_wood/FX_Wood.prefab
-  artifactKey: Guid(b5c9a36e8119d42438297c342cbe17e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/FX/Particle/FX_Hit_wood/FX_Wood.prefab using Guid(b5c9a36e8119d42438297c342cbe17e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4908a535ffeaf9bf8102b6afb09d89f2') in 0.055470 seconds 
-  Import took 0.078386 seconds .
+  Time since last request: 0.000220 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/midground_bush_fever_2_sprite.png
+  artifactKey: Guid(d0f3a935ea1dfa8408b2caad3ec05eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/midground_bush_fever_2_sprite.png using Guid(d0f3a935ea1dfa8408b2caad3ec05eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b3f7273ef67ea87473a35ba65460224') in 0.149996 seconds 
+  Import took 0.154714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/midground_bush_2_sprite.png
+  artifactKey: Guid(163a3e5203c6a79408a57301d77fb9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/midground_bush_2_sprite.png using Guid(163a3e5203c6a79408a57301d77fb9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2137f543e34c205fdd198748854f2942') in 0.136364 seconds 
+  Import took 0.140995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/2D_Assets/In-Game/30FPS/midground_bush_fever_1_sprite.png
+  artifactKey: Guid(e56ab88fdd21a1f4c88d53bea333a6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/In-Game/30FPS/midground_bush_fever_1_sprite.png using Guid(e56ab88fdd21a1f4c88d53bea333a6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37f3bb914e15917d96c866c9f36704c2') in 0.140226 seconds 
+  Import took 0.147765 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
