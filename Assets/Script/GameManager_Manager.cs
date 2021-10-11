@@ -63,7 +63,7 @@ public class GameManager_Manager : MonoBehaviour{
         m_Player.f_Reset();
         m_ContinueChance = true;
         f_ApplyBuff();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
             f_Spawn(i);
         }
         m_GamePlayUI.SetActive(true);
