@@ -15,6 +15,7 @@ public class UIManager_Manager : MonoBehaviour{
 
     //===== PUBLIC =====
     public Image m_FeverFillBar;
+    public Image m_NormalFillBar;
     public TextMeshProUGUI m_ComboCount;
     public TextMeshProUGUI m_TextImage;
     public TextMeshProUGUI m_Score;
@@ -26,6 +27,8 @@ public class UIManager_Manager : MonoBehaviour{
     public GameObject m_Position1;
     public GameObject m_Position2;
     public GameObject m_Combo;
+    public GameObject m_NormalBar;
+    public GameObject m_FeverBar;
     public Camera m_UICam;
     //===== PRIVATES =====
     Vector3 t_Vector;
@@ -53,6 +56,18 @@ public class UIManager_Manager : MonoBehaviour{
 
     public void f_SetFeverFillBar(float p_FillAmount, float p_MaxAmount) {
         m_FeverFillBar.fillAmount = p_FillAmount / p_MaxAmount;
+        m_NormalFillBar.fillAmount = p_FillAmount / p_MaxAmount;
+    }
+
+    public void f_ChangeFever(bool p_Fever) {
+        if (p_Fever) {
+            m_FeverBar.gameObject.SetActive(true);
+            m_NormalBar.gameObject.SetActive(false);
+        }
+        else {
+            m_FeverBar.gameObject.SetActive(false);
+            m_NormalBar.gameObject.SetActive(true);
+        }
     }
 
     public void f_SetTimerFillBar(float p_FillAmount, float p_MaxAmount, Enemy_GameObject p_Enemy) {

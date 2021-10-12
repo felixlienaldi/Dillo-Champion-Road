@@ -210,6 +210,11 @@ MonoBehaviour:
   m_Speed: 3
   m_ScoreValue: 1
   m_Sp: {fileID: 884441177310562993}
+  m_MoveDuration: 10
+  m_Right: 0
+  m_KnockbackSpeed: 10
+  m_ShakeSpeed: 50
+  m_AmountShake: 0.25
 --- !u!61 &1213298376536107944
 BoxCollider2D:
   m_ObjectHideFlags: 0

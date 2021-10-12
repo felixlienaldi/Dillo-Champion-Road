@@ -28,7 +28,7 @@ public class Player_GameObject : Character_GameObject{
     //===== PUBLIC =====
     public SpriteRenderer m_SpriteRenderer;
     [Header("Audio")]
-    public AudioClip[] m_PlayerHitClip;
+    public List<AudioClip> m_PlayerHitClip;
     public AudioClip[] m_EnemyHitClip;
     public AudioClip m_PlayerDamaged;
     public AudioClip m_NormalBGM;
@@ -72,10 +72,7 @@ public class Player_GameObject : Character_GameObject{
     public GameObject m_NormalEnviorment;
     public GameObject m_FeverEnviorment;
     public GameObject m_FeverEffect;
-    public GameObject m_HitEffectLeft;
-    public GameObject m_HitEffectRight;
-    public GameObject m_FeverHitEffectLeft;
-    public GameObject m_FeverHitEffectRight;
+    public List<AudioClip> m_IdleAudio;
     //===== PRIVATES =====
     private int m_HitCount;
     bool m_IsTakeDamageCoroutineRunning;
@@ -185,6 +182,10 @@ public class Player_GameObject : Character_GameObject{
         return m_FeverGain * m_FeverGainMultiplier;
     }
 
+    public void f_PlayFXAudio() {
+        Audio_Manager.m_Instance.f_PlayOneShot(m_IdleAudio[Random.Range(0, m_IdleAudio.Count)]);
+    }
+
     public IEnumerator<float> ie_TakeDamage() {
         m_IsTakeDamageCoroutineRunning = true;
         // m_SpriteRenderer.color = Color.red;
@@ -223,6 +224,7 @@ public class Player_GameObject : Character_GameObject{
                 Audio_Manager.m_Instance.f_ChangeBgm(m_NormalBGM);
                 m_FeverEffect.gameObject.SetActive(false);
                 //m_SpriteRenderer.color = Color.white;
+                UIManager_Manager.m_Instance.f_ChangeFever(m_IsFever);
             }
             UIManager_Manager.m_Instance.f_SetFeverFillBar(m_CurrentFeverTimer, f_GetFeverTimer());
         }
@@ -231,7 +233,9 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_CheckTimer() {
         m_CurrentTimer -= Time.deltaTime;
-        if(GameManager_Manager.m_Instance.m_ListActiveEnemies.Count > 0) UIManager_Manager.m_Instance.f_SetTimerFillBar(m_CurrentTimer, m_Timer, GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+        if (GameManager_Manager.m_Instance.m_ListActiveEnemies.Count > 0) {
+            GameManager_Manager.m_Instance.m_ListActiveEnemies[0].f_Timer(m_CurrentTimer,m_Timer);
+        }
         if (m_CurrentTimer <= 0) {
             if(m_BarrierCount > 0) {
                 m_BarrierCount--;
@@ -280,6 +284,7 @@ public class Player_GameObject : Character_GameObject{
                 m_FeverEffect.gameObject.SetActive(true);
                 Audio_Manager.m_Instance.f_ChangeBgm(m_FeverBGM);
                 m_CurrentFeverTimer = f_GetFeverTimer();
+                UIManager_Manager.m_Instance.f_ChangeFever(m_IsFever);
             }
             Timing.RunCoroutine(CameraGameObject_GameObject.m_Instance.ie_Shake(0.2f, 1f));
         }
@@ -293,7 +298,7 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_Attack() {
         m_HitCount++;
-        Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerHitClip[ Random.Range(0, m_PlayerHitClip.Length)]);
+        Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerHitClip[ Random.Range(0, m_PlayerHitClip.Count)]);
         if (m_HitCount > 4) m_HitCount = 1;
         m_Animator.SetInteger("Hit",m_HitCount);
         m_Animator.SetTrigger("Punch");
@@ -302,6 +307,7 @@ public class Player_GameObject : Character_GameObject{
     public void f_TakeDamage() {
         m_Combo = 0;
         m_PerfectHit = 0;
+        CameraGameObject_GameObject.m_Instance.f_Reset();
         Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerDamaged);
         Timing.RunCoroutine(CameraGameObject_GameObject.m_Instance.ie_Shake(0.2f, 3f));
         UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
@@ -346,28 +352,27 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_SetColliderAttack() {
         Audio_Manager.m_Instance.f_PlayOneShot(m_EnemyHitClip[Random.Range(0, m_EnemyHitClip.Length)]);
-        m_HitEffectLeft.gameObject.SetActive(false);
-        m_HitEffectRight.gameObject.SetActive(false);
-        m_FeverHitEffectLeft.gameObject.SetActive(false);
-        m_FeverHitEffectRight.gameObject.SetActive(false);
         if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {
-           if(!m_IsFever) m_HitEffectLeft.gameObject.SetActive(true);
-            else m_FeverHitEffectLeft.gameObject.SetActive(true);
+            FX_Manager.m_Instance.f_Left(m_IsFever);
         }
         else {
-            if (!m_IsFever) m_HitEffectRight.gameObject.SetActive(true);
-            else m_FeverHitEffectRight.gameObject.SetActive(true);
+            FX_Manager.m_Instance.f_Right(m_IsFever);
         }
         f_CheckTiming(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
     }
 
+    public void f_TapAttack() {
+        f_Attack(Input.mousePosition.x < Screen.width/2? false:true);
+    }
+
     public void f_Attack(bool p_Right) {
-        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") || m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle_Potion")) {
+        if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Damage") || !m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Damage_Potion")) {
             m_CurrentTimer = m_Timer;
             if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].m_Type == Enumerator.ENEMY_TYPE.INVERSE) {
                 if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x - transform.position.x >= 0) {
                     if (p_Right == false) {
                         f_Flip(!p_Right);
+                        CameraGameObject_GameObject.m_Instance.f_Move(!p_Right,m_IsCombo); 
                         f_Attack();
                     }
                     else {
@@ -377,6 +382,7 @@ public class Player_GameObject : Character_GameObject{
                                 m_OnAbsoluteHit?.Invoke(transform.localScale.x);
                             }
                             else {
+                                CameraGameObject_GameObject.m_Instance.f_Move(true, m_IsCombo);
                                 f_Flip(true);
                                 f_Attack();
                             }
@@ -388,6 +394,7 @@ public class Player_GameObject : Character_GameObject{
                 else {
                     if (p_Right == true) {
                         f_Flip(!p_Right);
+                        CameraGameObject_GameObject.m_Instance.f_Move(!p_Right, m_IsCombo);
                         f_Attack();
                     }
                     else {
@@ -398,6 +405,7 @@ public class Player_GameObject : Character_GameObject{
                             }
                             else {
                                 f_Flip(false);
+                                CameraGameObject_GameObject.m_Instance.f_Move(false, m_IsCombo);
                                 f_Attack();
                             }
                         }
@@ -412,6 +420,7 @@ public class Player_GameObject : Character_GameObject{
                 if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x - transform.position.x >= 0) {
                     if (p_Right == true) {
                         f_Flip(p_Right);
+                        CameraGameObject_GameObject.m_Instance.f_Move(p_Right, m_IsCombo);
                         f_Attack();
                     }
                     else {
@@ -422,6 +431,7 @@ public class Player_GameObject : Character_GameObject{
                             }
                             else {
                                 f_Flip(true);
+                                CameraGameObject_GameObject.m_Instance.f_Move(true, m_IsCombo);
                                 f_Attack();
                             }
                            
@@ -434,6 +444,7 @@ public class Player_GameObject : Character_GameObject{
                 else {
                     if (p_Right == false) {
                         f_Flip(p_Right);
+                        CameraGameObject_GameObject.m_Instance.f_Move(p_Right, m_IsCombo);
                         f_Attack();
                     }
                     else {
@@ -444,6 +455,7 @@ public class Player_GameObject : Character_GameObject{
                             }
                             else {
                                 f_Flip(false);
+                                CameraGameObject_GameObject.m_Instance.f_Move(false, m_IsCombo);
                                 f_Attack();
                             }
                             

@@ -143,6 +143,7 @@ public class GameManager_Manager : MonoBehaviour{
             p_Enemy.transform.position = m_RightGrids[p_Index].position;
             p_Enemy.m_ListGrids = m_RightGrids;
         }
+        p_Enemy.f_LineAssigned();
         p_Enemy.m_SpawnPositionIndex = p_Index;
     }
 
@@ -159,7 +160,7 @@ public class GameManager_Manager : MonoBehaviour{
     }
 
     IEnumerator<float> ie_NextLine() {
-        yield return Timing.WaitForSeconds(.25f);
+        yield return Timing.WaitForOneFrame;
         for (int i = 0; i < m_ListActiveEnemies.Count; i++) {
             m_ListActiveEnemies[i].f_Move();
         }
@@ -183,11 +184,11 @@ public class GameManager_Manager : MonoBehaviour{
         Player_GameObject.m_Instance.f_Reset();
         Player_GameObject.m_Instance.m_FeverEnviorment.gameObject.SetActive(false);
         Player_GameObject.m_Instance.m_NormalEnviorment.gameObject.SetActive(true);
-
+        CameraGameObject_GameObject.m_Instance.f_Reset();
         Time.timeScale = 1;
         m_GameState = GAME_STATE.MENU;
         m_HpUI.gameObject.SetActive(false);
-
+        UIManager_Manager.m_Instance.f_ChangeFever(false);
         for (int i = 0; i < SpawnManager_Manager.m_Instance.m_ListEnemy.Count; i++) {
             SpawnManager_Manager.m_Instance.m_ListEnemy[i].gameObject.SetActive(false);
         }

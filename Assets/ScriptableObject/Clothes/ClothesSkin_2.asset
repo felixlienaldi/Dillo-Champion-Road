@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d8f6175898ad94f8234655048ce2fc, type: 3}
+  m_Name: ClothesSkin_2
+  m_EditorClassIdentifier: 
+  m_ID: 2
+  m_Locked: 1
+  m_ComingSoon: 1
+  m_Price: 0
+  m_Animator: {fileID: 9100000, guid: eb5dc2893d3abe648bb0f2ca705fd40e, type: 2}
+  m_IdleFXId: 0
+  m_TapFXId: 0
+  m_DescriptionLore: 
+  m_DescEffect: 
+  m_HitAudio: []

@@ -14,6 +14,7 @@ public class CasualParticle_Gameobject : MonoBehaviour{
 
     //===== PUBLIC =====
     public float m_Timer = 1f;
+    public int m_ID = 0;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -30,7 +31,8 @@ public class CasualParticle_Gameobject : MonoBehaviour{
     //				    OTHER METHOD
     //=====================================================================
     public void OnEnable() {
-        Timing.RunCoroutine(ie_Kill());
+        Timing.KillCoroutines("Particle" + m_ID.ToString());
+        Timing.RunCoroutine(ie_Kill(),"Particle" + m_ID.ToString());
     }
 
     IEnumerator<float> ie_Kill() {
