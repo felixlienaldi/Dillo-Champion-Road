@@ -19,6 +19,7 @@ public class UIManager_Manager : MonoBehaviour{
     public TextMeshProUGUI m_ComboCount;
     public TextMeshProUGUI m_TextImage;
     public TextMeshProUGUI m_Score;
+    public TextMeshProUGUI m_BerryPriceText;
     public Animator[] m_HPIcon;
     public Sprite[] m_TimerType; //0 = green, 1= yellow,2 = red
     public Image m_TimerFillBar;
@@ -126,5 +127,9 @@ public class UIManager_Manager : MonoBehaviour{
         //m_TextImage.text = p_Text;
         yield return Timing.WaitForSeconds(0.75f);
         //m_TextImage.text = "";
+    }
+
+    public void f_BerryTextUpdate(int p_Berry) {
+        m_BerryPriceText.text = p_Berry.ToString("0");
     }
 }

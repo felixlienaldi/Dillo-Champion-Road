@@ -18,6 +18,7 @@ public class PostGameManager_Manager : MonoBehaviour{
     public TextMeshProUGUI m_TotalScore;
     public TextMeshProUGUI m_BerryScore;
     public GameObject m_Highscore;
+    public AudioClip m_HighScoreClip;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -42,9 +43,12 @@ public class PostGameManager_Manager : MonoBehaviour{
         GameManager_Manager.m_Instance.m_ListActiveEnemies.Clear();
 
         m_Highscore.SetActive(GameManager_Manager.m_Instance.m_Score > Player_Manager.m_Instance.m_HighScore);
-
+        if (GameManager_Manager.m_Instance.m_Score > Player_Manager.m_Instance.m_HighScore) {
+            Audio_Manager.m_Instance.f_PlayOneShot(m_HighScoreClip);
+        }
         m_TotalScore.text = GameManager_Manager.m_Instance.m_Score.ToString("00") + "pt";
-        m_BerryScore.text = "+"+Mathf.RoundToInt((GameManager_Manager.m_Instance.m_Score/100)).ToString();
+        m_BerryScore.text = "+"+Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score/100)).ToString();
+        Player_Manager.m_Instance.m_Berry += (int)Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score / 100));
         m_EndGameUI.SetActive(true);
     }
 

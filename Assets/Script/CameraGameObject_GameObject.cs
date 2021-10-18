@@ -28,6 +28,7 @@ public class CameraGameObject_GameObject : MonoBehaviour{
     public Vector3 m_HitRightComboRot;
     //===== PRIVATES =====
     private Vector3 m_DefaultPos = new Vector3(0, 0, -45);
+    Vector3 t_Vector;
     //=====================================================================
     //				MONOBEHAVIOUR METHOD 
     //=====================================================================
@@ -45,23 +46,19 @@ public class CameraGameObject_GameObject : MonoBehaviour{
     //=====================================================================
     //				    OTHER METHOD
     //=====================================================================
-    public void f_Move(bool p_Right,bool p_Combo) {
+    public void f_Move(bool p_Right,float p_Combo) {
         iTween.StopByName("Move Camera");
-        if (p_Right && p_Combo) {
-            iTween.MoveTo(m_Parent, iTween.Hash("name","Move Camera","position",m_HitRightComboPos,"time",1.0f));
+        if (p_Right) {
+            t_Vector = m_HitRightComboPos;
+            t_Vector.z = m_DefaultPos.z - (( m_DefaultPos.z-m_HitRightComboPos.z) * (Mathf.Min(p_Combo+1 , 5f)) / 5f);
+            iTween.MoveTo(m_Parent, iTween.Hash("name","Move Camera","position",t_Vector,"time",1.0f));
             iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", m_HitRightComboRot, "time", 1.0f));
         }
-        else if (p_Right && !p_Combo) {
-            iTween.MoveTo(m_Parent, iTween.Hash("name", "Move Camera", "position", m_HitRightDefaultPos, "time", 1.0f));
-            iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", m_HitRightDefaultRot, "time", 1.0f));
-        }
-        else if (!p_Right && p_Combo) {
-            iTween.MoveTo(m_Parent, iTween.Hash("name", "Move Camera", "position", m_HitLeftComboPos, "time", 1.0f));
+        else if (!p_Right) {
+            t_Vector = m_HitLeftComboPos;
+            t_Vector.z = m_DefaultPos.z - ((m_DefaultPos.z - m_HitLeftComboPos.z) * (Mathf.Min(p_Combo+1, 5f)) / 5f);
+            iTween.MoveTo(m_Parent, iTween.Hash("name", "Move Camera", "position", t_Vector, "time", 1.0f));
             iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", m_HitLeftComboRot, "time", 1.0f));
-        }
-        else if (!p_Right && !p_Combo) {
-            iTween.MoveTo(m_Parent, iTween.Hash("name", "Move Camera", "position", m_HitLeftDefaultPos, "time", 1.0f));
-            iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", m_HitLeftDefaultRot, "time", 1.0f));
         }
     }
 

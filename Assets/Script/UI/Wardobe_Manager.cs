@@ -21,6 +21,8 @@ public class Wardobe_Manager : MonoBehaviour {
     public TextMeshProUGUI m_DescLoreText;
     public TextMeshProUGUI m_DescEffectText;
     public GameObject m_ComingSoon;
+    public AudioClip m_BoughtClip;
+    public AudioClip m_NewEQClip;
     //===== PRIVATES =====
     private int m_CurrentID = 0;
     //=====================================================================
@@ -54,6 +56,7 @@ public class Wardobe_Manager : MonoBehaviour {
         Player_Manager.m_Instance.m_EquipedClothes = m_Clothes[m_CurrentID].m_ID;
         Player_GameObject.m_Instance.m_PlayerHitClip.Clear();
         Player_GameObject.m_Instance.m_PlayerHitClip.AddRange(m_Clothes[m_CurrentID].m_HitAudio);
+        GameManager_Manager.m_Instance.m_InverseMultiplier = m_Clothes[m_CurrentID].m_InverseScoreMultiplier;
     }
 
     public void f_OnChangeClothesID() {
@@ -96,6 +99,9 @@ public class Wardobe_Manager : MonoBehaviour {
 
     public void f_Buy() {
         m_Clothes[m_CurrentID].m_Locked = false;
+        Player_Manager.m_Instance.m_Berry -= (int)m_Clothes[m_CurrentID].m_Price;
+        Audio_Manager.m_Instance.f_PlayOneShot(m_BoughtClip);
+        Audio_Manager.m_Instance.f_PlayOneShot(m_NewEQClip);
         f_OnChangeClothesID();
     }
 }

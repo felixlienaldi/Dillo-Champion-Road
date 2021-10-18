@@ -32,7 +32,7 @@ public class Player_Manager : MonoBehaviour{
     }
 
     void Update(){
-        
+        UIManager_Manager.m_Instance.f_BerryTextUpdate(m_Berry);
     }
     //=====================================================================
     //				    OTHER METHOD

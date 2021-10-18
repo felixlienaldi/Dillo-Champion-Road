@@ -14,6 +14,8 @@ public class Start_Gameobject : MonoBehaviour{
     //===== STRUCT =====
     //===== PUBLIC =====
     public GameObject m_Parent;
+    public AudioClip m_CountdownClip;
+    public AudioClip m_StartClip;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -33,8 +35,13 @@ public class Start_Gameobject : MonoBehaviour{
     //=====================================================================
     //				    OTHER METHOD
     //=====================================================================
+    public void f_PlayCountDown() {
+        Audio_Manager.m_Instance.f_PlayOneShot(m_CountdownClip);
+    }
+
     public void f_CountdownDone() {
         m_Parent.gameObject.SetActive(false);
+        Audio_Manager.m_Instance.f_PlayOneShot(m_StartClip);
         GameManager_Manager.m_Instance.f_Initialize();
     }
 }

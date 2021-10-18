@@ -19,6 +19,7 @@ public class Clothes_Scriptable : ScriptableObject{
     public RuntimeAnimatorController m_Animator;
     public int m_IdleFXId = 0;
     public int m_TapFXId = 0;
+    public int m_InverseScoreMultiplier = 1;
     public string m_DescriptionLore;
     public string m_DescEffect;
     public List<AudioClip> m_HitAudio;

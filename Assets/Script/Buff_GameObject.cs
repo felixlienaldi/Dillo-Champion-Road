@@ -23,6 +23,7 @@ public class Buff_GameObject : ScriptableObject {
     public int m_Level;
     public int m_MaxLevel;
     public bool m_Applied;
+    public bool m_Bought = false;
     public Sprite m_BuffSprite;
     public string m_Desc;
     public string m_Names;

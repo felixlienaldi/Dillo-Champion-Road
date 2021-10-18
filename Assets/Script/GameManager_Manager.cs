@@ -17,6 +17,8 @@ public class GameManager_Manager : MonoBehaviour{
     //===== PUBLIC =====
     public GAME_STATE m_GameState;
     public bool m_ContinueChance = true;
+    public int m_InverseMultiplier =1;
+    public int m_NormalMultiplier=1;
 
     [Header("List Upgrade")]
     public List<Buff_GameObject> m_ListUpgrade;
@@ -38,6 +40,9 @@ public class GameManager_Manager : MonoBehaviour{
     public List<Transform> m_LeftGrids;
     public List<Transform> m_RightGrids;
     public List<Enemy_GameObject> m_ListActiveEnemies =  new List<Enemy_GameObject>();
+
+    [Header("Audio")]
+    public AudioClip m_GetScoreClip;
     //===== PRIVATES =====
     //=====================================================================
     //				MONOBEHAVIOUR METHOD 
@@ -75,21 +80,27 @@ public class GameManager_Manager : MonoBehaviour{
             else if (m_ListUpgrade[i].m_UpgradeType == UPGRADE_TYPE.HPGAIN) m_Player.m_MinimumCombo = m_Player.m_DefaultMinimumCombo-m_ListUpgrade[i].f_GetTotalMultiplier();
             else if (m_ListUpgrade[i].m_UpgradeType == UPGRADE_TYPE.FEVERTIME) m_Player.m_FeverTimeMultiplier = m_ListUpgrade[i].f_GetTotalMultiplier();
         }
+    }
 
-        for(int i = 0; i < m_ListPotion.Count; i++) {
+    public void f_ApplyPotion() {
+        Player_GameObject.m_Instance.f_ResetBuffRelated();
+        for (int i = 0; i < m_ListPotion.Count; i++) {
             if (m_ListPotion[i].m_UpgradeType == UPGRADE_TYPE.ACCURACY) m_Player.m_AbsoluteHitCount = m_ListPotion[i].m_Value;
             else if (m_ListPotion[i].m_UpgradeType == UPGRADE_TYPE.FEVERGAIN) m_Player.m_FeverGainMultiplier = m_ListPotion[i].m_Value;
             else if (m_ListPotion[i].m_UpgradeType == UPGRADE_TYPE.BARRIER) m_Player.m_BarrierCount = m_ListPotion[i].m_Value;
             else if (m_ListPotion[i].m_UpgradeType == UPGRADE_TYPE.REVIVE) m_Player.m_ReviveCount = m_ListPotion[i].m_Value;
         }
     }
+
     public void f_AddScore(float p_Score) {
         m_Score += f_CalculateScore(p_Score);
+        Audio_Manager.m_Instance.f_PlayOneShot(m_GetScoreClip);
         UIManager_Manager.m_Instance.f_SetScoreText("" + m_Score);
     }
 
     public float f_CalculateScore(float p_Score) {
-        return p_Score * m_ScoreMultiplier;
+        if(m_ListActiveEnemies[0].m_Type == ENEMY_TYPE.INVERSE)   return p_Score * m_ScoreMultiplier * m_InverseMultiplier;
+        else  return p_Score * m_ScoreMultiplier * m_NormalMultiplier;
     }
 
     public void f_PostGameManager() {
@@ -107,6 +118,7 @@ public class GameManager_Manager : MonoBehaviour{
             Timing.RunCoroutine(ie_ContinueTimer(),"Continue");
         }
         else {
+            m_ContinueMenu.gameObject.SetActive(false);
             Timing.KillCoroutines("Continue");
             f_EndGame();
         }
@@ -118,7 +130,10 @@ public class GameManager_Manager : MonoBehaviour{
         for (int i = 0; i < SpawnManager_Manager.m_Instance.m_ListEnemy.Count; i++) {
             SpawnManager_Manager.m_Instance.m_ListEnemy[i].gameObject.SetActive(false);
         }
-        for (int i = 0; i < m_ListPotion.Count; i++) m_ListPotion[i].m_Applied = false;
+        for (int i = 0; i < m_ListPotion.Count; i++) {
+            m_ListPotion[i].m_Applied = false;
+            m_ListPotion[i].m_Bought= false;
+        }
         m_ListPotion.Clear();
         PostGameManager_Manager.m_Instance.f_EndGame();
         m_ListActiveEnemies.Clear();
@@ -156,11 +171,6 @@ public class GameManager_Manager : MonoBehaviour{
         m_ListActiveEnemies.Remove(p_Enemy);
         //p_Enemy.gameObject.SetActive(false);
         p_Enemy.m_Animator.SetTrigger("Damage");
-        Timing.RunCoroutine(ie_NextLine());
-    }
-
-    IEnumerator<float> ie_NextLine() {
-        yield return Timing.WaitForOneFrame;
         for (int i = 0; i < m_ListActiveEnemies.Count; i++) {
             m_ListActiveEnemies[i].f_Move();
         }

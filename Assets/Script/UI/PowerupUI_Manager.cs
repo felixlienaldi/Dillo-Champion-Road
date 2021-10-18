@@ -20,6 +20,8 @@ public class PowerupUI_Manager : MonoBehaviour {
     public Image m_Icon;
     public GameObject m_LevelObject;
     public Button m_BuyButton;
+    public Button m_WearButton;
+    public Button m_UnwearButton;
     public List<PowerupCheckmark_Gameobject> m_Potions;
     public List<Buff_GameObject> m_ListPotions;
     public Buff_GameObject m_DefaultPowerup;
@@ -34,13 +36,12 @@ public class PowerupUI_Manager : MonoBehaviour {
 
     void Start() {
         f_ChoosePowerUp(m_DefaultPowerup);
-
     }
 
     public void f_OnEnables() {
         f_ChoosePowerUp(m_DefaultPowerup);
         for (int i = 0; i < m_Potions.Count; i++) {
-            if (m_Potions[i].m_BuffType.m_Applied) {
+            if (m_Potions[i].m_BuffType.m_Applied && m_Potions[i].m_BuffType.m_Bought) {
                 m_Potions[i].m_CheckMark.SetActive(true);
             }
             else {
@@ -55,10 +56,35 @@ public class PowerupUI_Manager : MonoBehaviour {
     //=====================================================================
     //				    OTHER METHOD
     //=====================================================================
+    public void f_Wear() {
+        for (int i = 0; i < m_Potions.Count; i++) {
+            if (m_Potions[i].m_BuffType.m_UpgradeType == m_ChoosenBuff.m_UpgradeType) {
+                m_Potions[i].m_CheckMark.SetActive(true);
+            }
+        }
+        m_ChoosenBuff.m_Applied = true;
+        GameManager_Manager.m_Instance.m_ListPotion.Add(m_ChoosenBuff);
+        f_OnChangePowerup();
+        GameManager_Manager.m_Instance.f_ApplyPotion();
+    }
+
+    public void f_Unapply() {
+        for (int i = 0; i < m_Potions.Count; i++) {
+            if (m_Potions[i].m_BuffType.m_UpgradeType == m_ChoosenBuff.m_UpgradeType) {
+                m_Potions[i].m_CheckMark.SetActive(false);
+            }
+        }
+        m_ChoosenBuff.m_Applied = false;
+        GameManager_Manager.m_Instance.m_ListPotion.Remove(m_ChoosenBuff);
+        f_OnChangePowerup();
+        GameManager_Manager.m_Instance.f_ApplyPotion();
+    }
+
     public void f_Buy() {
         Player_Manager.m_Instance.m_Berry -= (int)m_ChoosenBuff.f_GetPrice();
         if (m_ChoosenBuff.f_IsPotion()) {
             m_ChoosenBuff.m_Applied = true;
+            m_ChoosenBuff.m_Bought = true;
             for (int i = 0; i < m_Potions.Count; i++) {
                 if (m_Potions[i].m_BuffType.m_UpgradeType == m_ChoosenBuff.m_UpgradeType) {
                     m_Potions[i].m_CheckMark.SetActive(true);
@@ -91,12 +117,30 @@ public class PowerupUI_Manager : MonoBehaviour {
             if (m_ChoosenBuff.f_IsPotion()) {
                 m_LevelObject.SetActive(false);
                 m_UpgradeText.text = "BUY";
-                if (m_ChoosenBuff.m_Applied) m_BuyButton.interactable = false;
-                else m_BuyButton.interactable = true;
+                if (m_ChoosenBuff.m_Bought) {
+                    m_WearButton.gameObject.SetActive(true);
+                    if (m_ChoosenBuff.m_Applied) {
+                        m_WearButton.interactable = false;
+                        m_UnwearButton.gameObject.SetActive(true);
+                    }
+                    else {
+                        m_WearButton.interactable = true;
+                        m_UnwearButton.gameObject.SetActive(false);
+                    }
+                    m_BuyButton.gameObject.SetActive(false);
+                    m_BuyButton.interactable = false;
+                }
+                else {
+                    m_WearButton.gameObject.SetActive(false);
+                    m_BuyButton.gameObject.SetActive(true);
+                    m_BuyButton.interactable = true;
+                }
             }
             else {
+                m_WearButton.gameObject.SetActive(false);
                 m_UpgradeText.text = "UPGRADE";
                 m_LevelObject.SetActive(true);
+                m_BuyButton.gameObject.SetActive(true);
                 m_BuyButton.interactable = true;
             }
 

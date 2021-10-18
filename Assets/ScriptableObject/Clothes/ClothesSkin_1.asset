@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: ClothesSkin_1
   m_EditorClassIdentifier: 
   m_ID: 1
-  m_Locked: 0
+  m_Locked: 1
   m_ComingSoon: 0
   m_Price: 100000
   m_Animator: {fileID: 9100000, guid: 6f3be65675b0f9145b8186e4ea2c685a, type: 2}
   m_IdleFXId: 0
   m_TapFXId: 0
+  m_InverseScoreMultiplier: 2
   m_DescriptionLore: Lighting fast
   m_DescEffect: INVERSE SCORE 2X
   m_HitAudio:
