@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.16f1 (049d6eca3c44) revision 302446'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Education; OS build 18363.1801; Version 1909; 64bit' Language: 'en' Physical Memory: 16326 MB
+OS: 'Windows 10 Pro; OS build 19043.1288; Version 2009; 64bit' Language: 'en' Physical Memory: 24539 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,66 +11,832 @@ C:\Program Files\Unity\Hub\Editor\2020.3.16f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-D:/Dillo-Champion-Road
+E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60711
-Successfully changed project path to: D:/Dillo-Champion-Road
-D:/Dillo-Champion-Road
+56906
+Successfully changed project path to: E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
+E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 83.97 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 67.63 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Dillo-Champion-Road/Assets
+[Subsystems] Discovering subsystems at path E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
     Vendor:   
-    VRAM:     8088 MB
-    Driver:   27.21.14.6140
+    VRAM:     2988 MB
+    Driver:   30.0.14.9613
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56208
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56252
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002118 seconds.
+Registered in 0.002386 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 125.55 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 52.81 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.395 seconds
+- Completed reload, in  1.248 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5395ms)
-		BeginReloadAssembly (63ms)
+	ReloadAssembly (1248ms)
+		BeginReloadAssembly (65ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (1002ms)
-			LoadAssemblies (61ms)
+		EndReloadAssembly (462ms)
+			LoadAssemblies (63ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (310ms)
+			SetupTypeCache (166ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (97ms)
-			SetupLoadedEditorAssemblies (437ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (179ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (126ms)
-				BeforeProcessingInitializeOnLoad (35ms)
-				ProcessInitializeOnLoadAttributes (134ms)
-				ProcessInitializeOnLoadMethodAttributes (136ms)
+				RefreshPlugins (53ms)
+				BeforeProcessingInitializeOnLoad (9ms)
+				ProcessInitializeOnLoadAttributes (81ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.170063 seconds.
+Registered in 0.004958 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 53.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.524 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1525ms)
+		BeginReloadAssembly (152ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1307ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (334ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (614ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (54ms)
+				BeforeProcessingInitializeOnLoad (74ms)
+				ProcessInitializeOnLoadAttributes (461ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.88 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2603 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 116.0 MB.
+System memory in use after: 116.2 MB.
+
+Unloading 78 unused Assets to reduce memory usage. Loaded Objects now: 3008.
+Total: 3.537700 ms (FindLiveObjects: 0.238200 ms CreateObjectMapping: 0.118100 ms MarkObjects: 3.090100 ms  DeleteObjects: 0.089900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_EnemyHit
+  artifactKey: Guid(0d65d0fd45b7c844f841c9b3b58f48b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_EnemyHit using Guid(0d65d0fd45b7c844f841c9b3b58f48b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3af740f26aaf054f7fcb0e78e644c3d9') in 0.016690 seconds 
+  Import took 0.020510 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_idle
+  artifactKey: Guid(84cb3f410e15ca845881c6c917860988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_idle using Guid(84cb3f410e15ca845881c6c917860988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d054cb3cc0bc4f9d227ebafe8312672') in 0.006212 seconds 
+  Import took 0.011590 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_attack
+  artifactKey: Guid(c482a98590cc9a74884d8b424ccfccce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_attack using Guid(c482a98590cc9a74884d8b424ccfccce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18869d155ceb965f7615a01ce199bb18') in 0.013227 seconds 
+  Import took 0.019384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.022555 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_attack
+  artifactKey: Guid(c482a98590cc9a74884d8b424ccfccce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_attack using Guid(c482a98590cc9a74884d8b424ccfccce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18869d155ceb965f7615a01ce199bb18') in 0.002675 seconds 
+  Import took 0.008498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 43.582022 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_HP gain
+  artifactKey: Guid(b8db8654918adec4abb76abddb89f206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_HP gain using Guid(b8db8654918adec4abb76abddb89f206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f836f246d1531231d87b9a5ad51b75f1') in 0.009114 seconds 
+  Import took 0.013390 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.091069 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_HP gain/sprite_FX_PU_HPgain2.png
+  artifactKey: Guid(2e3685fa17a644f449bb3a9b4d197ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_HP gain/sprite_FX_PU_HPgain2.png using Guid(2e3685fa17a644f449bb3a9b4d197ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30107b9775123a6432de00907b82cb67') in 0.137005 seconds 
+  Import took 0.141152 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.963104 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_HP gain/sprite_FX_PU_HPgain2.png
+  artifactKey: Guid(2e3685fa17a644f449bb3a9b4d197ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_HP gain/sprite_FX_PU_HPgain2.png using Guid(2e3685fa17a644f449bb3a9b4d197ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4baec24acbfa288cea7982f95f8eb52e') in 0.011851 seconds 
+  Import took 0.016509 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.897128 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_HP gain/sprite_FX_PU_HPgain2.png
+  artifactKey: Guid(2e3685fa17a644f449bb3a9b4d197ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_HP gain/sprite_FX_PU_HPgain2.png using Guid(2e3685fa17a644f449bb3a9b4d197ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c89c36fe93b73d965b9f56a7a1978c02') in 0.031467 seconds 
+  Import took 0.035984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1258.923893 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_HP gain/FX_HPgain2.prefab
+  artifactKey: Guid(8a1e1f6b7bfc8344daa4c66fd677d9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_HP gain/FX_HPgain2.prefab using Guid(8a1e1f6b7bfc8344daa4c66fd677d9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e21f3d14e2d4909d585a0c76cd63171') in 0.054850 seconds 
+  Import took 0.059898 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2174.692395 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_EnemyHit/FX_Skin01_EnemyHit.prefab
+  artifactKey: Guid(35733f2102184414d8f94da8dd804e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_EnemyHit/FX_Skin01_EnemyHit.prefab using Guid(35733f2102184414d8f94da8dd804e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '816275b4c7eea473f5d9733e8b5bc99a') in 0.020797 seconds 
+  Import took 0.026015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_EnemyHit/sprite_FX_skin01_enemyhit.png
+  artifactKey: Guid(3ebf124712225c84eb669cf97bd9e5dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_EnemyHit/sprite_FX_skin01_enemyhit.png using Guid(3ebf124712225c84eb669cf97bd9e5dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cb92fd3fdd1e7c29334469f366104f8') in 0.086750 seconds 
+  Import took 0.090794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 51.590291 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Enemy Explode
+  artifactKey: Guid(1bd146f9e670603488d34ff40240f46e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Enemy Explode using Guid(1bd146f9e670603488d34ff40240f46e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd14fe2698ac8643bcadc9c2e47695752') in 0.008212 seconds 
+  Import took 0.012262 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.722164 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Enemy Explode/sprite_FX_enemy_explosion.png
+  artifactKey: Guid(78dbdce1b4c659840a707aa218f3d1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Enemy Explode/sprite_FX_enemy_explosion.png using Guid(78dbdce1b4c659840a707aa218f3d1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd00e1e7848e6debb34045bddaad8e508') in 0.062455 seconds 
+  Import took 0.066779 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.269917 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Enemy Explode/sprite_FX_enemy_explosion.png
+  artifactKey: Guid(78dbdce1b4c659840a707aa218f3d1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Enemy Explode/sprite_FX_enemy_explosion.png using Guid(78dbdce1b4c659840a707aa218f3d1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a3ed952f6ed8c9e85c9349313877dab') in 0.015492 seconds 
+  Import took 0.020362 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.973390 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Enemy Explode/sprite_FX_enemy_explosion.png
+  artifactKey: Guid(78dbdce1b4c659840a707aa218f3d1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Enemy Explode/sprite_FX_enemy_explosion.png using Guid(78dbdce1b4c659840a707aa218f3d1d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '279e64340106915173c0fc8f2df37220') in 0.047742 seconds 
+  Import took 0.053057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 42.686005 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_attack/FX_Skin01_attack.prefab
+  artifactKey: Guid(577c0341e7bc38c47920ad68aa48ade4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_attack/FX_Skin01_attack.prefab using Guid(577c0341e7bc38c47920ad68aa48ade4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af00d826f37ce9069f84bdcce869c55a') in 0.012354 seconds 
+  Import took 0.016848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_attack/sprite_FX_skin01_attack.png
+  artifactKey: Guid(8724f45ef35a42d4183e0ab9ffa7d128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_attack/sprite_FX_skin01_attack.png using Guid(8724f45ef35a42d4183e0ab9ffa7d128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9a239cc560d08b61794b0ece2e1211') in 0.117608 seconds 
+  Import took 0.121561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.885293 seconds.
+  path: Assets/2D_Assets/FX/Particle/Hit_02_Fever/sprite_Hit_02_fever.png
+  artifactKey: Guid(31b3bfa0701152440bd8a71eabb7134c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/Hit_02_Fever/sprite_Hit_02_fever.png using Guid(31b3bfa0701152440bd8a71eabb7134c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2d8d1fea6fef07699e6737459ae4dcd') in 0.152340 seconds 
+  Import took 0.157327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.133103 seconds.
+  path: Assets/2D_Assets/Character/Enemies/FX_MasterA_EnemyHit
+  artifactKey: Guid(0d65d0fd45b7c844f841c9b3b58f48b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Enemies/FX_MasterA_EnemyHit using Guid(0d65d0fd45b7c844f841c9b3b58f48b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5021bf3e70a3ea4da7d551f91274c323') in 0.007928 seconds 
+  Import took 0.024950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.314695 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/FX_MasterA_attack
+  artifactKey: Guid(c482a98590cc9a74884d8b424ccfccce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/FX_MasterA_attack using Guid(c482a98590cc9a74884d8b424ccfccce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57e6e4468bbf82a461fc8dfede4b8745') in 0.008760 seconds 
+  Import took 0.012786 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.367343 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB.png
+  artifactKey: Guid(52bd62e5db15280409aa0b59f55ed81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB.png using Guid(52bd62e5db15280409aa0b59f55ed81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98644aeee75e234c853fe4bb24c880da') in 0.023887 seconds 
+  Import took 0.028320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.459218 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png
+  artifactKey: Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png using Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b1ca0be12943fba1216558a826eb097') in 0.025250 seconds 
+  Import took 0.029925 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC_Special.png
+  artifactKey: Guid(6896f3832b48d284b92b03ffb7a185b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC_Special.png using Guid(6896f3832b48d284b92b03ffb7a185b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c0d92fc9e0e6e7375465cd2b5dd4fde') in 0.020483 seconds 
+  Import took 0.025153 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png
+  artifactKey: Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png using Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b1ca0be12943fba1216558a826eb097') in 0.019723 seconds 
+  Import took 0.024037 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.495009 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB_Special.png
+  artifactKey: Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB_Special.png using Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e9ab83a90fe3b2e7abc331354a823e3') in 0.024701 seconds 
+  Import took 0.029001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.804426 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB.png
+  artifactKey: Guid(52bd62e5db15280409aa0b59f55ed81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB.png using Guid(52bd62e5db15280409aa0b59f55ed81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc82463c7827ddd7c74f4e9a017f63b1') in 0.016339 seconds 
+  Import took 0.020952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB_Special.png
+  artifactKey: Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB_Special.png using Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fb22052cf3d895bebf1c527c24de5f3') in 0.020015 seconds 
+  Import took 0.023908 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.279457 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB.png
+  artifactKey: Guid(52bd62e5db15280409aa0b59f55ed81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB.png using Guid(52bd62e5db15280409aa0b59f55ed81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bc74839196a8f734e84afa9dba1685a') in 0.031301 seconds 
+  Import took 0.036034 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.279330 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB_Special.png
+  artifactKey: Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB_Special.png using Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29372fb62cf68e5189df19ed9a28f737') in 0.042183 seconds 
+  Import took 0.048451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002541 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB_Special.png
+  artifactKey: Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/sprite_FX_skin_masterB_Special.png using Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29372fb62cf68e5189df19ed9a28f737') in 0.042701 seconds 
+  Import took 0.047673 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.688188 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png
+  artifactKey: Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png using Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83584e257baf8e14d6045d0ae273fae6') in 0.014087 seconds 
+  Import took 0.019139 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC_Special.png
+  artifactKey: Guid(6896f3832b48d284b92b03ffb7a185b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC_Special.png using Guid(6896f3832b48d284b92b03ffb7a185b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfca5f4a3862ea858f96921d222037a5') in 0.017100 seconds 
+  Import took 0.023762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.478483 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png
+  artifactKey: Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png using Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3dd3cd24eef67ff311c8125af0d2c9d') in 0.035792 seconds 
+  Import took 0.041107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000943 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png
+  artifactKey: Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC.png using Guid(9eb492ddddcb4e543b083600a2bf830d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3dd3cd24eef67ff311c8125af0d2c9d') in 0.031602 seconds 
+  Import took 0.036647 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.437824 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC_Special.png
+  artifactKey: Guid(6896f3832b48d284b92b03ffb7a185b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/sprite_FX_skin_masterC_Special.png using Guid(6896f3832b48d284b92b03ffb7a185b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd60666b21345deefeedf86bf751f5586') in 0.040348 seconds 
+  Import took 0.045379 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 670.844172 seconds.
+  path: Assets/2D_Assets/Character/Enemies/FX_Enemy Explode/FX_EnemyExplode.prefab
+  artifactKey: Guid(bb928cfa62819754585490fecce59b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Enemies/FX_Enemy Explode/FX_EnemyExplode.prefab using Guid(bb928cfa62819754585490fecce59b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fd2282ca872ed8b88a0a87d13f8892a') in 0.018185 seconds 
+  Import took 0.024827 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.904432 seconds.
+  path: Assets/2D_Assets/Character/Enemies/FX_Enemy Explode/FX_EnemyExplode.prefab
+  artifactKey: Guid(bb928cfa62819754585490fecce59b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Enemies/FX_Enemy Explode/FX_EnemyExplode.prefab using Guid(bb928cfa62819754585490fecce59b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71568bc048560918f6447cca59e1ecff') in 0.012559 seconds 
+  Import took 0.020272 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 66.297269 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/sprite_FX_PU_revive.png
+  artifactKey: Guid(4ba54a020a904f74f852067030b1aa04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/sprite_FX_PU_revive.png using Guid(4ba54a020a904f74f852067030b1aa04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53fb37e29da390feba24f91d9e0453b1') in 0.102763 seconds 
+  Import took 0.108677 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002986 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/sprite_FX_PU_revive.png
+  artifactKey: Guid(4ba54a020a904f74f852067030b1aa04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/sprite_FX_PU_revive.png using Guid(4ba54a020a904f74f852067030b1aa04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53fb37e29da390feba24f91d9e0453b1') in 0.077193 seconds 
+  Import took 0.082317 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 718.415899 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab
+  artifactKey: Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab using Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b85ba2b56d8cdd43b2857e0a6d3ab92') in 0.064248 seconds 
+  Import took 0.069795 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000587 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab
+  artifactKey: Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab using Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b85ba2b56d8cdd43b2857e0a6d3ab92') in 0.044318 seconds 
+  Import took 0.050150 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 270.896361 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU3_FeverGain 1
+  artifactKey: Guid(c3fb6889bb02b3141919e1f17e38406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU3_FeverGain 1 using Guid(c3fb6889bb02b3141919e1f17e38406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05acb7e27381f149a6f04f5e0d161ae0') in 0.008147 seconds 
+  Import took 0.013461 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.810944 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU4_Revive
+  artifactKey: Guid(c3fb6889bb02b3141919e1f17e38406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU4_Revive using Guid(c3fb6889bb02b3141919e1f17e38406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0100da7fd2b0104eac1c45ae2270ed1') in 0.008918 seconds 
+  Import took 0.013634 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.319547 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU4_Revive/FX_PU_FeverGain.prefab
+  artifactKey: Guid(422cf9b983b4de745b52a8a34f86b5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU4_Revive/FX_PU_FeverGain.prefab using Guid(422cf9b983b4de745b52a8a34f86b5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8313c1265e57b500665840c8d59de9ba') in 0.014961 seconds 
+  Import took 0.019686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_fevergain.png
+  artifactKey: Guid(f5a786e7f66f1194b859126a5f84dfa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_fevergain.png using Guid(f5a786e7f66f1194b859126a5f84dfa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8190bb16bcb1d55b26f21e0436135ebf') in 0.027532 seconds 
+  Import took 0.033008 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.434380 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png
+  artifactKey: Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png using Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9efaa0fa77a7f6f7636a9a82dd323bd') in 0.023845 seconds 
+  Import took 0.028572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.735835 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png
+  artifactKey: Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png using Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46298bd675db8cfd1f02055bcc9a9704') in 0.014995 seconds 
+  Import took 0.020864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.964307 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png
+  artifactKey: Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png using Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22ba85491c5a8de493617f799e8e6157') in 0.036286 seconds 
+  Import took 0.043260 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 467.714411 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png
+  artifactKey: Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png using Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2f04c82b24bbbb9e017c4b07086f0ac') in 0.043039 seconds 
+  Import took 0.049494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.755691 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png
+  artifactKey: Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_PU4_Revive/sprite_FX_PU_Revive2.png using Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b904ec1b94438cc62062372964a1ca1') in 0.057704 seconds 
+  Import took 0.062885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2228.111956 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/sprite_FX_PU_Revive2.png
+  artifactKey: Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/sprite_FX_PU_Revive2.png using Guid(8fafdd8a6d7463b4a80fda957aacdbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '750fdddbfbdf44fe2b9223e15cff9b14') in 0.039119 seconds 
+  Import took 0.043837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 47.701945 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_Revive_ground.anim
+  artifactKey: Guid(101349b9a52661447ad2f4772852a508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_Revive_ground.anim using Guid(101349b9a52661447ad2f4772852a508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '021f27f9993ad50eb809794560345288') in 0.012050 seconds 
+  Import took 0.017871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009160 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_Revive_ground.anim
+  artifactKey: Guid(101349b9a52661447ad2f4772852a508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_Revive_ground.anim using Guid(101349b9a52661447ad2f4772852a508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '021f27f9993ad50eb809794560345288') in 0.004332 seconds 
+  Import took 0.009238 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.673695 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_idle/FX_Skin01_idle.prefab
+  artifactKey: Guid(3759f3929df935f4697db0dd5073fc55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_idle/FX_Skin01_idle.prefab using Guid(3759f3929df935f4697db0dd5073fc55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44252ea80a318624599cd9141a3b5a44') in 0.015703 seconds 
+  Import took 0.020314 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Skin01_idle/sprite_FX_skin01_idle.png
+  artifactKey: Guid(2c48c4cf82b08cb4f84c655bb50ccced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Skin01_idle/sprite_FX_skin01_idle.png using Guid(2c48c4cf82b08cb4f84c655bb50ccced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76ba2323afc46275ae03ec86a27b129e') in 0.066796 seconds 
+  Import took 0.071132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 77.436874 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Revive_ground
+  artifactKey: Guid(bd232a519b3d10e4dbf93b3f440d6ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Revive_ground using Guid(bd232a519b3d10e4dbf93b3f440d6ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e048d9edcca317cbcca25f7f6466e3c') in 0.003030 seconds 
+  Import took 0.008459 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 691.631116 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_Revive2_ground.prefab
+  artifactKey: Guid(4f5c3c2bfd1695042a8826769a3c9484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_Revive2_ground.prefab using Guid(4f5c3c2bfd1695042a8826769a3c9484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc71f207664afb963a39a7966120a223') in 0.018228 seconds 
+  Import took 0.024720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.878444 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_Revive2.prefab
+  artifactKey: Guid(ac8b94ec5077d6048819e7736c24d301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_Revive2.prefab using Guid(ac8b94ec5077d6048819e7736c24d301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05d1bf32b0c7609f9b8dd6c9581591a0') in 0.035460 seconds 
+  Import took 0.041120 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 224.962281 seconds.
+  path: Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab
+  artifactKey: Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Animation/FX_PU4_Revive/FX_PU_Revive.prefab using Guid(6df315a1df0533548a2109e97f577256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af58ebc4facb4e3d94fa3c4a6c702d93') in 0.067792 seconds 
+  Import took 0.072728 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 64.540530 seconds.
+  path: Assets/2D_Assets/Atlas/atlas_4k.png
+  artifactKey: Guid(40ec8e48be9e988448f7b2c155a8d80a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Atlas/atlas_4k.png using Guid(40ec8e48be9e988448f7b2c155a8d80a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1c092b6cd97d94efc1115dc98dbfa8f') in 0.591474 seconds 
+  Import took 0.597264 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 91.034842 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_skin_masterB_Special
+  artifactKey: Guid(87a5d1a62c80dd54bb55adf07dad6236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_skin_masterB_Special using Guid(87a5d1a62c80dd54bb55adf07dad6236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc7714d784c6aba6faca395aa65beb2') in 0.009293 seconds 
+  Import took 0.014852 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_skin_masterB_Special
+  artifactKey: Guid(87a5d1a62c80dd54bb55adf07dad6236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_skin_masterB_Special using Guid(87a5d1a62c80dd54bb55adf07dad6236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc7714d784c6aba6faca395aa65beb2') in 0.001787 seconds 
+  Import took 0.006171 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.890907 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_skin_masterB_Special 1
+  artifactKey: Guid(15abdccfa26bd3249ab18a5420bb29f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_skin_masterB_Special 1 using Guid(15abdccfa26bd3249ab18a5420bb29f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '798102a9838d6e780f762153f9b6ce73') in 0.007611 seconds 
+  Import took 0.012409 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.491723 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_skin_masterC_Special
+  artifactKey: Guid(15abdccfa26bd3249ab18a5420bb29f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_skin_masterC_Special using Guid(15abdccfa26bd3249ab18a5420bb29f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe56322ff40981ffb2eea3d0cfe7d11') in 0.006267 seconds 
+  Import took 0.011684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6963.689993 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_hit
+  artifactKey: Guid(b73c118e426a8e54c88a51409cfb8eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_hit using Guid(b73c118e426a8e54c88a51409cfb8eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ac79e30d7be4846b310ec31e67372ab') in 0.007354 seconds 
+  Import took 0.015486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.512823 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_hit 1
+  artifactKey: Guid(7a22c6c15f7f9df41bce3de602f00ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_hit 1 using Guid(7a22c6c15f7f9df41bce3de602f00ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a235afba3f802b1204629d39322b6cb') in 0.008759 seconds 
+  Import took 0.012755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.142609 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_special
+  artifactKey: Guid(7a22c6c15f7f9df41bce3de602f00ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_special using Guid(7a22c6c15f7f9df41bce3de602f00ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b767fffdac133d97d1800cdb34e995bc') in 0.008400 seconds 
+  Import took 0.012789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.073912 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit
+  artifactKey: Guid(58f0cb8979989444fb468e2733b98656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit using Guid(58f0cb8979989444fb468e2733b98656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3575c0de9de83e00797a9fe272a4ed08') in 0.003860 seconds 
+  Import took 0.008907 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.372402 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit 1
+  artifactKey: Guid(9ae1c115c83a4cf49b268949c2911691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit 1 using Guid(9ae1c115c83a4cf49b268949c2911691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79d99b95d407b6b7cdd9b54f38bcff23') in 0.003318 seconds 
+  Import took 0.010076 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004105 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit 1
+  artifactKey: Guid(9ae1c115c83a4cf49b268949c2911691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit 1 using Guid(9ae1c115c83a4cf49b268949c2911691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79d99b95d407b6b7cdd9b54f38bcff23') in 0.002867 seconds 
+  Import took 0.007205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.582076 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_specia;
+  artifactKey: Guid(9ae1c115c83a4cf49b268949c2911691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_specia; using Guid(9ae1c115c83a4cf49b268949c2911691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '526b65ee0de10e5308ff63ee8fbabf46') in 0.008617 seconds 
+  Import took 0.012838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.530762 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special
+  artifactKey: Guid(9ae1c115c83a4cf49b268949c2911691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special using Guid(9ae1c115c83a4cf49b268949c2911691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '965c7aff34a48164c8b72d9f102e97e4') in 0.002162 seconds 
+  Import took 0.009024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 519.402027 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit/FX_masterC_hit.prefab
+  artifactKey: Guid(09aae25155aea9c4389dfe4eec4c24ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit/FX_masterC_hit.prefab using Guid(09aae25155aea9c4389dfe4eec4c24ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eed3ebc0ef2de8af6613ae4f59b637b7') in 0.028252 seconds 
+  Import took 0.034056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005101 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit/FX_masterC_hit.prefab
+  artifactKey: Guid(09aae25155aea9c4389dfe4eec4c24ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_hit/FX_masterC_hit.prefab using Guid(09aae25155aea9c4389dfe4eec4c24ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eed3ebc0ef2de8af6613ae4f59b637b7') in 0.010929 seconds 
+  Import took 0.015777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.568552 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_hit/FX_masterB_hit.prefab
+  artifactKey: Guid(a22c223b4b5e938479d23a25bf436de0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_hit/FX_masterB_hit.prefab using Guid(a22c223b4b5e938479d23a25bf436de0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e76a8ec873117fae6ce488869c1c79b') in 0.015743 seconds 
+  Import took 0.020474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 389.894054 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_FX_skin_masterC_Special.png
+  artifactKey: Guid(6896f3832b48d284b92b03ffb7a185b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_FX_skin_masterC_Special.png using Guid(6896f3832b48d284b92b03ffb7a185b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3c86978f0c1b92e215e075bd8ea33cf') in 0.043083 seconds 
+  Import took 0.049760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 721.659542 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_LeafB/leafB_atlas_fever.png
+  artifactKey: Guid(c40834bf8320ab445bed772221993151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_LeafB/leafB_atlas_fever.png using Guid(c40834bf8320ab445bed772221993151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dcba56b18dee584fa32c61431fc7275') in 0.111931 seconds 
+  Import took 0.119850 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.935530 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_LeafA/leafA_atlas.png
+  artifactKey: Guid(06ddd253cd6bee746b1d5fd91f093b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_LeafA/leafA_atlas.png using Guid(06ddd253cd6bee746b1d5fd91f093b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922917b0aec16941fc1c71cf9f828ed9') in 0.108783 seconds 
+  Import took 0.113312 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.868763 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Line/alpha_particle_trail.png
+  artifactKey: Guid(26b001865e0159a46b848b4cb0fb8dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Line/alpha_particle_trail.png using Guid(26b001865e0159a46b848b4cb0fb8dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd6835bd012ab07e6548fee27da8c8c') in 0.101856 seconds 
+  Import took 0.107112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Line/sprite_FX.png
+  artifactKey: Guid(17f94d69d752af641bf70849df7a74eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Line/sprite_FX.png using Guid(17f94d69d752af641bf70849df7a74eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48d4e7776a7b531c942d71db9db47579') in 0.081788 seconds 
+  Import took 0.086044 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/2D_Assets/FX/Particle/FX_Line/alpha_particle_trail.png
+  artifactKey: Guid(26b001865e0159a46b848b4cb0fb8dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/FX/Particle/FX_Line/alpha_particle_trail.png using Guid(26b001865e0159a46b848b4cb0fb8dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd6835bd012ab07e6548fee27da8c8c') in 0.014664 seconds 
+  Import took 0.019541 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 990.178922 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/FX_masterC_Special.prefab
+  artifactKey: Guid(50d12073330ed224fb71d80018d68ab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/FX_masterC_Special.prefab using Guid(50d12073330ed224fb71d80018d68ab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '683c054829d0e899e0a5144a28ee4929') in 0.023694 seconds 
+  Import took 0.029604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003779 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/FX_masterC_Special.prefab
+  artifactKey: Guid(50d12073330ed224fb71d80018d68ab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/FX_masterC_Special.prefab using Guid(50d12073330ed224fb71d80018d68ab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '683c054829d0e899e0a5144a28ee4929') in 0.011851 seconds 
+  Import took 0.017821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 485.338963 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_special/sprite_FX_skin_masterB_Special.png
+  artifactKey: Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_special/sprite_FX_skin_masterB_Special.png using Guid(6bc96d94f7c7d32479b6c38e0338079d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7599f32699666a0663146ef8c58e223') in 0.047923 seconds 
+  Import took 0.054317 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 745.272264 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_special/FX_masterB_Special.prefab
+  artifactKey: Guid(c0efabe5868f63948bd9cda72544aabe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_special/FX_masterB_Special.prefab using Guid(c0efabe5868f63948bd9cda72544aabe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0baf4280267244447cab74ccead7bcd8') in 0.024980 seconds 
+  Import took 0.031393 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000478 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_special/FX_masterB_Special.prefab
+  artifactKey: Guid(c0efabe5868f63948bd9cda72544aabe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/FX_special/FX_masterB_Special.prefab using Guid(c0efabe5868f63948bd9cda72544aabe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0baf4280267244447cab74ccead7bcd8') in 0.008934 seconds 
+  Import took 0.016944 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
