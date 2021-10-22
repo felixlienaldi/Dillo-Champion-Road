@@ -47,6 +47,9 @@ TextureImporter:
   - first:
       213: -3436590933642243716
     second: sprite_button_icon_14
+  - first:
+      213: -6812974111770232520
+    second: sprite_button_icon_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -470,6 +473,27 @@ TextureImporter:
       bones: []
       spriteID: c711de1f0c6ce40d0800000000000000
       internalID: -3436590933642243716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_button_icon_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839b00c54247371a0800000000000000
+      internalID: -6812974111770232520
       vertices: []
       indices: 
       edges: []
