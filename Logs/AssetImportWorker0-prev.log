@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.16f1 (049d6eca3c44) revision 302446'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19043.1288; Version 2009; 64bit' Language: 'en' Physical Memory: 24539 MB
+OS: 'Windows 10 Education; OS build 18363.1854; Version 1909; 64bit' Language: 'en' Physical Memory: 16326 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,72 +11,72 @@ C:\Program Files\Unity\Hub\Editor\2020.3.16f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
+D:/Dillo-Champion-Road
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51982
-Successfully changed project path to: E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
-E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road
+58432
+Successfully changed project path to: D:/Dillo-Champion-Road
+D:/Dillo-Champion-Road
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 64.64 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 83.39 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path E:/James/Work/002Game/008Dillo/001_Dillo Champion Road/unity/Dillo-Champion-Road/Assets
+[Subsystems] Discovering subsystems at path D:/Dillo-Champion-Road/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
     Vendor:   
-    VRAM:     2988 MB
-    Driver:   30.0.14.9613
+    VRAM:     8088 MB
+    Driver:   27.21.14.6140
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56648
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56388
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001685 seconds.
+Registered in 0.001995 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 52.59 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 63.08 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.095 seconds
+- Completed reload, in  2.204 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1095ms)
-		BeginReloadAssembly (56ms)
+	ReloadAssembly (2205ms)
+		BeginReloadAssembly (75ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (438ms)
-			LoadAssemblies (54ms)
+		EndReloadAssembly (575ms)
+			LoadAssemblies (71ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (155ms)
+			SetupTypeCache (202ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (32ms)
-			SetupLoadedEditorAssemblies (174ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (225ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (53ms)
-				BeforeProcessingInitializeOnLoad (8ms)
-				ProcessInitializeOnLoadAttributes (79ms)
-				ProcessInitializeOnLoadMethodAttributes (30ms)
+				RefreshPlugins (63ms)
+				BeforeProcessingInitializeOnLoad (18ms)
+				ProcessInitializeOnLoadAttributes (99ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004553 seconds.
+Registered in 0.007508 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 55.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 62.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 GPGSUpgrader start
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -101,45 +101,45 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 (Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.532 seconds
+- Completed reload, in  1.853 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1533ms)
-		BeginReloadAssembly (147ms)
+	ReloadAssembly (1854ms)
+		BeginReloadAssembly (214ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (1323ms)
-			LoadAssemblies (94ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (1563ms)
+			LoadAssemblies (152ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (348ms)
+			SetupTypeCache (396ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (63ms)
-			SetupLoadedEditorAssemblies (614ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (747ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (56ms)
-				BeforeProcessingInitializeOnLoad (74ms)
-				ProcessInitializeOnLoadAttributes (458ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				RefreshPlugins (62ms)
+				BeforeProcessingInitializeOnLoad (101ms)
+				ProcessInitializeOnLoadAttributes (552ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
-Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 1.07 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2603 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.9 MB.
-System memory in use after: 116.1 MB.
+Unloading 2604 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.5 MB.
+System memory in use after: 115.7 MB.
 
 Unloading 78 unused Assets to reduce memory usage. Loaded Objects now: 3008.
-Total: 3.303300 ms (FindLiveObjects: 0.252000 ms CreateObjectMapping: 0.137700 ms MarkObjects: 2.835300 ms  DeleteObjects: 0.077200 ms)
+Total: 3.767200 ms (FindLiveObjects: 0.256900 ms CreateObjectMapping: 0.126800 ms MarkObjects: 3.295200 ms  DeleteObjects: 0.087200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -148,224 +148,103 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_FX_skin_masterC_Special2.png
-  artifactKey: Guid(fbc4a2d833d38764cb71fa1f623b7e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_FX_skin_masterC_Special2.png using Guid(fbc4a2d833d38764cb71fa1f623b7e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b093fb297b65cc3391a6b42edce1ebf4') in 0.143862 seconds 
-  Import took 0.147881 seconds .
+  path: Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/masterA.png
+  artifactKey: Guid(62a860d056e780743a0e604069de12c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/masterA.png using Guid(62a860d056e780743a0e604069de12c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '030c8745e1b5532b9d1d3652b6f5540d') in 0.260064 seconds 
+  Import took 0.267053 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.642533 seconds.
-  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_masterC_vignette.png
-  artifactKey: Guid(c3ac644c8961e074eba49bccd5519684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_masterC_vignette.png using Guid(c3ac644c8961e074eba49bccd5519684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b881fc32e19a8de622715d8a20b01f43') in 0.054758 seconds 
-  Import took 0.060257 seconds .
+  Time since last request: 0.000250 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/masterA_crimson obsidian.controller
+  artifactKey: Guid(6f3be65675b0f9145b8186e4ea2c685a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/masterA_crimson obsidian.controller using Guid(6f3be65675b0f9145b8186e4ea2c685a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57329ff8be21a94247f289f809b16c9e') in 0.023460 seconds 
+  Import took 0.028790 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.004172 seconds.
-  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_masterC_vignette.png
-  artifactKey: Guid(c3ac644c8961e074eba49bccd5519684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_masterC_vignette.png using Guid(c3ac644c8961e074eba49bccd5519684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b881fc32e19a8de622715d8a20b01f43') in 0.057655 seconds 
-  Import took 0.062246 seconds .
+  Time since last request: 0.000237 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerB/beginnerB.png
+  artifactKey: Guid(c1db8c88d0828f740b101c3ca91c36b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerB/beginnerB.png using Guid(c1db8c88d0828f740b101c3ca91c36b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4a2c70acb3864001159d9e72b1bd12') in 0.054152 seconds 
+  Import took 0.065124 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 86.403831 seconds.
-  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_FX_skin_masterC_Special2.png
-  artifactKey: Guid(fbc4a2d833d38764cb71fa1f623b7e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_FX_skin_masterC_Special2.png using Guid(fbc4a2d833d38764cb71fa1f623b7e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6c8c03a64cd1834354f782d8852de3f') in 0.015232 seconds 
-  Import took 0.019667 seconds .
+  Time since last request: 0.000180 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerC/beginnerC.png
+  artifactKey: Guid(36c8a2b6acd22de4ba079301b0f7ae1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerC/beginnerC.png using Guid(36c8a2b6acd22de4ba079301b0f7ae1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de6099427b5e97ea9a2a934608a9c608') in 0.051498 seconds 
+  Import took 0.063430 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.650379 seconds.
-  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_FX_skin_masterC_Special2.png
-  artifactKey: Guid(fbc4a2d833d38764cb71fa1f623b7e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_FX_skin_masterC_Special2.png using Guid(fbc4a2d833d38764cb71fa1f623b7e51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1cf5b93c5f156da2be5ed353e6c45a5') in 0.043720 seconds 
-  Import took 0.048172 seconds .
+  Time since last request: 0.000215 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/FX_MasterA_attack/FX_Skin01_attack.prefab
+  artifactKey: Guid(577c0341e7bc38c47920ad68aa48ade4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/FX_MasterA_attack/FX_Skin01_attack.prefab using Guid(577c0341e7bc38c47920ad68aa48ade4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af00d826f37ce9069f84bdcce869c55a') in 0.054396 seconds 
+  Import took 0.063445 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1574.797616 seconds.
-  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/FX_masterC_Special 1.prefab
-  artifactKey: Guid(213a3385aacbde74ebaabd56d05f8c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/FX_masterC_Special 1.prefab using Guid(213a3385aacbde74ebaabd56d05f8c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dadc77b8ea9da553f079edf43b927c2') in 0.069279 seconds 
-  Import took 0.074675 seconds .
+  Time since last request: 0.000203 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/FX_MasterA_attack/sprite_FX_skin01_attack.png
+  artifactKey: Guid(8724f45ef35a42d4183e0ab9ffa7d128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/FX_MasterA_attack/sprite_FX_skin01_attack.png using Guid(8724f45ef35a42d4183e0ab9ffa7d128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9a239cc560d08b61794b0ece2e1211') in 0.093324 seconds 
+  Import took 0.099628 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 305.728626 seconds.
-  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_masterC_vignette.png
-  artifactKey: Guid(c3ac644c8961e074eba49bccd5519684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_special/sprite_masterC_vignette.png using Guid(c3ac644c8961e074eba49bccd5519684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f742d94ccaa21058310f095b311de9b') in 0.077532 seconds 
-  Import took 0.082165 seconds .
+  Time since last request: 0.000190 seconds.
+  path: Assets/2D_Assets/Character/Dillo/03_advancedB/advancedB.png
+  artifactKey: Guid(233b4621140bd3b459941e807f601ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/03_advancedB/advancedB.png using Guid(233b4621140bd3b459941e807f601ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f2df28ecdd2a58fd99a301cbdb45bd5') in 0.047348 seconds 
+  Import took 0.061868 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2863.268336 seconds.
-  path: Assets/2D_Assets/Atlas/sprite_button_icon.png
-  artifactKey: Guid(b1e345b529d41a249b3d2bae25398b80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/sprite_button_icon.png using Guid(b1e345b529d41a249b3d2bae25398b80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5f5297f7dc1522a76a987f70bc11332') in 0.113138 seconds 
-  Import took 0.118295 seconds .
+  Time since last request: 0.000217 seconds.
+  path: Assets/2D_Assets/Character/Dillo/03_advancedA/advancedA.png
+  artifactKey: Guid(7a94c198f8d260e4280420281619e73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/03_advancedA/advancedA.png using Guid(7a94c198f8d260e4280420281619e73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e75730e95f1438b5c210a106575ff42') in 0.040810 seconds 
+  Import took 0.046920 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 30.463166 seconds.
-  path: Assets/2D_Assets/Atlas/sprite_button_icon.png
-  artifactKey: Guid(b1e345b529d41a249b3d2bae25398b80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/sprite_button_icon.png using Guid(b1e345b529d41a249b3d2bae25398b80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5348b6a310ef3c62cd7074f734614325') in 0.081657 seconds 
-  Import took 0.088253 seconds .
+  Time since last request: 0.000211 seconds.
+  path: Assets/2D_Assets/Character/Dillo/03_advancedC/advancedC.png
+  artifactKey: Guid(ad168f775ee7d36468ce37f39485a4b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/03_advancedC/advancedC.png using Guid(ad168f775ee7d36468ce37f39485a4b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb9b70c02bfe25a53d750624a81dbc32') in 0.046858 seconds 
+  Import took 0.057786 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 10.675958 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dd83aaf8596abd8000d0a47aa2a8e66') in 0.068292 seconds 
-  Import took 0.074481 seconds .
+  Time since last request: 0.000179 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerA_default/beginnerA.png
+  artifactKey: Guid(bbc5d0b5a46a7e24caa58f045310ecff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerA_default/beginnerA.png using Guid(bbc5d0b5a46a7e24caa58f045310ecff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '486675ed017c34df1fd4a778e8052cac') in 0.078567 seconds 
+  Import took 0.083133 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.370041 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '033e227e4d9df326a7d88fc47a3b3c09') in 0.052317 seconds 
-  Import took 0.057145 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 544.657786 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30134f73477caf74f01523decd577e01') in 0.049818 seconds 
-  Import took 0.074741 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 20.246491 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbe9a6283f18f94357478c7d6ef5ac0c') in 0.145681 seconds 
-  Import took 0.153923 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 869.947801 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd58d31566d5e00988e24040513e8af1b') in 0.265188 seconds 
-  Import took 0.270348 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 83.132807 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64420609a029099aacfb122d4aff00d4') in 0.284732 seconds 
-  Import took 0.290428 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 74.069732 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ae950c211c2336ec432a3b21c404e6b') in 0.238821 seconds 
-  Import took 0.244002 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 288.246785 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bc0a9e5c768bdf2978556add3b0f0b5') in 0.324544 seconds 
-  Import took 0.330937 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1310.846085 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e94c87a0d9d5587bd756666d43bf1f2') in 0.374846 seconds 
-  Import took 0.380285 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 707.210007 seconds.
-  path: Assets/Font/Cubano SDF.asset
-  artifactKey: Guid(6e0684b23f609bc47a399df5a9991e13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF.asset using Guid(6e0684b23f609bc47a399df5a9991e13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd09c74e67c4bb466a08d54b512b5ee6') in 0.105651 seconds 
-  Import took 0.111271 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.526905 seconds.
-  path: Assets/Font/Cubano SDF 1.asset
-  artifactKey: Guid(b0c30950c4f8bb84d8ad5eb3676b4ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF 1.asset using Guid(b0c30950c4f8bb84d8ad5eb3676b4ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '501d513de708a5e05c6fb4a4ee948ff5') in 0.045370 seconds 
-  Import took 0.051237 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.772553 seconds.
-  path: Assets/Font/Cubano SDF_stroke blue.asset
-  artifactKey: Guid(b0c30950c4f8bb84d8ad5eb3676b4ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_stroke blue.asset using Guid(b0c30950c4f8bb84d8ad5eb3676b4ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dccf32f1a814fdacdd03c6b816fbb17e') in 0.040535 seconds 
-  Import took 0.047349 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 276.371957 seconds.
-  path: Assets/Font/Cubano SDF_plain 2.asset
-  artifactKey: Guid(4c1254b213389a94bad4f072779925e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_plain 2.asset using Guid(4c1254b213389a94bad4f072779925e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68e5ef986593eae4973eede1ffa9a260') in 0.046322 seconds 
-  Import took 0.050861 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.883666 seconds.
-  path: Assets/Font/Cubano SDF_grey.asset
-  artifactKey: Guid(4c1254b213389a94bad4f072779925e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_grey.asset using Guid(4c1254b213389a94bad4f072779925e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c197a4e94e6d4ac4f4322630a134b94b') in 0.040337 seconds 
-  Import took 0.044755 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 519.016011 seconds.
-  path: Assets/Font/Cubano SDF_stroke blue.asset
-  artifactKey: Guid(b0c30950c4f8bb84d8ad5eb3676b4ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_stroke blue.asset using Guid(b0c30950c4f8bb84d8ad5eb3676b4ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffb3aabcef27ffd9356d40bc33209081') in 0.056497 seconds 
-  Import took 0.061347 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.301334 seconds.
-  path: Assets/Font/Cubano SDF_stroke blue 1.asset
-  artifactKey: Guid(84872615d5d679e40a9d09eba75e8b03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_stroke blue 1.asset using Guid(84872615d5d679e40a9d09eba75e8b03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '970119d4836c3c1335c8536408829609') in 0.042915 seconds 
-  Import took 0.057624 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.124320 seconds.
-  path: Assets/Font/Cubano SDF_yellow stroke blue.asset
-  artifactKey: Guid(84872615d5d679e40a9d09eba75e8b03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Font/Cubano SDF_yellow stroke blue.asset using Guid(84872615d5d679e40a9d09eba75e8b03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e76934e4e87b4503c04a74751af5dff6') in 0.038601 seconds 
-  Import took 0.043239 seconds .
+  Time since last request: 125.155940 seconds.
+  path: Assets/Script/PlayFab/DailyMission_Manager.cs
+  artifactKey: Guid(a5f77a751c195ae48907d1f7c41f721e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/PlayFab/DailyMission_Manager.cs using Guid(a5f77a751c195ae48907d1f7c41f721e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '579aa8817980deba5147385fec84f8ca') in 0.022101 seconds 
+  Import took 0.036309 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005607 seconds.
+Registered in 0.006623 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 GPGSUpgrader start
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -390,43 +269,43 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 (Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.320 seconds
+- Completed reload, in  2.054 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1320ms)
-		BeginReloadAssembly (147ms)
+	ReloadAssembly (2055ms)
+		BeginReloadAssembly (137ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (68ms)
-		EndReloadAssembly (1107ms)
-			LoadAssemblies (94ms)
+			CreateAndSetChildDomain (50ms)
+		EndReloadAssembly (1845ms)
+			LoadAssemblies (124ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (315ms)
+			SetupTypeCache (461ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (43ms)
-			SetupLoadedEditorAssemblies (534ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (967ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (58ms)
-				ProcessInitializeOnLoadAttributes (459ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				BeforeProcessingInitializeOnLoad (118ms)
+				ProcessInitializeOnLoadAttributes (815ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (15ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.90 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.82 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2564 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.8 MB.
-System memory in use after: 116.0 MB.
+Unloading 2565 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.7 MB.
+System memory in use after: 114.9 MB.
 
-Unloading 68 unused Assets to reduce memory usage. Loaded Objects now: 3118.
-Total: 4.145200 ms (FindLiveObjects: 0.288000 ms CreateObjectMapping: 0.130300 ms MarkObjects: 3.622000 ms  DeleteObjects: 0.103800 ms)
+Unloading 68 unused Assets to reduce memory usage. Loaded Objects now: 3025.
+Total: 3.922200 ms (FindLiveObjects: 0.285900 ms CreateObjectMapping: 0.103200 ms MarkObjects: 3.442200 ms  DeleteObjects: 0.089800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -435,25 +314,448 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 3382.519713 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2ff8d012f13c90a67494daf6d433c4c') in 0.308973 seconds 
-  Import took 0.315682 seconds .
+  Time since last request: 1001.465374 seconds.
+  path: Assets/Script/PlayFab/DailyMissionButton_Gameobject.cs
+  artifactKey: Guid(8906728be51325841953327b69dd864a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/PlayFab/DailyMissionButton_Gameobject.cs using Guid(8906728be51325841953327b69dd864a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a42d38381eb8679c5a8a5510a8ac1d5d') in 0.014075 seconds 
+  Import took 0.020600 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007974 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.952 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1952ms)
+		BeginReloadAssembly (141ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (55ms)
+		EndReloadAssembly (1734ms)
+			LoadAssemblies (145ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (394ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (76ms)
+			SetupLoadedEditorAssemblies (843ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (152ms)
+				ProcessInitializeOnLoadAttributes (648ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (26ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.95 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2566 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.8 MB.
+System memory in use after: 115.0 MB.
+
+Unloading 66 unused Assets to reduce memory usage. Loaded Objects now: 3030.
+Total: 3.821400 ms (FindLiveObjects: 0.454800 ms CreateObjectMapping: 0.131700 ms MarkObjects: 3.200100 ms  DeleteObjects: 0.033400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 528.802639 seconds.
+  path: Assets/Script/PlayFab/DailyMissionButton_Gameobject.cs
+  artifactKey: Guid(8906728be51325841953327b69dd864a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/PlayFab/DailyMissionButton_Gameobject.cs using Guid(8906728be51325841953327b69dd864a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2f9191cf5349ec4ddbf0bfcea035a6c') in 0.010595 seconds 
+  Import took 0.030474 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009533 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.634 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2634ms)
+		BeginReloadAssembly (475ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (12ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (1ms)
+			CreateAndSetChildDomain (294ms)
+		EndReloadAssembly (2045ms)
+			LoadAssemblies (214ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (526ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (175ms)
+			SetupLoadedEditorAssemblies (953ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (204ms)
+				ProcessInitializeOnLoadAttributes (724ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (53ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 3.94 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2566 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.8 MB.
+System memory in use after: 115.0 MB.
+
+Unloading 66 unused Assets to reduce memory usage. Loaded Objects now: 3034.
+Total: 4.201200 ms (FindLiveObjects: 0.322900 ms CreateObjectMapping: 0.127500 ms MarkObjects: 3.710900 ms  DeleteObjects: 0.038100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 51.753799 seconds.
+  path: Assets/Script/PlayFab/DailyMissionButton_Gameobject.cs
+  artifactKey: Guid(8906728be51325841953327b69dd864a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/PlayFab/DailyMissionButton_Gameobject.cs using Guid(8906728be51325841953327b69dd864a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '265281c2895bf7704225febdfda41b85') in 0.008480 seconds 
+  Import took 0.022575 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 54.917105 seconds.
-  path: Assets/2D_Assets/Atlas/atlas_4k_extra.png
-  artifactKey: Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D_Assets/Atlas/atlas_4k_extra.png using Guid(9aace98e54b00484e92ae325106ffc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e5f4da255f3018fe1d4f35027bc823a') in 0.382076 seconds 
-  Import took 0.386878 seconds .
+  Time since last request: 0.104654 seconds.
+  path: Assets/Script/PlayFab/DailyMissionButton_Gameobject.cs
+  artifactKey: Guid(8906728be51325841953327b69dd864a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/PlayFab/DailyMissionButton_Gameobject.cs using Guid(8906728be51325841953327b69dd864a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '265281c2895bf7704225febdfda41b85') in 0.006293 seconds 
+  Import took 0.027366 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007723 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.414 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2415ms)
+		BeginReloadAssembly (196ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (14ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (53ms)
+		EndReloadAssembly (2098ms)
+			LoadAssemblies (132ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (631ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (1052ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (143ms)
+				ProcessInitializeOnLoadAttributes (885ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.05 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2566 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.8 MB.
+System memory in use after: 115.0 MB.
+
+Unloading 66 unused Assets to reduce memory usage. Loaded Objects now: 3038.
+Total: 5.035500 ms (FindLiveObjects: 0.496100 ms CreateObjectMapping: 0.395500 ms MarkObjects: 4.108000 ms  DeleteObjects: 0.034400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 38.116757 seconds.
+  path: Assets/Script/PlayFab/Fragment_Manager.cs
+  artifactKey: Guid(e00ac233a1c3f46488b33b47e9882ccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/PlayFab/Fragment_Manager.cs using Guid(e00ac233a1c3f46488b33b47e9882ccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c22ca9705f9b17922a56ed5aad328c7d') in 0.016824 seconds 
+  Import took 0.024569 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008152 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.210 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2210ms)
+		BeginReloadAssembly (216ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (69ms)
+		EndReloadAssembly (1917ms)
+			LoadAssemblies (122ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (490ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (1023ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (109ms)
+				ProcessInitializeOnLoadAttributes (885ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2567 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.7 MB.
+System memory in use after: 115.0 MB.
+
+Unloading 66 unused Assets to reduce memory usage. Loaded Objects now: 3043.
+Total: 4.739800 ms (FindLiveObjects: 0.441900 ms CreateObjectMapping: 0.158600 ms MarkObjects: 4.100900 ms  DeleteObjects: 0.036400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010943 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.204 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2204ms)
+		BeginReloadAssembly (158ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (17ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (55ms)
+		EndReloadAssembly (1917ms)
+			LoadAssemblies (150ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (565ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (919ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (144ms)
+				ProcessInitializeOnLoadAttributes (746ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (13ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.03 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2567 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.9 MB.
+System memory in use after: 115.1 MB.
+
+Unloading 66 unused Assets to reduce memory usage. Loaded Objects now: 3047.
+Total: 5.159000 ms (FindLiveObjects: 1.133700 ms CreateObjectMapping: 0.328800 ms MarkObjects: 3.644200 ms  DeleteObjects: 0.050600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

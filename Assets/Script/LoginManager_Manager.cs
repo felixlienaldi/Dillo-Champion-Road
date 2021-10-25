@@ -71,7 +71,7 @@ public class LoginManager_Manager : MonoBehaviour{
     void Start(){
         Debug.Log(ReturnAndroidID());
         f_GuestLoginRequest();
-        f_InitializePlayGamesConfig();
+        //f_InitializePlayGamesConfig();
     }
 
     void Update(){
@@ -86,11 +86,7 @@ public class LoginManager_Manager : MonoBehaviour{
     /// <param name="p_Result">Result details from the request</param>
     private void f_OnLoginSuccess(LoginResult p_Result) {
         m_LoginData = JsonUtility.FromJson<c_LoginData>(p_Result.ToJson());
-        PlayerStatistic_Manager.m_Instance.f_GetPlayerStatistic();
-        CurrencyManager_Manager.m_Instance.f_GetCurrency();
-        LeaderboardManager_Manager.m_Instance.f_GetLeaderBoard();
-        PlayerData_Manager.m_Instance.f_GetPlayerData();
-        LeaderboardManager_Manager.m_Instance.f_GetPlayerLeaderBoard();
+        PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest { PlayFabId = m_LoginData.PlayFabId }, f_OnAccountInfo, PlayFab_Error.m_Instance.f_OnPlayFabError);
     }
 
     /// <summary>
@@ -100,9 +96,18 @@ public class LoginManager_Manager : MonoBehaviour{
 #if UNITY_ANDROID
         LoginWithAndroidDeviceIDRequest RequestAndroid = new LoginWithAndroidDeviceIDRequest { AndroidDeviceId = ReturnAndroidID(), CreateAccount = true };
         PlayFabClientAPI.LoginWithAndroidDeviceID(RequestAndroid, f_OnLoginSuccess, PlayFab_Error.m_Instance.f_OnPlayFabError);
+#elif UNITY_STANDALONE_WIN
+        LoginWithCustomIDRequest t_Req = new LoginWithCustomIDRequest {
+            CustomId = "Testing",
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams {
+                GetPlayerProfile = true
+            }
+        };
+        PlayFabClientAPI.LoginWithCustomID(t_Req, f_OnLoginSuccess, PlayFab_Error.m_Instance.f_OnPlayFabError);
 #endif
     }
-    
+
     /// <summary>
     /// Method for requesting unlink Android Device ID to playfab
     /// </summary>
@@ -123,8 +128,8 @@ public class LoginManager_Manager : MonoBehaviour{
     public static string ReturnAndroidID() {
         return SystemInfo.deviceUniqueIdentifier;
     }
-
-    #region GOOGLE
+#if UNITY_ANDROID
+#region GOOGLE
     /// <summary>
     /// Method for Initialize Google Play Games Config
     /// </summary>
@@ -196,6 +201,22 @@ public class LoginManager_Manager : MonoBehaviour{
         f_UnlinkGuestRequest();
     }
 
-    #endregion
+#endregion
+#endif
+    public void f_OnAccountInfo(GetAccountInfoResult p_Result) {
+        if (p_Result.AccountInfo.TitleInfo.Created == p_Result.AccountInfo.TitleInfo.LastLogin) {
+            PlayerStatistic_Manager.m_Instance.f_NewPlayer();
+            Debug.Log("New");
+        }
+        else {
+            PlayerStatistic_Manager.m_Instance.f_GetPlayerStatistic();
+            Debug.Log("Not New");
+        }
 
+        CurrencyManager_Manager.m_Instance.f_GetCurrency();
+        LeaderboardManager_Manager.m_Instance.f_GetLeaderBoard();
+        PlayerData_Manager.m_Instance.f_GetPlayerData();
+        LeaderboardManager_Manager.m_Instance.f_GetPlayerLeaderBoard();
+        Timer_Manager.m_Instance.f_GetTimeServer();
+    }
 }

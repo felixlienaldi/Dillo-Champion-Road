@@ -108,6 +108,7 @@ public class UIManager_Manager : MonoBehaviour{
     }
 
     public void f_MinHp(float p_Health) {
+        Debug.Log(p_Health);
         m_HPIcon[(int) p_Health].Play("Loss");
     }
 

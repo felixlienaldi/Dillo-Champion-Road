@@ -36,4 +36,11 @@ namespace Enumerator
         REVIVE,
         ACCURACY
     }
+
+    public enum FRAGMENT_TYPE { 
+        BEGINNER,
+        MEDIOCORE,
+        ADVANCE,
+        MASTER
+    }
 }

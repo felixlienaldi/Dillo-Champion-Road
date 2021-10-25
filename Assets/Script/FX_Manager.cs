@@ -52,13 +52,13 @@ public class FX_Manager : MonoBehaviour{
             if (m_DilloLeftEffect[i] != null) m_DilloLeftEffect[i].SetActive(false);
         }
 
-        if (m_DilloLeftEffect[Player_Manager.m_Instance.m_EquipedClothes] != null) m_DilloLeftEffect[Player_Manager.m_Instance.m_EquipedClothes].SetActive(true);
+        if (m_DilloLeftEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId] != null) m_DilloLeftEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
 
         if (p_Fever) {
-            m_LeftAttackFeverEffect[Player_Manager.m_Instance.m_EquipedClothes].SetActive(true);
+            m_LeftAttackFeverEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
         }
         else {
-            m_LeftAttackHitEffect[Player_Manager.m_Instance.m_EquipedClothes].SetActive(true);
+            m_LeftAttackHitEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
         }
     }
 
@@ -75,13 +75,13 @@ public class FX_Manager : MonoBehaviour{
             if (m_DilloRightEffect[i] != null) m_DilloRightEffect[i].SetActive(false);
         }
 
-        if (m_DilloRightEffect[Player_Manager.m_Instance.m_EquipedClothes] != null) m_DilloRightEffect[Player_Manager.m_Instance.m_EquipedClothes].SetActive(true);
+        if (m_DilloRightEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId] != null) m_DilloRightEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
 
         if (p_Fever) {
-            m_RightAttackFeverEffect[Player_Manager.m_Instance.m_EquipedClothes].SetActive(true);
+            m_RightAttackFeverEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
         }
         else {
-            m_RightAttackHitEffect[Player_Manager.m_Instance.m_EquipedClothes].SetActive(true);
+            m_RightAttackHitEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
         }
     }
 }

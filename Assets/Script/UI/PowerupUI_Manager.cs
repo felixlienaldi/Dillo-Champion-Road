@@ -24,6 +24,9 @@ public class PowerupUI_Manager : MonoBehaviour {
     public Button m_UnwearButton;
     public List<PowerupCheckmark_Gameobject> m_Potions;
     public List<Buff_GameObject> m_ListPotions;
+    public Buff_GameObject m_ScoreMultiplierBuff;
+    public Buff_GameObject m_HpGainUpBuff;
+    public Buff_GameObject m_FeverTimeBuff;
     public Buff_GameObject m_DefaultPowerup;
     //===== PRIVATES =====
     private Buff_GameObject m_ChoosenBuff;
@@ -66,6 +69,7 @@ public class PowerupUI_Manager : MonoBehaviour {
         GameManager_Manager.m_Instance.m_ListPotion.Add(m_ChoosenBuff);
         f_OnChangePowerup();
         GameManager_Manager.m_Instance.f_ApplyPotion();
+        f_SaveDataPotion();
     }
 
     public void f_Unapply() {
@@ -78,10 +82,11 @@ public class PowerupUI_Manager : MonoBehaviour {
         GameManager_Manager.m_Instance.m_ListPotion.Remove(m_ChoosenBuff);
         f_OnChangePowerup();
         GameManager_Manager.m_Instance.f_ApplyPotion();
+        f_SaveDataPotion();
     }
 
     public void f_Buy() {
-        Player_Manager.m_Instance.m_Berry -= (int)m_ChoosenBuff.f_GetPrice();
+        CurrencyManager_Manager.m_Instance.f_RemoveVirtualCurrencyRequest("BE",(int)m_ChoosenBuff.f_GetPrice());
         if (m_ChoosenBuff.f_IsPotion()) {
             m_ChoosenBuff.m_Applied = true;
             m_ChoosenBuff.m_Bought = true;
@@ -95,6 +100,8 @@ public class PowerupUI_Manager : MonoBehaviour {
         else {
             m_ChoosenBuff.f_SetLevel(m_ChoosenBuff.m_Level + 1);
         }
+        f_SaveDataPotion();
+        f_SaveDataBuff();
         f_OnChangePowerup();
     }
 
@@ -154,12 +161,115 @@ public class PowerupUI_Manager : MonoBehaviour {
         }
         else {
             m_UpgradeText.text = "UPGRADE";
-            m_Price.gameObject.SetActive(false); m_BuyButton.interactable = false;
+            m_Price.gameObject.SetActive(false);
+            m_BuyButton.interactable = false;
         }
     }
 
     public void f_ChoosePowerUp(Buff_GameObject p_Buff) {
         m_ChoosenBuff = p_Buff;
         f_OnChangePowerup();
+    }
+
+    public void f_SaveDataBuff() {
+        PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("FeverGain",m_FeverTimeBuff.m_Level);
+        PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("HpGainUp",m_HpGainUpBuff.m_Level);
+        PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("ScoreMultiplier",m_ScoreMultiplierBuff.m_Level);
+        PlayerStatistic_Manager.m_Instance.f_UpdatePlayerStatistics();
+    }
+
+    public void f_SaveDataPotion() {
+        for (int i = 0; i < m_Potions.Count; i++) {
+            string t_KeyData = "";
+
+            if (m_Potions[i].m_BuffType.m_Bought) t_KeyData += "1";
+            else t_KeyData += "0";
+
+            if (m_Potions[i].m_BuffType.m_Applied) t_KeyData += "1";
+            else t_KeyData += "0";
+
+            if (m_Potions[i].m_BuffType.m_UpgradeType == Enumerator.UPGRADE_TYPE.ACCURACY) PlayerData_Manager.m_Instance.f_UpdatePlayerAvatarList("ACCURACY", t_KeyData);
+            else if (m_Potions[i].m_BuffType.m_UpgradeType == Enumerator.UPGRADE_TYPE.FEVERGAIN) PlayerData_Manager.m_Instance.f_UpdatePlayerAvatarList("FEVERGAIN", t_KeyData);
+            else if (m_Potions[i].m_BuffType.m_UpgradeType == Enumerator.UPGRADE_TYPE.BARRIER) PlayerData_Manager.m_Instance.f_UpdatePlayerAvatarList("BARRIER", t_KeyData);
+            else if (m_Potions[i].m_BuffType.m_UpgradeType == Enumerator.UPGRADE_TYPE.REVIVE) PlayerData_Manager.m_Instance.f_UpdatePlayerAvatarList("REVIVE", t_KeyData);
+        }
+    }
+
+    public void f_LoadDataPotion(string p_Type,string p_Key) {
+        for (int i = 0; i < m_Potions.Count; i++) {
+            if (m_Potions[i].m_BuffType.m_UpgradeType == Enumerator.UPGRADE_TYPE.ACCURACY && p_Type == "ACCURACY") {
+                if (p_Key[0] == '1') {
+                    m_Potions[i].m_BuffType.m_Bought = true;
+                }
+                else {
+                    m_Potions[i].m_BuffType.m_Bought = false;
+                }
+
+                if (p_Key[1] == '1') {
+                    m_Potions[i].m_BuffType.m_Applied = true;
+                    GameManager_Manager.m_Instance.m_ListPotion.Add(m_Potions[i].m_BuffType);
+                    m_Potions[i].m_CheckMark.SetActive(true);
+                }
+                else {
+                    m_Potions[i].m_BuffType.m_Applied = false;
+                    m_Potions[i].m_CheckMark.SetActive(false);
+                }
+            }
+            else if (m_Potions[i].m_BuffType.m_UpgradeType == Enumerator.UPGRADE_TYPE.FEVERGAIN && p_Type == "FEVERGAIN") {
+                if (p_Key[0] == '1') {
+                    m_Potions[i].m_BuffType.m_Bought = true;
+                }
+                else {
+                    m_Potions[i].m_BuffType.m_Bought = false;
+                }
+
+                if (p_Key[1] == '1') {
+                    m_Potions[i].m_BuffType.m_Applied = true;
+                    GameManager_Manager.m_Instance.m_ListPotion.Add(m_Potions[i].m_BuffType);
+                    m_Potions[i].m_CheckMark.SetActive(true);
+
+                }
+                else {
+                    m_Potions[i].m_BuffType.m_Applied = false;
+                    m_Potions[i].m_CheckMark.SetActive(false);
+                }
+            }
+            else if (m_Potions[i].m_BuffType.m_UpgradeType == Enumerator.UPGRADE_TYPE.BARRIER && p_Type == "BARRIER") {
+                if (p_Key[0] == '1') {
+                    m_Potions[i].m_BuffType.m_Bought = true;
+                }
+                else {
+                    m_Potions[i].m_BuffType.m_Bought = false;
+                }
+
+                if (p_Key[1] == '1') {
+                    m_Potions[i].m_BuffType.m_Applied = true;
+                    GameManager_Manager.m_Instance.m_ListPotion.Add(m_Potions[i].m_BuffType);
+                    m_Potions[i].m_CheckMark.SetActive(true);
+                }
+                else {
+                    m_Potions[i].m_BuffType.m_Applied = false;
+                    m_Potions[i].m_CheckMark.SetActive(false);
+                }
+            }
+            else if (m_Potions[i].m_BuffType.m_UpgradeType == Enumerator.UPGRADE_TYPE.REVIVE && p_Type == "REVIVE") {
+                if (p_Key[0] == '1') {
+                    m_Potions[i].m_BuffType.m_Bought = true;
+                }
+                else {
+                    m_Potions[i].m_BuffType.m_Bought = false;
+                }
+
+                if (p_Key[1] == '1') {
+                    m_Potions[i].m_BuffType.m_Applied = true;
+                    GameManager_Manager.m_Instance.m_ListPotion.Add(m_Potions[i].m_BuffType);
+                    m_Potions[i].m_CheckMark.SetActive(true);
+                }
+                else {
+                    m_Potions[i].m_BuffType.m_Applied = false;
+                    m_Potions[i].m_CheckMark.SetActive(false);
+                }
+            }
+        }
     }
 }

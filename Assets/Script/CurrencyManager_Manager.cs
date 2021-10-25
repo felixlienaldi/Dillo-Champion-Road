@@ -60,8 +60,24 @@ public class CurrencyManager_Manager : MonoBehaviour{
     /// </summary>
     /// <param name="p_Result">Result details </param>
     public void OnUpdateCurrencySuccess(GetUserInventoryResult p_Result) {
-        m_InventoryData = JsonConvert.DeserializeObject<c_Data>(p_Result.ToJson()); //INI JADI DICTIONARY
-        //m_InventoryData = JsonUtility.FromJson<c_Data>(p_Result.ToJson()); INI MESTI ADA CLASS
+        //m_InventoryData = JsonConvert.DeserializeObject<c_Data>(p_Result.ToJson()); //INI JADI DICTIONARY
+        int t_Currency;
+        p_Result.VirtualCurrency.TryGetValue("BE", out t_Currency);
+        Player_Manager.m_Instance.m_Berry = t_Currency;
+        p_Result.VirtualCurrency.TryGetValue("BF", out t_Currency);
+        Fragment_Manager.m_Instance.m_BeginnerFragment = t_Currency;
+        p_Result.VirtualCurrency.TryGetValue("MF", out t_Currency);
+        Fragment_Manager.m_Instance.m_MediocoreFragment = t_Currency;
+        p_Result.VirtualCurrency.TryGetValue("AF", out t_Currency);
+        Fragment_Manager.m_Instance.m_AdvanceFragment = t_Currency;
+        p_Result.VirtualCurrency.TryGetValue("MA", out t_Currency);
+        Fragment_Manager.m_Instance.m_MasterFragment = t_Currency;
+        p_Result.VirtualCurrency.TryGetValue("EN", out t_Currency);
+        Energy_Manager.m_Instance.m_EnergyAmount = t_Currency;
+        if (p_Result.VirtualCurrencyRechargeTimes.TryGetValue("EN", out VirtualCurrencyRechargeTime t_RechargeDetails)) {
+            Energy_Manager.m_Instance.
+                f_CheckEnergy(t_RechargeDetails);
+        }        
     }
 
     /// <summary>
@@ -69,10 +85,10 @@ public class CurrencyManager_Manager : MonoBehaviour{
     /// </summary>
     /// <param name="p_Amount">The amount of currency to be added</param>
     /// <param name="p_Currency">Currency type</param>
-    public void f_AddVirtualCurrencyRequest(int p_Amount) {
+    public void f_AddVirtualCurrencyRequest(string p_CurrencyCode,int p_Amount) {
         PlayFabClientAPI.AddUserVirtualCurrency(new AddUserVirtualCurrencyRequest {
             Amount = p_Amount,
-            VirtualCurrency = m_CurrencyCode
+            VirtualCurrency = p_CurrencyCode
         }, OnModifiedInGameCurrency, PlayFab_Error.m_Instance.f_OnPlayFabError);
     }
 
@@ -80,10 +96,10 @@ public class CurrencyManager_Manager : MonoBehaviour{
     /// Method used for substract virtual currency, if the currency already set beforehand
     /// </summary>
     /// <param name="p_Amount">The amount of currency to be substract</param>
-    public void f_RemoveVirtualCurrencyRequest(int p_Amount) {
+    public void f_RemoveVirtualCurrencyRequest(string p_CurrencyCode, int p_Amount) {
         PlayFabClientAPI.SubtractUserVirtualCurrency(new SubtractUserVirtualCurrencyRequest {
             Amount = p_Amount,
-            VirtualCurrency = m_CurrencyCode,
+            VirtualCurrency = p_CurrencyCode,
         }, OnModifiedInGameCurrency, PlayFab_Error.m_Instance.f_OnPlayFabError);
     }
 

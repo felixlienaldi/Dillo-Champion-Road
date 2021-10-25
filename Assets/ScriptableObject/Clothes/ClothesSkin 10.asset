@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d8f6175898ad94f8234655048ce2fc, type: 3}
+  m_Name: ClothesSkin 10
+  m_EditorClassIdentifier: 
+  m_ID: 10
+  m_Locked: 0
+  m_ComingSoon: 0
+  m_Price: 100000
+  m_FragPrice: 750
+  m_Type: 3
+  m_Animator: {fileID: 9100000, guid: 982d37a6de1339c4d968f51b3f9f515e, type: 2}
+  m_IdleFXId: 0
+  m_TapFXId: 2
+  m_MaxHit: 4
+  m_DescriptionLore: Android 52 - Dillo heavily modified cyborg body
+  m_DescEffect: HP GAIN MINUS 100% & 20% CHANCE TO WIPE ALL ENEMEIS IN SCREEN
+  m_HitAudio:
+  - {fileID: 8300000, guid: bb81fe6f53c3b29458621898f9c788c9, type: 3}
+  - {fileID: 8300000, guid: 674b94370634fca4fbcf253e2152f1f3, type: 3}
+  - {fileID: 8300000, guid: b97db0bd8a10ba242bf547cc26f4cf45, type: 3}
+  - {fileID: 8300000, guid: 3097cda861ec7bc4e87da218a97fd839, type: 3}
+  m_IsCrimson: 0
+  m_IsAndroid: 1
+  m_IsGrandMaster: 0

@@ -51,7 +51,7 @@ public class Player_GameObject : Character_GameObject{
     public float m_FeverGainMultiplier;
     public int m_EnemyKilled;
     public int m_Level = 0;
-    float m_CurrentFeverTimer;
+    public float m_CurrentFeverTimer;
 
     [Header("Timing")]
     public float m_Timer;
@@ -69,16 +69,22 @@ public class Player_GameObject : Character_GameObject{
     public GameObject m_PrecisionLeft;
     public GameObject m_PrecisionRight;
     public GameObject m_FeverGainEffect;
+    public GameObject m_AndroidEffect;
+    public GameObject m_MasterEffect;
     public UnityEvent m_OnRevived;
     public UnityEvent<float> m_OnAbsoluteHit;
     public GameObject m_NormalEnviorment;
     public GameObject m_FeverEnviorment;
     public GameObject m_FeverEffect;
     public List<AudioClip> m_IdleAudio;
+    public bool m_IsCrimson = false;
+    public bool m_IsAndroid = false;
+    public bool m_IsGrandMaster = false;
+    public int m_MaxHit = 4;
     //===== PRIVATES =====
     private int m_HitCount;
     private bool p_Input = false;
-    private bool m_Invincible = false;
+    public bool m_Invincible = false;
     bool m_IsTakeDamageCoroutineRunning;
     float m_CurrentTimer;
     //=====================================================================
@@ -193,12 +199,12 @@ public class Player_GameObject : Character_GameObject{
     }
 
     public void f_CheckBuff() {
-        if (m_AbsoluteHitCount > 0) {
-            m_Animator.SetBool("Potion", true);
-        }
-        else {
-            m_Animator.SetBool("Potion", false);
-        }
+        //if (m_AbsoluteHitCount > 0) {
+        //    m_Animator.SetBool("Potion", true);
+        //}
+        //else {
+        //    m_Animator.SetBool("Potion", false);
+        //}
 
         if (f_GainFever() <= 1) m_FeverGainEffect.SetActive(false);
         else m_FeverGainEffect.SetActive(true);
@@ -285,9 +291,12 @@ public class Player_GameObject : Character_GameObject{
   
     public void f_CheckTiming(Enemy_GameObject p_EnemyObject) {
         m_Combo++;
+        DailyMission_Manager.m_Instance.f_AddDestroyedEnemy(1);
+        DailyMission_Manager.m_Instance.f_CompareCombo(m_Combo);
+        if(DailyMission_Manager.m_Instance.m_EnemyID == 0 && p_EnemyObject.m_Type == Enumerator.ENEMY_TYPE.NORMAL ) DailyMission_Manager.m_Instance.f_AddCertainEnemy();
+        else if (DailyMission_Manager.m_Instance.m_EnemyID == 0 && p_EnemyObject.m_Type == Enumerator.ENEMY_TYPE.INVERSE) DailyMission_Manager.m_Instance.f_AddCertainEnemy();
 
-
-        if (m_Combo % m_MinimumCombo == 0) {
+        if (m_Combo % m_MinimumCombo == 0 && !m_IsAndroid) {
             if (f_GetCurrentHealth() < f_GetMaxHealth()) {
                 m_CurrentHealthPoint++;
                 UIManager_Manager.m_Instance.f_AddHP(f_GetCurrentHealth());
@@ -319,7 +328,7 @@ public class Player_GameObject : Character_GameObject{
     public void f_Attack() {
         m_HitCount++;
         Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerHitClip[ Random.Range(0, m_PlayerHitClip.Count)]);
-        if (m_HitCount > 4) m_HitCount = 1;
+        if (m_HitCount > m_MaxHit) m_HitCount = 1;
         m_Animator.SetInteger("Hit",m_HitCount);
         m_Animator.SetTrigger("Punch");
         if (m_IsFever) {
@@ -330,6 +339,7 @@ public class Player_GameObject : Character_GameObject{
         }
         Audio_Manager.m_Instance.f_PlayOneShot(m_EnemyHitClip[Random.Range(0, m_EnemyHitClip.Length)]);
         f_CheckTiming(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+        p_Input = true;
     }
 
     public void f_TakeDamage() {
@@ -338,12 +348,16 @@ public class Player_GameObject : Character_GameObject{
         CameraGameObject_GameObject.m_Instance.f_Reset();
         Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerDamaged);
         Timing.RunCoroutine(CameraGameObject_GameObject.m_Instance.ie_Shake(0.2f, 3f));
+#if UNITY_ANDROID
         Handheld.Vibrate();
+#endif
         UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
         //GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
         if (!m_Invincible) {
-            f_TakeDamage(1);
-            UIManager_Manager.m_Instance.f_MinHp(f_GetCurrentHealth());
+            if (!f_CheckMaster()) {
+                f_TakeDamage(1);
+                UIManager_Manager.m_Instance.f_MinHp(f_GetCurrentHealth());
+            }
         }
         m_CurrentTimer = m_Timer;
         if (!m_IsTakeDamageCoroutineRunning) Timing.RunCoroutine(ie_WaitTimer());        
@@ -511,9 +525,16 @@ public class Player_GameObject : Character_GameObject{
 
             }
             f_CallFX();
-            GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+            if (!p_Input) {
+                GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+            }
+            else {
+                GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+                p_Input = false;
+                f_AttackBehind();
+                f_CheckAndroid();                
+            }
         }
-
     }
 
 
@@ -534,20 +555,77 @@ public class Player_GameObject : Character_GameObject{
 
             UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
             if (m_PerfectHit >= m_MinimumHit) {
-                m_PerfectHit = 0;
-                m_IsFever = true;
-                m_NormalEnviorment.gameObject.SetActive(false);
-                m_FeverEnviorment.gameObject.SetActive(true);
-                m_FeverEffect.gameObject.SetActive(true);
-                Audio_Manager.m_Instance.f_ChangeBgm(m_FeverBGM);
-                m_CurrentFeverTimer = f_GetFeverTimer();
-                UIManager_Manager.m_Instance.f_ChangeFever(m_IsFever);
+                f_ChangetoFever();
             }
-
         }
         else {
             GameManager_Manager.m_Instance.f_AddScore(p_EnemyObject.m_ScoreValue * 4);
         }
+    }
+
+    public void f_ChangetoFever() {
+        m_PerfectHit = 0;
+        m_IsFever = true;
+        m_Invincible = true;
+        m_NormalEnviorment.gameObject.SetActive(false);
+        m_FeverEnviorment.gameObject.SetActive(true);
+        m_FeverEffect.gameObject.SetActive(true);
+        Audio_Manager.m_Instance.f_ChangeBgm(m_FeverBGM);
+        m_CurrentFeverTimer = f_GetFeverTimer();
+        UIManager_Manager.m_Instance.f_ChangeFever(m_IsFever);
+    }
+
+    public void f_AttackBehind() {
+        if (m_IsCrimson && !m_IsFever) {
+            int t_Index = Random.Range(0, 100);
+            if (t_Index <= 50) {
+                f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+                f_Attack();
+                GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+            }
+        }
+    }
+
+    public void f_CheckAndroid() {
+        if (m_IsAndroid && !m_IsFever) {
+            int t_Index = Random.Range(0, 100);
+            if (t_Index <= 20) {
+                m_AndroidEffect.SetActive(false);
+                m_AndroidEffect.SetActive(true);
+                for (int i = 0; i < GameManager_Manager.m_Instance.m_ListActiveEnemies.Count; i++) {
+                    f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[i]);
+                }
+
+                GameManager_Manager.m_Instance.m_ListActiveEnemies.Clear();
+
+                for (int i = 0; i < SpawnManager_Manager.m_Instance.m_ListEnemy.Count; i++) {
+                    SpawnManager_Manager.m_Instance.m_ListEnemy[i].gameObject.SetActive(false);
+                }
+
+                for (int i = 0; i < 6; i++) {
+                    GameManager_Manager.m_Instance.f_Spawn(i);
+                }
+            }
+        }
+    }
+
+    public bool f_CheckMaster() {
+        if (m_IsGrandMaster) {
+            int t_Index = Random.Range(0, 100);
+            if (t_Index > 50) {
+                m_MasterEffect.SetActive(false);
+                m_MasterEffect.SetActive(true);
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else return false;
+    }
+
+    public void f_SetHP(int p_HP) {
+        m_CurrentHealthPoint = p_HP;
     }
 
     IEnumerator<float> ie_Invincible() {

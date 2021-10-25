@@ -51,21 +51,21 @@ public class CameraGameObject_GameObject : MonoBehaviour{
         if (p_Right) {
             t_Vector = m_HitRightComboPos;
             t_Vector.z = m_DefaultPos.z - (( m_DefaultPos.z-m_HitRightComboPos.z) * (Mathf.Min(p_Combo+1 , 5f)) / 5f);
-            iTween.MoveTo(m_Parent, iTween.Hash("name","Move Camera","position",t_Vector,"time",1.0f));
-            iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", m_HitRightComboRot, "time", 1.0f));
+            iTween.MoveTo(m_Parent, iTween.Hash("name","Move Camera","position",t_Vector,"time",3.0f));
+            iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", m_HitRightComboRot, "time", 3.0f));
         }
         else if (!p_Right) {
             t_Vector = m_HitLeftComboPos;
             t_Vector.z = m_DefaultPos.z - ((m_DefaultPos.z - m_HitLeftComboPos.z) * (Mathf.Min(p_Combo+1, 5f)) / 5f);
-            iTween.MoveTo(m_Parent, iTween.Hash("name", "Move Camera", "position", t_Vector, "time", 1.0f));
-            iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", m_HitLeftComboRot, "time", 1.0f));
+            iTween.MoveTo(m_Parent, iTween.Hash("name", "Move Camera", "position", t_Vector, "time", 3.0f));
+            iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", m_HitLeftComboRot, "time", 3.0f));
         }
     }
 
     public void f_Reset() {
         iTween.StopByName("Move Camera");
-        iTween.MoveTo(m_Parent, iTween.Hash("name", "Move Camera", "position", m_DefaultPos, "time", 1.0f));
-        iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", Vector3.zero, "time", 1.0f));
+        iTween.MoveTo(m_Parent, iTween.Hash("name", "Move Camera", "position", m_DefaultPos, "time", 3.0f));
+        iTween.RotateTo(m_Parent, iTween.Hash("name", "Move Camera", "rotation", Vector3.zero, "time", 3.0f));
     }
 
 

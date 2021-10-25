@@ -42,19 +42,26 @@ public class PostGameManager_Manager : MonoBehaviour{
         GameManager_Manager.m_Instance.m_GameState = GAME_STATE.ENDGAME;
         GameManager_Manager.m_Instance.m_ListActiveEnemies.Clear();
 
+        DailyMission_Manager.m_Instance.f_AddCurrentMatch();
+        DailyMission_Manager.m_Instance.f_Endgame();
+        PowerupUI_Manager.m_Instance.f_SaveDataPotion();
+
         m_Highscore.SetActive(GameManager_Manager.m_Instance.m_Score > Player_Manager.m_Instance.m_HighScore);
         if (GameManager_Manager.m_Instance.m_Score > Player_Manager.m_Instance.m_HighScore) {
+            PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("Highscore",(int) GameManager_Manager.m_Instance.m_Score);
             Audio_Manager.m_Instance.f_PlayOneShot(m_HighScoreClip);
         }
         m_TotalScore.text = GameManager_Manager.m_Instance.m_Score.ToString("00") + "pt";
         m_BerryScore.text = "+"+Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score/100)).ToString();
         Player_Manager.m_Instance.m_Berry += (int)Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score / 100));
         m_EndGameUI.SetActive(true);
+        PlayerStatistic_Manager.m_Instance.f_UpdatePlayerStatistics();
     }
 
     public void f_Retry() {
         
     }
+
     public void f_MainMenu() {
 
     }

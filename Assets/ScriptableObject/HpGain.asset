@@ -15,16 +15,16 @@ MonoBehaviour:
   m_UpgradeType: 1
   m_Price:
   - 100
-  - 500
-  - 1500
-  - 5000
-  - 20000
-  - 50000
-  - 150000
-  - 500000
-  - 750000
+  - 250
+  - 650
+  - 1600
+  - 4000
+  - 10000
+  - 30000
+  - 70000
+  - 200000
   m_Value: 0
-  m_UpgradeValue: 2
+  m_UpgradeValue: 5
   m_Level: 0
   m_MaxLevel: 9
   m_Applied: 0
