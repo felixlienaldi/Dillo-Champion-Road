@@ -234,7 +234,7 @@ MonoBehaviour:
   m_fontSizeMax: 70.8
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -413,7 +413,6 @@ GameObject:
   - component: {fileID: 5819173063729631105}
   - component: {fileID: 5819173063729631231}
   - component: {fileID: 5819173063729631104}
-  - component: {fileID: 8847776829621506151}
   m_Layer: 5
   m_Name: slot
   m_TagString: Untagged
@@ -481,18 +480,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8847776829621506151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5819173063729631106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef22083fe410a87428706d44ec35d97b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionText: {fileID: 5819173063133601023}
-  m_NameText: {fileID: 5819173062963360684}
-  m_ScoreText: {fileID: 5819173062811195289}
