@@ -21,6 +21,7 @@ public class Energy_Manager : MonoBehaviour{
     public int m_EnergyAmount = 5;
     public int m_MaxEnergyAmont = 5;
     public bool m_IsStamCapped;
+    public Button m_PlayButton;
     //===== PRIVATES =====
     TimeSpan m_RechargeTime = new TimeSpan();
     //=====================================================================
@@ -48,6 +49,13 @@ public class Energy_Manager : MonoBehaviour{
                     m_TimerText.text = string.Format("{0:00}:{1:00}", m_RechargeTime.Minutes, m_RechargeTime.Seconds);
                 }
             }
+        }
+
+        if (m_EnergyAmount > 0) {
+            if (!m_PlayButton.IsInteractable()) m_PlayButton.interactable = true;
+        }
+        else {
+            if (m_PlayButton.IsInteractable()) m_PlayButton.interactable = false;
         }
         m_EnergyAmountText.text = m_EnergyAmount.ToString();
     }

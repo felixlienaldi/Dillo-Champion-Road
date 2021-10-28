@@ -44,21 +44,21 @@ public class SpawnManager_Manager : MonoBehaviour{
     public Enemy_GameObject f_Spawn() {
         
         if (!Player_GameObject.m_Instance.m_IsCrimson) {
-            if (Player_GameObject.m_Instance.m_EnemyKilled < 12) {
+            if (Player_GameObject.m_Instance.m_EnemyKilled < 21) {
                 m_EnemyType = 0;
             }
-            else if (Player_GameObject.m_Instance.m_EnemyKilled >= 12 && Player_GameObject.m_Instance.m_EnemyKilled < 30) {
-                m_EnemyType = UnityEngine.Random.Range(0, 100) > 30 ? 0 : 1;
+            else if (Player_GameObject.m_Instance.m_EnemyKilled >= 21 && Player_GameObject.m_Instance.m_EnemyKilled < 41) {
+                m_EnemyType = UnityEngine.Random.Range(0, 100) > 10 ? 0 : 1;
             }
             else {
-                m_EnemyType = UnityEngine.Random.Range(0, 100) > 50 ? 0 : 1;
+                m_EnemyType = UnityEngine.Random.Range(0, 100) > 20 ? 0 : 1;
             }
         }
         else {
-            if (Player_GameObject.m_Instance.m_EnemyKilled < 12) {
+            if (Player_GameObject.m_Instance.m_EnemyKilled < 21) {
                 m_EnemyType = UnityEngine.Random.Range(0, 100) > 50 ? 0 : 1;
             }
-            else if (Player_GameObject.m_Instance.m_EnemyKilled >= 12 && Player_GameObject.m_Instance.m_EnemyKilled < 30) {
+            else if (Player_GameObject.m_Instance.m_EnemyKilled >= 21 && Player_GameObject.m_Instance.m_EnemyKilled < 41) {
                 m_EnemyType = UnityEngine.Random.Range(0, 100) > 65 ? 0 : 1;
             }
             else {

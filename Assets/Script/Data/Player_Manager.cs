@@ -18,6 +18,7 @@ public class Player_Manager : MonoBehaviour{
     public string m_Names;
     public string m_Pos;
     public int m_EquipedClothes =0;
+    public bool m_BoughAds = false;
     //===== PRIVATES =====
 
     //=====================================================================

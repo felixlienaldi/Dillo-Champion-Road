@@ -77,7 +77,8 @@ public class CurrencyManager_Manager : MonoBehaviour{
         if (p_Result.VirtualCurrencyRechargeTimes.TryGetValue("EN", out VirtualCurrencyRechargeTime t_RechargeDetails)) {
             Energy_Manager.m_Instance.
                 f_CheckEnergy(t_RechargeDetails);
-        }        
+        }
+        UIManager_Manager.m_Instance.f_LoadingFinish();
     }
 
     /// <summary>
@@ -86,6 +87,7 @@ public class CurrencyManager_Manager : MonoBehaviour{
     /// <param name="p_Amount">The amount of currency to be added</param>
     /// <param name="p_Currency">Currency type</param>
     public void f_AddVirtualCurrencyRequest(string p_CurrencyCode,int p_Amount) {
+        UIManager_Manager.m_Instance.f_LoadinStart();
         PlayFabClientAPI.AddUserVirtualCurrency(new AddUserVirtualCurrencyRequest {
             Amount = p_Amount,
             VirtualCurrency = p_CurrencyCode
@@ -97,6 +99,7 @@ public class CurrencyManager_Manager : MonoBehaviour{
     /// </summary>
     /// <param name="p_Amount">The amount of currency to be substract</param>
     public void f_RemoveVirtualCurrencyRequest(string p_CurrencyCode, int p_Amount) {
+        UIManager_Manager.m_Instance.f_LoadinStart();
         PlayFabClientAPI.SubtractUserVirtualCurrency(new SubtractUserVirtualCurrencyRequest {
             Amount = p_Amount,
             VirtualCurrency = p_CurrencyCode,

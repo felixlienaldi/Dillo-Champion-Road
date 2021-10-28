@@ -44,6 +44,7 @@ public class PlayerStatistic_Manager : MonoBehaviour{
     //=====================================================================
     
     public void f_UpdatePlayerStatistics() {
+        UIManager_Manager.m_Instance.f_LoadinStart();
         PlayFabClientAPI.UpdatePlayerStatistics(new UpdatePlayerStatisticsRequest {
             Statistics = m_ListStatistic.Statistics
         }, f_OnUpdateStatisticSuccess, PlayFab_Error.m_Instance.f_OnPlayFabError);
@@ -63,7 +64,7 @@ public class PlayerStatistic_Manager : MonoBehaviour{
         foreach (StatisticUpdate t_Stats in m_ListStatistic.Statistics) {
             switch (t_Stats.StatisticName) {
                 case "DailyMission1":
-                    DailyMission_Manager.m_Instance.f_RegisterToken(1,t_Stats.Value);
+                    DailyMission_Manager.m_Instance.f_RegisterToken(1, t_Stats.Value);
                     break;
                 case "DailyMission2":
                     DailyMission_Manager.m_Instance.f_RegisterToken(2, t_Stats.Value);
@@ -112,10 +113,15 @@ public class PlayerStatistic_Manager : MonoBehaviour{
                     PowerupUI_Manager.m_Instance.m_ScoreMultiplierBuff.m_Level = t_Stats.Value;
                     break;
                 case "EnemyID":
-                    DailyMission_Manager.m_Instance.m_EnemyID = (t_Stats.Value%2 == 0?0:1);
+                    DailyMission_Manager.m_Instance.m_EnemyID = (t_Stats.Value % 2 == 0 ? 0 : 1);
+                    break;
+                case "DailyBox":
+                    Fragment_Manager.m_Instance.m_DailyBoxAvailable = (t_Stats.Value == 0 ? true : false);
                     break;
             }
         }
+        UIManager_Manager.m_Instance.f_LoadingFinish();
+        LeaderboardManager_Manager.m_Instance.f_GetPlayerLeaderBoard();
     }
 
     public void f_NewPlayer() {
@@ -137,8 +143,9 @@ public class PlayerStatistic_Manager : MonoBehaviour{
             new StatisticUpdate {StatisticName = "ScoreMultiplier",Value =0},
             new StatisticUpdate {StatisticName = "ShopBought",Value =0},
             new StatisticUpdate {StatisticName = "EnemyID",Value =0},
+            new StatisticUpdate {StatisticName = "DailyBox",Value =0},
         };
-
+        PlayerData_Manager.m_Instance.f_UpdatePlayerAvatarList("Ads","0");
         f_UpdatePlayerStatistics();
     }
 

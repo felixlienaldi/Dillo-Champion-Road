@@ -65,17 +65,19 @@ public class LeaderboardManager_Manager : MonoBehaviour{
     /// Method to GetLeaderboard from PlayFabAPI
     /// </summary>
     /// <param name="p_StatisticName">The Heroes Name you want to see the leaderboard, Default = "First Hero"</param>
-    public void f_GetLeaderBoard(string p_StatisticName = "Hero Ascension") {
+    public void f_GetLeaderBoard(string p_StatisticName = "Highscore") {
+        UIManager_Manager.m_Instance.f_LoadinStart();
         //TODO : Nanti parameter defaultnya ganti ke hero pertama yang bakal dikeluarin saat mencet leaderboard
         PlayFabClientAPI.GetLeaderboard(
             new GetLeaderboardRequest {
                 StartPosition = 0,
-                MaxResultsCount = 50,
+                MaxResultsCount = 20,
                 StatisticName = p_StatisticName
             }, OnGetLeaderboardSuccess, PlayFab_Error.m_Instance.f_OnPlayFabError);
     }
 
-    public void f_GetPlayerLeaderBoard(string p_StatisticName = "Hero Ascension") {
+    public void f_GetPlayerLeaderBoard(string p_StatisticName = "Highscore") {
+        UIManager_Manager.m_Instance.f_LoadinStart();
         PlayFabClientAPI.GetLeaderboardAroundPlayer(
             new GetLeaderboardAroundPlayerRequest {
                 MaxResultsCount = 1,
@@ -89,9 +91,18 @@ public class LeaderboardManager_Manager : MonoBehaviour{
     /// <param name="p_Result">result details from request</param>
     public void OnGetLeaderboardSuccess(GetLeaderboardResult p_Result) {
         m_LeaderboardList = JsonUtility.FromJson<c_LeaderboardList>(p_Result.ToJson());
+        Leaderboard_Manager.m_Instance.f_DeactivateAllLeaderboard();
+        for (int i = 0; i < m_LeaderboardList.Leaderboard.Length; i++) {
+            Leaderboard_Manager.m_Instance.f_Spawn(m_LeaderboardList.Leaderboard[i].Position,
+                m_LeaderboardList.Leaderboard[i].DisplayName,
+                m_LeaderboardList.Leaderboard[i].StatValue);
+        }
+        UIManager_Manager.m_Instance.f_LoadingFinish();
     }
 
     public void OnGetLeaderboardPlayerSuccess(GetLeaderboardAroundPlayerResult p_Result) {
         m_PlayerLeaderboard = JsonUtility.FromJson<c_LeaderboardList>(p_Result.ToJson());
+        Leaderboard_Manager.m_Instance.f_UpdatePlayer(m_PlayerLeaderboard.Leaderboard[0].Position, m_PlayerLeaderboard.Leaderboard[0].DisplayName, m_PlayerLeaderboard.Leaderboard[0].StatValue);
+        UIManager_Manager.m_Instance.f_LoadingFinish();
     }
 }

@@ -21,7 +21,7 @@ MonoBehaviour:
   m_Animator: {fileID: 9100000, guid: 28b7788d060a2d0449b0883016302f1c, type: 2}
   m_IdleFXId: 0
   m_TapFXId: 0
-  m_MaxHit: 4
+  m_MaxHit: 2
   m_DescriptionLore: Dillo's muaythai warrior outfit
   m_DescEffect: NO EFFECT
   m_HitAudio:

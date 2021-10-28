@@ -21,7 +21,7 @@ MonoBehaviour:
   m_Animator: {fileID: 9100000, guid: 49c503d4d54275c4a984762a9a505735, type: 2}
   m_IdleFXId: 0
   m_TapFXId: 0
-  m_MaxHit: 4
+  m_MaxHit: 2
   m_DescriptionLore: Dillo's monk in-training outfit
   m_DescEffect: NO EFFECT
   m_HitAudio:

@@ -21,6 +21,7 @@ public class DailyMissionButton_Gameobject : MonoBehaviour {
     public TextMeshProUGUI m_RequiredAmount;
     public TextMeshProUGUI m_CurrentAmount;
     public TextMeshProUGUI m_Line;
+    public TextMeshProUGUI m_AcceptText;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -68,29 +69,38 @@ public class DailyMissionButton_Gameobject : MonoBehaviour {
     //				    OTHER METHOD
     //=====================================================================
     public void f_CheckValidToClaim() {
-        m_ClaimButton.SetActive(DailyMission_Manager.m_Instance.f_CheckValid(m_Id));
-        m_DefaultButton.SetActive(!DailyMission_Manager.m_Instance.f_CheckValid(m_Id));        
-        if (DailyMission_Manager.m_Instance.f_CheckValid(m_Id) || DailyMission_Manager.m_Instance.f_Checkmark(m_Id)){
+        m_ClaimButton.SetActive(DailyMission_Manager.m_Instance.f_CheckValid(m_Id) || DailyMission_Manager.m_Instance.f_Checkmark(m_Id));
+        m_DefaultButton.SetActive(!DailyMission_Manager.m_Instance.f_CheckValid(m_Id) && !DailyMission_Manager.m_Instance.f_Checkmark(m_Id));
+        if (DailyMission_Manager.m_Instance.f_Checkmark(m_Id)) {
             m_Checkmark.gameObject.SetActive(true);
-        } else m_Checkmark.gameObject.SetActive(false);
+            m_AcceptText.color = Color.gray;
+        }
+        else {
+            m_Checkmark.gameObject.SetActive(false);
+            m_AcceptText.color = Color.white;
+        }
     }
 
     public void f_Claim() {
         if (m_Id == 1) {
             CurrencyManager_Manager.m_Instance.f_AddVirtualCurrencyRequest("BE", 10);
             PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("DailyMission1", 1);
+            PopupReward_Manager.m_Instance.f_ShowPopup(0,10);
         }
         else if (m_Id == 2) {
             CurrencyManager_Manager.m_Instance.f_AddVirtualCurrencyRequest("BE", 10);
             PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("DailyMission2", 1);
+            PopupReward_Manager.m_Instance.f_ShowPopup(0,10);
         }
         else if (m_Id == 3) {
             CurrencyManager_Manager.m_Instance.f_AddVirtualCurrencyRequest("BE", 10);
             PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("DailyMission3", 1);
+            PopupReward_Manager.m_Instance.f_ShowPopup(0,10);
         }
         else if (m_Id == 4) {
             CurrencyManager_Manager.m_Instance.f_AddVirtualCurrencyRequest("BE", 10);
             PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("DailyMission4", 1);
+            PopupReward_Manager.m_Instance.f_ShowPopup(0,10);
         }
         else if (m_Id == 5) {
             Fragment_Manager.m_Instance.f_CalculateGacha();

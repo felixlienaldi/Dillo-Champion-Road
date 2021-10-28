@@ -21,13 +21,12 @@ MonoBehaviour:
   m_Animator: {fileID: 9100000, guid: 6f5d207ba50374a4583c518003416474, type: 2}
   m_IdleFXId: 0
   m_TapFXId: 0
-  m_MaxHit: 4
+  m_MaxHit: 2
   m_DescriptionLore: Dillo's iaido mentor outfit
   m_DescEffect: NO EFFECT
   m_HitAudio:
-  - {fileID: 8300000, guid: 632a05c05a0309342b6c127b382688bb, type: 3}
-  - {fileID: 8300000, guid: 586259154b0f85945a861c583cecba12, type: 3}
-  - {fileID: 8300000, guid: c30bafdae7e1ed846bd9486727365241, type: 3}
+  - {fileID: 8300000, guid: 1f20e5bf4895d1c4daf9fb4bcb7d5ee1, type: 3}
+  - {fileID: 8300000, guid: 705b019fd1bc9f549bb8469665cd8ae5, type: 3}
   m_IsCrimson: 0
   m_IsAndroid: 0
   m_IsGrandMaster: 0

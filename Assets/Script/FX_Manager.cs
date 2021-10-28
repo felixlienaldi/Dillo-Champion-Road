@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class FX_Manager : MonoBehaviour{
+public class FX_Manager : MonoBehaviour {
     //=====================================================================
     //				      VARIABLES 
     //=====================================================================
@@ -20,21 +20,25 @@ public class FX_Manager : MonoBehaviour{
     public List<GameObject> m_RightAttackFeverEffect;
     public List<GameObject> m_DilloLeftEffect;
     public List<GameObject> m_DilloRightEffect;
+    public GameObject m_LeftBehind;
+    public GameObject m_RightBehind;
+    public GameObject m_WoodLeft;
+    public GameObject m_WoodRight;
     //===== PRIVATES =====
 
     //=====================================================================
     //				MONOBEHAVIOUR METHOD 
     //=====================================================================
-    void Awake(){
+    void Awake() {
         m_Instance = this;
     }
 
-    void Start(){
-        
+    void Start() {
+
     }
 
-    void Update(){
-        
+    void Update() {
+
     }
     //=====================================================================
     //				    OTHER METHOD
@@ -60,9 +64,11 @@ public class FX_Manager : MonoBehaviour{
         else {
             m_LeftAttackHitEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
         }
+        m_WoodLeft.SetActive(false);
     }
 
     public void f_Right(bool p_Fever) {
+        m_WoodRight.SetActive(false);
         for (int i = 0; i < m_RightAttackHitEffect.Count; i++) {
             m_RightAttackHitEffect[i].SetActive(false);
         }
@@ -83,5 +89,16 @@ public class FX_Manager : MonoBehaviour{
         else {
             m_RightAttackHitEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
         }
+        m_WoodRight.SetActive(true);
+    }
+
+    public void f_LeftBehind() {
+        m_LeftBehind.gameObject.SetActive(false);
+        m_LeftBehind.gameObject.SetActive(true);
+    }
+
+    public void f_RightBehind() {
+        m_RightBehind.gameObject.SetActive(false);
+        m_RightBehind.gameObject.SetActive(true);
     }
 }

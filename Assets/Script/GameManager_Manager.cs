@@ -179,6 +179,15 @@ public class GameManager_Manager : MonoBehaviour{
         f_Spawn(m_LeftGrids.Count - 1);
     }
 
+    public void f_NextLineBomb(Enemy_GameObject p_Enemy) {
+        m_ListActiveEnemies.Remove(p_Enemy);
+        //p_Enemy.gameObject.SetActive(false);
+        p_Enemy.m_Animator.SetTrigger("Damage");
+        for (int i = 0; i < m_ListActiveEnemies.Count; i++) {
+            m_ListActiveEnemies[i].f_Move();
+        }
+    }
+
     public void f_Pause() {
         Time.timeScale = 0;
         m_GameState = GAME_STATE.PAUSED;

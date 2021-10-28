@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ClothesSkin 11
   m_EditorClassIdentifier: 
   m_ID: 11
-  m_Locked: 0
+  m_Locked: 1
   m_ComingSoon: 0
   m_Price: 100000
   m_FragPrice: 750
@@ -21,14 +21,12 @@ MonoBehaviour:
   m_Animator: {fileID: 9100000, guid: b3469fca8acaabb4fbee9937f27b3a91, type: 2}
   m_IdleFXId: 0
   m_TapFXId: 3
-  m_MaxHit: 4
+  m_MaxHit: 2
   m_DescriptionLore: 'Grand Master - Dillo obtain the secret hidden scroll '
   m_DescEffect: REDUCE FIELD OF VISION & 50% CHANCE TO EVADE ENEMY'S ATTACK
   m_HitAudio:
-  - {fileID: 8300000, guid: bb81fe6f53c3b29458621898f9c788c9, type: 3}
-  - {fileID: 8300000, guid: 674b94370634fca4fbcf253e2152f1f3, type: 3}
-  - {fileID: 8300000, guid: b97db0bd8a10ba242bf547cc26f4cf45, type: 3}
-  - {fileID: 8300000, guid: 3097cda861ec7bc4e87da218a97fd839, type: 3}
+  - {fileID: 8300000, guid: d51e60841178c1647b56922624cb77a4, type: 3}
+  - {fileID: 8300000, guid: f5e3c9a45be24174796371aa836c352b, type: 3}
   m_IsCrimson: 0
   m_IsAndroid: 0
   m_IsGrandMaster: 1

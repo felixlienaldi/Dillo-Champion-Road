@@ -15,6 +15,10 @@ public class Audio_Manager : MonoBehaviour{
     //===== PUBLIC =====
     public AudioSource m_BgmSource;
     public AudioSource m_OneShotSource;
+    public bool m_OnMute = false;
+    public List<Image> m_MuteButton;
+    public Sprite m_MuteSprite;
+    public Sprite m_UnmuteSprite;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -29,7 +33,7 @@ public class Audio_Manager : MonoBehaviour{
     }
 
     void Update(){
-        
+
     }
     //=====================================================================
     //				    OTHER METHOD
@@ -42,5 +46,21 @@ public class Audio_Manager : MonoBehaviour{
 
     public void f_PlayOneShot(AudioClip p_Clip) { 
         m_OneShotSource.PlayOneShot(p_Clip);
+    }
+
+    public void f_ToggleMute() {
+        m_OnMute = !m_OnMute;
+        if (m_OnMute) {
+            for (int i = 0; i < m_MuteButton.Count; i++) {
+                m_MuteButton[i].sprite = m_MuteSprite;
+            }
+            AudioListener.volume = 0;
+        }
+        else {
+            for (int i = 0; i < m_MuteButton.Count; i++) {
+                m_MuteButton[i].sprite = m_UnmuteSprite;
+            }
+            AudioListener.volume = 1;
+        }
     }
 }

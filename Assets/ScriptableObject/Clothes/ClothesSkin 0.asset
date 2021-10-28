@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ClothesSkin 0
   m_EditorClassIdentifier: 
   m_ID: 0
-  m_Locked: 1
+  m_Locked: 0
   m_ComingSoon: 0
   m_Price: 0
   m_FragPrice: 0

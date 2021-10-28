@@ -30,6 +30,7 @@ public class UIManager_Manager : MonoBehaviour{
     public GameObject m_Combo;
     public GameObject m_NormalBar;
     public GameObject m_FeverBar;
+    public GameObject m_LoadingScreen;
     public Camera m_UICam;
     //===== PRIVATES =====
     Vector3 t_Vector;
@@ -132,5 +133,13 @@ public class UIManager_Manager : MonoBehaviour{
 
     public void f_BerryTextUpdate(int p_Berry) {
         m_BerryPriceText.text = p_Berry.ToString("0");
+    }
+
+    public void f_LoadinStart() {
+        m_LoadingScreen.gameObject.SetActive(true);
+    }
+
+    public void f_LoadingFinish() {
+        m_LoadingScreen.gameObject.SetActive(false);
     }
 }

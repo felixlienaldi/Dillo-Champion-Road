@@ -57,10 +57,11 @@ public class LoginManager_Manager : MonoBehaviour{
 
     //===== PUBLIC =====
     public c_LoginData m_LoginData;
+    public bool m_Google = false;
     public bool m_GuestLoggedIn;
     public bool m_IsLinked;
     //===== PRIVATES =====
-
+    Firebase.FirebaseApp app;
     //=====================================================================
     //				MONOBEHAVIOUR METHOD 
     //=====================================================================
@@ -70,8 +71,9 @@ public class LoginManager_Manager : MonoBehaviour{
 
     void Start(){
         Debug.Log(ReturnAndroidID());
-        f_GuestLoginRequest();
-        //f_InitializePlayGamesConfig();
+        f_CheckFirebase();
+        UIManager_Manager.m_Instance.f_LoadinStart();
+        f_InitializePlayGamesConfig();
     }
 
     void Update(){
@@ -80,6 +82,25 @@ public class LoginManager_Manager : MonoBehaviour{
     //=====================================================================
     //				    OTHER METHOD
     //=====================================================================
+    public void f_CheckFirebase() {
+#if UNITY_ANDROID
+        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+            var dependencyStatus = task.Result;
+            if (dependencyStatus == Firebase.DependencyStatus.Available) {
+                // Create and hold a reference to your FirebaseApp,
+                // where app is a Firebase.FirebaseApp property of your application class.
+                app = Firebase.FirebaseApp.DefaultInstance;
+
+                // Set a flag here to indicate whether Firebase is ready to use by your app.
+            }
+            else {
+                UnityEngine.Debug.LogError(System.String.Format(
+                  "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+                // Firebase Unity SDK is not safe to use here.
+            }
+        });
+#endif
+    }
     /// <summary>
     /// Method that will be called after Guest Login Request, resulted in success
     /// </summary>
@@ -148,22 +169,28 @@ public class LoginManager_Manager : MonoBehaviour{
 
         // Activate the Google Play Games platform
         PlayGamesPlatform.Activate();
+        f_GoogleSignInRequest();
     }
 
     /// <summary>
     /// Method for Login to Google Request, will be put in button google sign in
     /// </summary>
     public void f_GoogleSignInRequest() {
+        Debug.Log("Google");
         Social.localUser.Authenticate((p_Success) => {
             if (p_Success) {
                 string t_ServerAuthCode = PlayGamesPlatform.Instance.GetServerAuthCode();
-
+                m_Google = true;
                 if (m_GuestLoggedIn && !m_IsLinked) {
                     f_LinkWithGoogle(t_ServerAuthCode);
                 }
                 else if (!m_GuestLoggedIn && !m_IsLinked) {
                     f_LoginWithGoogle(t_ServerAuthCode);
                 }
+            }
+            else {
+                m_Google = false;
+                f_GuestLoginRequest();
             }
 
         });
@@ -205,18 +232,35 @@ public class LoginManager_Manager : MonoBehaviour{
 #endif
     public void f_OnAccountInfo(GetAccountInfoResult p_Result) {
         if (p_Result.AccountInfo.TitleInfo.Created == p_Result.AccountInfo.TitleInfo.LastLogin) {
+#if UNITY_ANDROID
+            string t_Name;
+            if (m_Google) t_Name = PlayGamesPlatform.Instance.GetUserDisplayName();
+            else t_Name = m_LoginData.PlayFabId;
+#endif
+            PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest { DisplayName = t_Name }, f_OnDisplayNameSuccess, PlayFab_Error.m_Instance.f_OnPlayFabError);
+        }
+        else f_CallAPI(false);
+    }
+
+    public void f_CallAPI(bool p_New) {
+        if (p_New) {
             PlayerStatistic_Manager.m_Instance.f_NewPlayer();
-            Debug.Log("New");
         }
         else {
             PlayerStatistic_Manager.m_Instance.f_GetPlayerStatistic();
-            Debug.Log("Not New");
+
         }
 
+        PushNotification_GameObject.m_Instance.f_RegisterForPush();
         CurrencyManager_Manager.m_Instance.f_GetCurrency();
         LeaderboardManager_Manager.m_Instance.f_GetLeaderBoard();
         PlayerData_Manager.m_Instance.f_GetPlayerData();
-        LeaderboardManager_Manager.m_Instance.f_GetPlayerLeaderBoard();
+        //LeaderboardManager_Manager.m_Instance.f_GetPlayerLeaderBoard();
         Timer_Manager.m_Instance.f_GetTimeServer();
+    }
+
+    public void f_OnDisplayNameSuccess(UpdateUserTitleDisplayNameResult p_Result) {
+        Player_Manager.m_Instance.m_Names = p_Result.DisplayName;        
+        f_CallAPI(true);
     }
 }

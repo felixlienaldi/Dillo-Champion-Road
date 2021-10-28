@@ -21,7 +21,7 @@ MonoBehaviour:
   m_Animator: {fileID: 9100000, guid: 05a8e1540cf1248418418550eb7892bf, type: 2}
   m_IdleFXId: 0
   m_TapFXId: 0
-  m_MaxHit: 4
+  m_MaxHit: 2
   m_DescriptionLore: Dillo's shaolin apprentice outfit
   m_DescEffect: NO EFFECT
   m_HitAudio:

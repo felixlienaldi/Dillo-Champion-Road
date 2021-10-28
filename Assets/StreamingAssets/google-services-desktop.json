@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097598809548",
+    "project_id": "dillo-champion-road-64644464",
+    "storage_bucket": "dillo-champion-road-64644464.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097598809548:android:216d36332e54a010b29969",
+        "android_client_info": {
+          "package_name": "com.RedrainStudio.DilloChampionRoad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097598809548-33g6dfrd0ufctvhhrrft83buqi8fcm6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY_ts687aKI8UAsTcudUEQMdaqZzVAhy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097598809548-33g6dfrd0ufctvhhrrft83buqi8fcm6n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -16,6 +16,7 @@ public class Leaderboard_Manager : PoolingManager_Manager<Leaderboard_Gameobject
     //===== PUBLIC =====
     public Transform m_Parent;
     public Leaderboard_Gameobject m_PlayerLeaderboard;
+    public Leaderboard_Gameobject m_YourBest;
     //===== PRIVATES =====
     Leaderboard_Gameobject t_Objects;
     Vector3 t_Vector;
@@ -32,7 +33,7 @@ public class Leaderboard_Manager : PoolingManager_Manager<Leaderboard_Gameobject
         t_Objects = f_SpawnObject();
         t_Objects.transform.parent = m_Parent;
         t_Vector = t_Objects.transform.position;
-        t_Vector.z = -100;
+        t_Vector.z = 100;
         t_Objects.transform.position = t_Vector;
         t_Objects.f_Init(p_Pos, p_Name, p_Score);
         t_Objects.gameObject.SetActive(true);
@@ -46,5 +47,6 @@ public class Leaderboard_Manager : PoolingManager_Manager<Leaderboard_Gameobject
 
     public void f_UpdatePlayer(string p_Pos,string p_Name,string p_Score) {
         m_PlayerLeaderboard.f_Init(p_Pos, p_Name, p_Score);
+        m_YourBest.f_Init(p_Pos, p_Name, p_Score);
     }
 }

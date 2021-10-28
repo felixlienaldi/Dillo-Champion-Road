@@ -21,13 +21,12 @@ MonoBehaviour:
   m_Animator: {fileID: 9100000, guid: 8912bad77ec57de4391ae3c6c22e7d6f, type: 2}
   m_IdleFXId: 0
   m_TapFXId: 0
-  m_MaxHit: 4
+  m_MaxHit: 2
   m_DescriptionLore: Dillo's wild west sheriff outfit
   m_DescEffect: NO EFFECT
   m_HitAudio:
-  - {fileID: 8300000, guid: 632a05c05a0309342b6c127b382688bb, type: 3}
-  - {fileID: 8300000, guid: 586259154b0f85945a861c583cecba12, type: 3}
-  - {fileID: 8300000, guid: c30bafdae7e1ed846bd9486727365241, type: 3}
+  - {fileID: 8300000, guid: a4d55f08026496a40a7e3524b6bdbff6, type: 3}
+  - {fileID: 8300000, guid: d3de652442200c84ab29b735fd0922bd, type: 3}
   m_IsCrimson: 0
   m_IsAndroid: 0
   m_IsGrandMaster: 0

@@ -83,6 +83,7 @@ public class Player_GameObject : Character_GameObject{
     public int m_MaxHit = 4;
     //===== PRIVATES =====
     private int m_HitCount;
+    private int m_AndroidHit = 0;
     private bool p_Input = false;
     public bool m_Invincible = false;
     bool m_IsTakeDamageCoroutineRunning;
@@ -136,6 +137,7 @@ public class Player_GameObject : Character_GameObject{
             f_Move();
             f_CheckCombo();
             f_CheckFever();
+            if (Input.GetKeyUp(KeyCode.L)) f_BombBeyond();
         }
 
         f_CheckBuff();
@@ -146,6 +148,7 @@ public class Player_GameObject : Character_GameObject{
     //				        OTHER METHOD
     //=====================================================================
     public void f_Reset() {
+        m_AndroidHit = 0;
         p_Input = false;
         m_EnemyKilled = 0;
         m_IsCombo = false;
@@ -416,6 +419,7 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_Attack(bool p_Right) {
         if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Damage") && !m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Damage_Potion")) {
+            if(!m_IsFever) m_AndroidHit++;
             if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].m_Type == Enumerator.ENEMY_TYPE.INVERSE) {
                 if (GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x - transform.position.x >= 0) {
                     if (p_Right == false) {
@@ -540,7 +544,7 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_CheckScore(Enemy_GameObject p_EnemyObject) {
         if (!m_IsFever) {
-            if (m_CurrentTimer / m_Timer >= .7f) {
+            if (m_CurrentTimer / m_Timer >= .7f || m_IsGrandMaster) {
                 GameManager_Manager.m_Instance.f_AddScore(p_EnemyObject.m_ScoreValue * 3);
                 m_PerfectHit += 3 * f_GainFever();
             }
@@ -581,6 +585,12 @@ public class Player_GameObject : Character_GameObject{
             if (t_Index <= 50) {
                 f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
                 f_Attack();
+                if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {
+                    FX_Manager.m_Instance.f_LeftBehind();
+                }
+                else {
+                    FX_Manager.m_Instance.f_RightBehind();
+                }
                 GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
             }
         }
@@ -588,25 +598,28 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_CheckAndroid() {
         if (m_IsAndroid && !m_IsFever) {
-            int t_Index = Random.Range(0, 100);
-            if (t_Index <= 20) {
-                m_AndroidEffect.SetActive(false);
-                m_AndroidEffect.SetActive(true);
-                for (int i = 0; i < GameManager_Manager.m_Instance.m_ListActiveEnemies.Count; i++) {
-                    f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[i]);
-                }
-
-                GameManager_Manager.m_Instance.m_ListActiveEnemies.Clear();
-
-                for (int i = 0; i < SpawnManager_Manager.m_Instance.m_ListEnemy.Count; i++) {
-                    SpawnManager_Manager.m_Instance.m_ListEnemy[i].gameObject.SetActive(false);
-                }
-
-                for (int i = 0; i < 6; i++) {
-                    GameManager_Manager.m_Instance.f_Spawn(i);
+            if (m_AndroidHit >= 20) {
+                m_AndroidHit = 0;
+                int t_Index = Random.Range(0, 100);
+                if (t_Index <= 20) {
+                    f_BombBeyond();
                 }
             }
         }
+    }
+
+    public void f_BombBeyond() {
+        m_AndroidEffect.SetActive(false);
+        m_AndroidEffect.SetActive(true);
+
+        for (int i = 0; i < 6; i++) {
+            f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+            Explosion_Manager.m_Instance.f_SpawnExplosion(GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position);
+            GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+        }
+        //for (int i = 0; i < 6; i++) {
+        //    GameManager_Manager.m_Instance.f_Spawn(i);
+        //}
     }
 
     public bool f_CheckMaster() {

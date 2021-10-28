@@ -57,6 +57,7 @@ public class PlayerData_Manager : MonoBehaviour {
     }
 
     public void f_UpdatePlayerAvatarList(string p_AvatarKey, string p_AvatarList) {
+        UIManager_Manager.m_Instance.f_LoadinStart();
         PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest {
             Data = new Dictionary<string, string> {
                 {p_AvatarKey, p_AvatarList},
@@ -92,14 +93,25 @@ public class PlayerData_Manager : MonoBehaviour {
         if (m_PlayerDataList.Data.TryGetValue("FEVERGAIN", out c_DataDetails t_FeverGainKey)) {
             PowerupUI_Manager.m_Instance.f_LoadDataPotion("FEVERGAIN", t_FeverGainKey.Value);
         }
-
         if (m_PlayerDataList.Data.TryGetValue("EquippedSkin", out c_DataDetails t_EqSkinKey)) {
             Wardobe_Manager.m_Instance.f_LoadEquipedSkinData(t_EqSkinKey.Value);
         }
-
         if (m_PlayerDataList.Data.TryGetValue("SkinList", out c_DataDetails t_ListSkinKey)) {
             Wardobe_Manager.m_Instance.f_LoadSkinData(t_ListSkinKey.Value);
         }
+        
+        if (m_PlayerDataList.Data.TryGetValue("Ads", out c_DataDetails t_AdsKey)) {
+            if (t_AdsKey.Value == "0") {
+                Player_Manager.m_Instance.m_BoughAds = false;
+                AdMobBanner_Gameobject.m_Instance.f_ShowBanner();
+            }
+            else {
+                Player_Manager.m_Instance.m_BoughAds = true;
+                AdMobBanner_Gameobject.m_Instance.f_HideBanner();
+            }
+
+        }
         GameManager_Manager.m_Instance.f_ApplyPotion();
+        UIManager_Manager.m_Instance.f_LoadingFinish();
     }
 }

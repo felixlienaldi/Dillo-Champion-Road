@@ -96,9 +96,10 @@ public class Wardobe_Manager : MonoBehaviour {
                     m_PriceText.color = Color.white;
                     m_BuyButton.interactable = true;
                 }
-                m_PriceFragText.text = m_Clothes[m_CurrentID].m_FragPrice.ToString();
+                
                 if (m_Clothes[m_CurrentID].m_Type == Enumerator.FRAGMENT_TYPE.BEGINNER) {
                     m_FragImage.sprite = Fragment_Manager.m_Instance.m_ImageList[0];
+                    m_PriceFragText.text = Fragment_Manager.m_Instance.m_BeginnerFragment.ToString();
                     if (Fragment_Manager.m_Instance.m_BeginnerFragment >= m_Clothes[m_CurrentID].m_FragPrice) {
                         m_FragBuyButton.interactable = true;
                         m_PriceFragText.color = Color.white;
@@ -110,6 +111,7 @@ public class Wardobe_Manager : MonoBehaviour {
                 }
                 else if (m_Clothes[m_CurrentID].m_Type == Enumerator.FRAGMENT_TYPE.MEDIOCORE) {
                     m_FragImage.sprite = Fragment_Manager.m_Instance.m_ImageList[1];
+                    m_PriceFragText.text = Fragment_Manager.m_Instance.m_MediocoreFragment.ToString();
                     if (Fragment_Manager.m_Instance.m_MediocoreFragment >= m_Clothes[m_CurrentID].m_FragPrice) {
                         m_FragBuyButton.interactable = true;
                         m_PriceFragText.color = Color.white;
@@ -121,6 +123,7 @@ public class Wardobe_Manager : MonoBehaviour {
                 }
                 else if (m_Clothes[m_CurrentID].m_Type == Enumerator.FRAGMENT_TYPE.ADVANCE) {
                     m_FragImage.sprite = Fragment_Manager.m_Instance.m_ImageList[2];
+                    m_PriceFragText.text = Fragment_Manager.m_Instance.m_AdvanceFragment.ToString();
                     if (Fragment_Manager.m_Instance.m_AdvanceFragment >= m_Clothes[m_CurrentID].m_FragPrice) {
                         m_FragBuyButton.interactable = true;
                         m_PriceFragText.color = Color.white;
@@ -132,6 +135,7 @@ public class Wardobe_Manager : MonoBehaviour {
                 }
                 else {
                     m_FragImage.sprite = Fragment_Manager.m_Instance.m_ImageList[3];
+                    m_PriceFragText.text = Fragment_Manager.m_Instance.m_MasterFragment.ToString();
                     if (Fragment_Manager.m_Instance.m_MasterFragment >= m_Clothes[m_CurrentID].m_FragPrice) {
                         m_FragBuyButton.interactable = true;
                         m_PriceFragText.color = Color.white;
@@ -141,6 +145,7 @@ public class Wardobe_Manager : MonoBehaviour {
                         m_PriceFragText.color = Color.red;
                     }
                 }
+                m_PriceFragText.text += "/"+m_Clothes[m_CurrentID].m_FragPrice.ToString();
             }
             else {
                 m_ComingSoon.SetActive(true);

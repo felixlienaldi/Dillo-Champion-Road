@@ -19,6 +19,7 @@ public class PostGameManager_Manager : MonoBehaviour{
     public TextMeshProUGUI m_BerryScore;
     public GameObject m_Highscore;
     public AudioClip m_HighScoreClip;
+    public Button m_2XButton;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -52,10 +53,17 @@ public class PostGameManager_Manager : MonoBehaviour{
             Audio_Manager.m_Instance.f_PlayOneShot(m_HighScoreClip);
         }
         m_TotalScore.text = GameManager_Manager.m_Instance.m_Score.ToString("00") + "pt";
+        CurrencyManager_Manager.m_Instance.f_AddVirtualCurrencyRequest("BE", Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score / 100)));
         m_BerryScore.text = "+"+Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score/100)).ToString();
-        Player_Manager.m_Instance.m_Berry += (int)Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score / 100));
         m_EndGameUI.SetActive(true);
         PlayerStatistic_Manager.m_Instance.f_UpdatePlayerStatistics();
+        m_2XButton.interactable = true;
+    }
+
+    public void f_Success() {
+        m_2XButton.interactable = false;
+        m_BerryScore.text = "+" + (Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score / 100)) * 2).ToString();
+        CurrencyManager_Manager.m_Instance.f_AddVirtualCurrencyRequest("BE", Mathf.FloorToInt((GameManager_Manager.m_Instance.m_Score / 100)));
     }
 
     public void f_Retry() {
