@@ -1,0 +1,528 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.16f1 (049d6eca3c44) revision 302446'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Education; OS build 18363.1854; Version 1909; 64bit' Language: 'en' Physical Memory: 16326 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.16f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Dillo-Champion-Road
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+56076
+Successfully changed project path to: D:/Dillo-Champion-Road
+D:/Dillo-Champion-Road
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 116.84 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.16f1 (049d6eca3c44)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Dillo-Champion-Road/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   
+    VRAM:     8088 MB
+    Driver:   27.21.14.6140
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56440
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001980 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 62.69 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.985 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1985ms)
+		BeginReloadAssembly (60ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (500ms)
+			LoadAssemblies (57ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (166ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (202ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (63ms)
+				BeforeProcessingInitializeOnLoad (18ms)
+				ProcessInitializeOnLoadAttributes (83ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.018412 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 60.73 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.768 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1769ms)
+		BeginReloadAssembly (167ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (1534ms)
+			LoadAssemblies (117ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (399ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (708ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (61ms)
+				BeforeProcessingInitializeOnLoad (83ms)
+				ProcessInitializeOnLoadAttributes (534ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.22 seconds
+Refreshing native plugins compatible for Editor in 2.11 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2701 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 118.3 MB.
+System memory in use after: 118.5 MB.
+
+Unloading 157 unused Assets to reduce memory usage. Loaded Objects now: 3033.
+Total: 4.367600 ms (FindLiveObjects: 0.369900 ms CreateObjectMapping: 0.165400 ms MarkObjects: 3.696900 ms  DeleteObjects: 0.134100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/2D_Assets/Character
+  artifactKey: Guid(8234c3dafc637024ebb486559f3aea79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character using Guid(8234c3dafc637024ebb486559f3aea79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd29b5810173b9b845b1d5e6fc6f5fde0') in 0.014819 seconds 
+  Import took 0.062843 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerB
+  artifactKey: Guid(1f0fbc4335f9dc04f91866ee28316478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerB using Guid(1f0fbc4335f9dc04f91866ee28316478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3ef55a2ac33a695e71b0ab9c869f94e') in 0.009394 seconds 
+  Import took 0.067656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/2D_Assets/Character/Dillo
+  artifactKey: Guid(957331ac373bfb74db9af0b0666a9680) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo using Guid(957331ac373bfb74db9af0b0666a9680) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94a2661bda5960420b72dd2a32cafbf6') in 0.028702 seconds 
+  Import took 0.077850 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerA_default/beginnerA_default.controller
+  artifactKey: Guid(a2ee852fe17284d4f854f2dedf5921f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerA_default/beginnerA_default.controller using Guid(a2ee852fe17284d4f854f2dedf5921f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8b76dcd4ccb908df0a72e28a9ee9c63') in 0.064840 seconds 
+  Import took 0.112318 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000343 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerA_default
+  artifactKey: Guid(de1623cc6b8e382408f7b08ccc8cd3a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerA_default using Guid(de1623cc6b8e382408f7b08ccc8cd3a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d0bee70d1d214eb17fc92972224a9e4') in 0.034509 seconds 
+  Import took 0.118170 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 448.746768 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerA_default/Hit_1.anim
+  artifactKey: Guid(7d2c8feb4acae4b49b4d4dd575b17b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerA_default/Hit_1.anim using Guid(7d2c8feb4acae4b49b4d4dd575b17b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b48a2ca7e8c5982ede5e92db1feded3') in 0.029275 seconds 
+  Import took 0.066799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.376216 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerA_default/Damaged.anim
+  artifactKey: Guid(d12857a15cb7ce74cb2e6edaeeeaf022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerA_default/Damaged.anim using Guid(d12857a15cb7ce74cb2e6edaeeeaf022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d2b56edb8e17821b465904183635b6d') in 0.034464 seconds 
+  Import took 0.070127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 44.878289 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerB/Damaged.anim
+  artifactKey: Guid(f6b0e5543453f044585004d5337bac86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerB/Damaged.anim using Guid(f6b0e5543453f044585004d5337bac86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95fc39a8416e933bdf85d8323b5678ea') in 0.024598 seconds 
+  Import took 0.041750 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.801569 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerB/Hit_1.anim
+  artifactKey: Guid(0c9cc456b9e9bca4993c7aedee20b88b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerB/Hit_1.anim using Guid(0c9cc456b9e9bca4993c7aedee20b88b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a48dd8d62edbb5d13518c90e0e12be2f') in 0.003308 seconds 
+  Import took 0.015725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.647742 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerB/Hit_2.anim
+  artifactKey: Guid(baa7103bd7f7a3342ae9e8d35241fef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerB/Hit_2.anim using Guid(baa7103bd7f7a3342ae9e8d35241fef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ab1cb7156c90173d02ac63974f3b405') in 0.007862 seconds 
+  Import took 0.030652 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007651 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerB/Hit_2.anim
+  artifactKey: Guid(baa7103bd7f7a3342ae9e8d35241fef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerB/Hit_2.anim using Guid(baa7103bd7f7a3342ae9e8d35241fef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ab1cb7156c90173d02ac63974f3b405') in 0.005256 seconds 
+  Import took 0.016344 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.915065 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerB/beginnerB.controller
+  artifactKey: Guid(1f1b9804dca82c64e8cc78063fad8025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerB/beginnerB.controller using Guid(1f1b9804dca82c64e8cc78063fad8025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '262c70ee2e1881fdd9474f0e83d13c74') in 0.041187 seconds 
+  Import took 0.084973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 345.097418 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerC/beginnerC.controller
+  artifactKey: Guid(d694eb441a35e654f9748daebef76e0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerC/beginnerC.controller using Guid(d694eb441a35e654f9748daebef76e0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1073ce25a21b9e6c0093734d986d3b') in 0.033378 seconds 
+  Import took 0.064810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.239654 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreA/Damaged.anim
+  artifactKey: Guid(78df7d097ca0bea4ba4cf5ae6e16cf20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreA/Damaged.anim using Guid(78df7d097ca0bea4ba4cf5ae6e16cf20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abb23b890a091fd5cf1ad7399927e4d3') in 0.003168 seconds 
+  Import took 0.044804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 62.984949 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreB/Damaged.anim
+  artifactKey: Guid(e8ee3cd3baf003e4fbb9b46bff1af35f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreB/Damaged.anim using Guid(e8ee3cd3baf003e4fbb9b46bff1af35f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5b0671c46932320f048e155920f1e55') in 0.002946 seconds 
+  Import took 0.041329 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.210900 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreB/mediocreB.controller
+  artifactKey: Guid(49c503d4d54275c4a984762a9a505735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreB/mediocreB.controller using Guid(49c503d4d54275c4a984762a9a505735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c50583e958bd2bdea1598aea0957324b') in 0.033837 seconds 
+  Import took 0.075217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.875388 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreB/Hit_1.anim
+  artifactKey: Guid(8802c57e43677074a92114aa341928c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreB/Hit_1.anim using Guid(8802c57e43677074a92114aa341928c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '738757587e9b8cbeba30434d476f9306') in 0.012738 seconds 
+  Import took 0.032496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001196 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreB/Hit_1.anim
+  artifactKey: Guid(8802c57e43677074a92114aa341928c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreB/Hit_1.anim using Guid(8802c57e43677074a92114aa341928c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '738757587e9b8cbeba30434d476f9306') in 0.005578 seconds 
+  Import took 0.010346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.758096 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreB/Hit_4.anim
+  artifactKey: Guid(9be4ccebc2f8ef64d8d0942f186bc979) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreB/Hit_4.anim using Guid(9be4ccebc2f8ef64d8d0942f186bc979) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecc4220b58a1b613b967c4919e26ddd6') in 0.054615 seconds 
+  Import took 0.098940 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.431983 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreB/Idle.anim
+  artifactKey: Guid(61cca4f0dfa105b478e4543d4bd49d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreB/Idle.anim using Guid(61cca4f0dfa105b478e4543d4bd49d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7b6ea4a352a45782685d1dfe3246e57') in 0.011037 seconds 
+  Import took 0.057641 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.524894 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreA/Idle.anim
+  artifactKey: Guid(59101c98c762e4045a869dbe31ccfeaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreA/Idle.anim using Guid(59101c98c762e4045a869dbe31ccfeaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38a2b3f04d3415b77ed045985948aa02') in 0.026642 seconds 
+  Import took 0.044331 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.983261 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerC/Idle.anim
+  artifactKey: Guid(bb2260642bb3e8a4d8d75a67bf1537e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerC/Idle.anim using Guid(bb2260642bb3e8a4d8d75a67bf1537e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6ce2ac6e75a288174f8f09dbcd47a9f') in 0.003739 seconds 
+  Import took 0.032113 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005480 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerC/Idle.anim
+  artifactKey: Guid(bb2260642bb3e8a4d8d75a67bf1537e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerC/Idle.anim using Guid(bb2260642bb3e8a4d8d75a67bf1537e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6ce2ac6e75a288174f8f09dbcd47a9f') in 0.004452 seconds 
+  Import took 0.011542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.236194 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerB/Idle.anim
+  artifactKey: Guid(f04909c9e6c4cc44ebd59fe8b5635e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerB/Idle.anim using Guid(f04909c9e6c4cc44ebd59fe8b5635e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04f7ee419fa96ec34c6abc24df2e9c9a') in 0.003669 seconds 
+  Import took 0.041578 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.464347 seconds.
+  path: Assets/2D_Assets/Character/Dillo/01_beginnerA_default/Idle.anim
+  artifactKey: Guid(9487533e9d53fba44b14b13ab8e39d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/01_beginnerA_default/Idle.anim using Guid(9487533e9d53fba44b14b13ab8e39d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4645354a1c8406295d8e8058a980a053') in 0.028459 seconds 
+  Import took 0.050079 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.748787 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/Idle.anim
+  artifactKey: Guid(49a12efb0a35a2b46a43ea36a556bd3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/Idle.anim using Guid(49a12efb0a35a2b46a43ea36a556bd3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49efaf3b284bdf7a16773f91598d1ded') in 0.017326 seconds 
+  Import took 0.064217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 248.334694 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/Idle.anim
+  artifactKey: Guid(2f3db326169263e43a586443a8e923f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/Idle.anim using Guid(2f3db326169263e43a586443a8e923f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56203490c0736a930339565661fd090e') in 0.023982 seconds 
+  Import took 0.050269 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.386095 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/Idle.anim
+  artifactKey: Guid(eee25b0d9d703ac488a9be50116396b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/Idle.anim using Guid(eee25b0d9d703ac488a9be50116396b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73ba3c757e4dd6318ccfd11c662825b7') in 0.003828 seconds 
+  Import took 0.009019 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.579852 seconds.
+  path: Assets/2D_Assets/Character/Dillo/02_mediocreC/mediocreC.controller
+  artifactKey: Guid(05a8e1540cf1248418418550eb7892bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/02_mediocreC/mediocreC.controller using Guid(05a8e1540cf1248418418550eb7892bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '809dbbede57edafa53e412fdbe0b06c8') in 0.011692 seconds 
+  Import took 0.053780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.559743 seconds.
+  path: Assets/2D_Assets/Character/Dillo/03_advancedB/advancedB.controller
+  artifactKey: Guid(8912bad77ec57de4391ae3c6c22e7d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/03_advancedB/advancedB.controller using Guid(8912bad77ec57de4391ae3c6c22e7d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9534f6a298c105cb3f989df40184cf5') in 0.041169 seconds 
+  Import took 0.046732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.546694 seconds.
+  path: Assets/2D_Assets/Character/Dillo/03_advancedC/advancedC.controller
+  artifactKey: Guid(6f5d207ba50374a4583c518003416474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/03_advancedC/advancedC.controller using Guid(6f5d207ba50374a4583c518003416474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe92c47ce4e77b0acc60edb658662ba7') in 0.032455 seconds 
+  Import took 0.065430 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.940852 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/Damaged.anim
+  artifactKey: Guid(a5501be17a8368146a97723dad6f7729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/Damaged.anim using Guid(a5501be17a8368146a97723dad6f7729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb741b60e4b3e69ceab070c68c9de870') in 0.004514 seconds 
+  Import took 0.010371 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.147326 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/masterA_crimson obsidian.controller
+  artifactKey: Guid(6f3be65675b0f9145b8186e4ea2c685a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterA_crimson obsidian/masterA_crimson obsidian.controller using Guid(6f3be65675b0f9145b8186e4ea2c685a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ed799c3a1084609943e3649c8af4703') in 0.018630 seconds 
+  Import took 0.041000 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.664052 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterB_android 52/masterB_android 52.controller
+  artifactKey: Guid(982d37a6de1339c4d968f51b3f9f515e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterB_android 52/masterB_android 52.controller using Guid(982d37a6de1339c4d968f51b3f9f515e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a82f2fa175d036b9b9483abc1108dee') in 0.038911 seconds 
+  Import took 0.074848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.622148 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_masterC_vignette.controller
+  artifactKey: Guid(4f12f18ca7d0df04eb6a0264c4d8ca7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/FX_masterC_vignette.controller using Guid(4f12f18ca7d0df04eb6a0264c4d8ca7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbf0da68a4723285b54ac3623ce44fb9') in 0.026349 seconds 
+  Import took 0.059320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.971998 seconds.
+  path: Assets/2D_Assets/Character/Dillo/04_masterC_grand master/masterC_grand master.controller
+  artifactKey: Guid(b3469fca8acaabb4fbee9937f27b3a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D_Assets/Character/Dillo/04_masterC_grand master/masterC_grand master.controller using Guid(b3469fca8acaabb4fbee9937f27b3a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53e207b2a160e0d11e0c5e2cdec16453') in 0.013752 seconds 
+  Import took 0.048501 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.017525 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.37 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.034 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2034ms)
+		BeginReloadAssembly (142ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (54ms)
+		EndReloadAssembly (1827ms)
+			LoadAssemblies (144ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (422ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (1022ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (897ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.58 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2765 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 118.3 MB.
+System memory in use after: 118.5 MB.
+
+Unloading 318 unused Assets to reduce memory usage. Loaded Objects now: 3037.
+Total: 3.936100 ms (FindLiveObjects: 0.276300 ms CreateObjectMapping: 0.121000 ms MarkObjects: 3.385600 ms  DeleteObjects: 0.152300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 490.489754 seconds.
+  path: Assets/Prefabs
+  artifactKey: Guid(ba1d703c38d3e9d44a2b4f5637c07d07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs using Guid(ba1d703c38d3e9d44a2b4f5637c07d07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a38806f4834b13feca02045921d254aa') in 0.011343 seconds 
+  Import took 0.050905 seconds .
+

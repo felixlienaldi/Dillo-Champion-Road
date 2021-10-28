@@ -545,15 +545,15 @@ public class Player_GameObject : Character_GameObject{
     public void f_CheckScore(Enemy_GameObject p_EnemyObject) {
         if (!m_IsFever) {
             if (m_CurrentTimer / m_Timer >= .7f || m_IsGrandMaster) {
-                GameManager_Manager.m_Instance.f_AddScore(p_EnemyObject.m_ScoreValue * 3);
+                GameManager_Manager.m_Instance.f_AddScore(p_EnemyObject.m_ScoreValue * 3 * (m_IsCrimson?2:1));
                 m_PerfectHit += 3 * f_GainFever();
             }
             else if (m_CurrentTimer / m_Timer >= .4f) {
-                GameManager_Manager.m_Instance.f_AddScore(p_EnemyObject.m_ScoreValue * 2);
+                GameManager_Manager.m_Instance.f_AddScore(p_EnemyObject.m_ScoreValue * 2 * (m_IsCrimson ? 2 : 1));
                 m_PerfectHit += 2 * f_GainFever();
             }
             else if (m_CurrentTimer / m_Timer > 0) {
-                GameManager_Manager.m_Instance.f_AddScore(p_EnemyObject.m_ScoreValue * 1);
+                GameManager_Manager.m_Instance.f_AddScore(p_EnemyObject.m_ScoreValue * 1 * (m_IsCrimson ? 2 : 1));
                 m_PerfectHit += 1 * f_GainFever();
             }
 
@@ -580,20 +580,20 @@ public class Player_GameObject : Character_GameObject{
     }
 
     public void f_AttackBehind() {
-        if (m_IsCrimson && !m_IsFever) {
-            int t_Index = Random.Range(0, 100);
-            if (t_Index <= 50) {
-                f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
-                f_Attack();
-                if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {
-                    FX_Manager.m_Instance.f_LeftBehind();
-                }
-                else {
-                    FX_Manager.m_Instance.f_RightBehind();
-                }
-                GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
-            }
-        }
+        //if (m_IsCrimson && !m_IsFever) {
+        //    int t_Index = Random.Range(0, 100);
+        //    if (t_Index <= 50) {
+        //        f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+        //        f_Attack();
+        //        if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {
+        //            FX_Manager.m_Instance.f_LeftBehind();
+        //        }
+        //        else {
+        //            FX_Manager.m_Instance.f_RightBehind();
+        //        }
+        //        GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+        //    }
+        //}
     }
 
     public void f_CheckAndroid() {

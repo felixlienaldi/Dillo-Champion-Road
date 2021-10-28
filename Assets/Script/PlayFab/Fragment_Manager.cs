@@ -118,7 +118,7 @@ public class Fragment_Manager : MonoBehaviour {
     }
     public void f_PreviousMenu() {
         m_CurrentID--;
-        if (m_CurrentID < 0) m_CurrentID = 0;
+        if (m_CurrentID < 0) m_CurrentID = m_MenuList.Count - 1;
         for (int i = 0; i < m_MenuList.Count; i++) {
             if (i == m_CurrentID) {
                 m_MenuList[i].gameObject.SetActive(true);
@@ -130,7 +130,7 @@ public class Fragment_Manager : MonoBehaviour {
     }
     public void f_NextMenu() {
         m_CurrentID++;
-        if (m_CurrentID >= m_MenuList.Count) m_CurrentID = m_MenuList.Count-1;
+        if (m_CurrentID >= m_MenuList.Count) m_CurrentID = 0;
         for (int i = 0; i < m_MenuList.Count; i++) {
             if (i == m_CurrentID) {
                 m_MenuList[i].gameObject.SetActive(true);

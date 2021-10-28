@@ -96,7 +96,7 @@ public class GameManager_Manager : MonoBehaviour{
 
     public void f_AddScore(float p_Score) {
         m_Score += f_CalculateScore(p_Score);
-        Audio_Manager.m_Instance.f_PlayOneShot(m_GetScoreClip);
+       // Audio_Manager.m_Instance.f_PlayOneShot(m_GetScoreClip);
         UIManager_Manager.m_Instance.f_SetScoreText("" + m_Score);
     }
 
