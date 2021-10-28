@@ -34,7 +34,8 @@ public class AdMobBanner_Gameobject : MonoBehaviour {
 #endif
 
         // Create a 320x50 banner at the top of the screen.
-        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+        AdSize adSize = new AdSize(320, 50);
+        bannerView = new BannerView(adUnitId, adSize, AdPosition.Top);
 
         AdRequest request = new AdRequest.Builder().Build();
 
