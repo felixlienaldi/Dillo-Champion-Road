@@ -170,12 +170,15 @@ public class Player_GameObject : Character_GameObject{
         Audio_Manager.m_Instance.f_ChangeBgm(m_NormalBGM);
         // m_SpriteRenderer.color = Color.white;
         UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
-        UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
         //f_CheckTimer();
         //f_Move();
         //f_CheckCombo();
         //f_CheckFever();
         //f_CheckBuff();
+    }
+
+    public void f_ResetHealth() {
+        UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
     }
 
     public void f_ResetBuffRelated() {
@@ -333,8 +336,14 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_Attack() {
         m_HitCount++;
-        Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerHitClip[ Random.Range(0, m_PlayerHitClip.Count)]);
         if (m_HitCount > m_MaxHit) m_HitCount = 1;
+
+        if (m_IsAndroid || m_IsGrandMaster) {
+            Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerHitClip[m_HitCount - 1]);
+        }
+        else {
+            Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerHitClip[Random.Range(0, m_PlayerHitClip.Count)]);
+        }
         m_Animator.SetInteger("Hit",m_HitCount);
         m_Animator.SetTrigger("Punch");
         if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {

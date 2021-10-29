@@ -70,6 +70,7 @@ public class GameManager_Manager : MonoBehaviour{
             f_Spawn(i);
         }
         m_GamePlayUI.SetActive(true);
+        Player_GameObject.m_Instance.f_ResetHealth();
     
     }
 

@@ -61,7 +61,7 @@ public class Energy_Manager : MonoBehaviour{
             if (m_RetryButton.IsInteractable()) m_RetryButton.interactable = false;
         }
 
-        if (m_EnergyAmount > 5) {
+        if (m_EnergyAmount >= 5) {
             if (m_TimerText.isActiveAndEnabled) m_TimerText.gameObject.SetActive(false);
         }
         else {
