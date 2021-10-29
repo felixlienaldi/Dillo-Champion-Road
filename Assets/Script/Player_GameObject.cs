@@ -59,7 +59,7 @@ public class Player_GameObject : Character_GameObject{
     public float m_DefaultTimer=5f;
     [Header("Animation Name")]
     public string m_AttackAnimation;
-
+    public Animator m_CombAnim;
     [Header("Other System")]
     public float m_BarrierCount;
     public float m_ReviveCount;
@@ -293,6 +293,7 @@ public class Player_GameObject : Character_GameObject{
                 f_TakeDamage();
             }
             m_CurrentTimer = m_Timer;
+            Explosion_Manager.m_Instance.f_SpawnExplosion(GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position);
             GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
         }
     }
@@ -300,6 +301,7 @@ public class Player_GameObject : Character_GameObject{
   
     public void f_CheckTiming(Enemy_GameObject p_EnemyObject) {
         m_Combo++;
+        if(m_Combo>=5)  m_CombAnim.SetTrigger("Combo");
         DailyMission_Manager.m_Instance.f_AddDestroyedEnemy(1);
         DailyMission_Manager.m_Instance.f_CompareCombo(m_Combo);
         if(DailyMission_Manager.m_Instance.m_EnemyID == 0 && p_EnemyObject.m_Type == Enumerator.ENEMY_TYPE.NORMAL ) DailyMission_Manager.m_Instance.f_AddCertainEnemy();

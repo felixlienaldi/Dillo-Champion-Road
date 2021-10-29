@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 15fe4dfa73ccb7b41aa7b267a06559bb
+  - enabled: 1
     path: Assets/Scenes/DCR_Composite.unity
     guid: 109775d97d531d846863c980d72839a4
   m_configObjects: {}
