@@ -339,18 +339,18 @@ public class Player_GameObject : Character_GameObject{
         m_Animator.SetTrigger("Punch");
         if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {
             if (m_IsAndroid) {
-                FX_Manager.m_Instance.f_RightAndroid(m_HitCount);
-            }
-            else if (m_IsGrandMaster) {
-                FX_Manager.m_Instance.f_RightNinja(m_HitCount);
-            }
-        }
-        else {
-            if (m_IsAndroid) {
                 FX_Manager.m_Instance.f_LeftAndroid(m_HitCount);
             }
             else if (m_IsGrandMaster) {
                 FX_Manager.m_Instance.f_LeftNinja(m_HitCount);
+            }
+        }
+        else {
+            if (m_IsAndroid) {
+                FX_Manager.m_Instance.f_RightAndroid(m_HitCount);
+            }
+            else if (m_IsGrandMaster) {
+                FX_Manager.m_Instance.f_RightNinja(m_HitCount);
             }
         }
         if (m_IsFever) {
