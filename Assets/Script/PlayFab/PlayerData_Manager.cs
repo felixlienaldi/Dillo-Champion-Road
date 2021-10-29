@@ -99,7 +99,7 @@ public class PlayerData_Manager : MonoBehaviour {
         if (m_PlayerDataList.Data.TryGetValue("SkinList", out c_DataDetails t_ListSkinKey)) {
             Wardobe_Manager.m_Instance.f_LoadSkinData(t_ListSkinKey.Value);
         }
-        
+
         if (m_PlayerDataList.Data.TryGetValue("Ads", out c_DataDetails t_AdsKey)) {
             if (t_AdsKey.Value == "0") {
                 Player_Manager.m_Instance.m_BoughAds = false;
@@ -110,6 +110,10 @@ public class PlayerData_Manager : MonoBehaviour {
                 AdMobBanner_Gameobject.m_Instance.f_HideBanner();
             }
 
+        }
+        else {
+            Player_Manager.m_Instance.m_BoughAds = false;
+            AdMobBanner_Gameobject.m_Instance.f_ShowBanner();
         }
         GameManager_Manager.m_Instance.f_ApplyPotion();
         UIManager_Manager.m_Instance.f_LoadingFinish();
