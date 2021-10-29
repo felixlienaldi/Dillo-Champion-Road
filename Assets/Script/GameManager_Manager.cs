@@ -61,7 +61,6 @@ public class GameManager_Manager : MonoBehaviour{
     //				    OTHER METHOD
     //=====================================================================
     public void f_Initialize() {
-        CurrencyManager_Manager.m_Instance.f_RemoveVirtualCurrencyRequest("EN", 1);
         m_Score = 0;
         UIManager_Manager.m_Instance.f_SetScoreText("" + m_Score);
         m_GameState = GAME_STATE.GAME;

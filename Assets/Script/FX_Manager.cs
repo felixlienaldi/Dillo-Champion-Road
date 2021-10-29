@@ -20,6 +20,10 @@ public class FX_Manager : MonoBehaviour {
     public List<GameObject> m_RightAttackFeverEffect;
     public List<GameObject> m_DilloLeftEffect;
     public List<GameObject> m_DilloRightEffect;
+    public List<GameObject> m_LeftAndroid;
+    public List<GameObject> m_RightAndroid;
+    public List<GameObject> m_LeftNinja;
+    public List<GameObject> m_RightNinja;
     public GameObject m_LeftBehind;
     public GameObject m_RightBehind;
     public GameObject m_WoodLeft;
@@ -44,6 +48,7 @@ public class FX_Manager : MonoBehaviour {
     //				    OTHER METHOD
     //=====================================================================
     public void f_Left(bool p_Fever) {
+        m_WoodLeft.SetActive(false);
         for (int i = 0; i < m_LeftAttackHitEffect.Count; i++) {
             m_LeftAttackHitEffect[i].SetActive(false);
         }
@@ -89,7 +94,28 @@ public class FX_Manager : MonoBehaviour {
         else {
             m_RightAttackHitEffect[Wardobe_Manager.m_Instance.f_GetEquippedSkin().m_TapFXId].SetActive(true);
         }
+
         m_WoodRight.SetActive(true);
+    }
+
+    public void f_LeftAndroid(int p_HitCount) {
+        m_LeftAndroid[p_HitCount-1].SetActive(false);
+        m_LeftAndroid[p_HitCount-1].SetActive(true);
+    }
+
+    public void f_RightAndroid(int p_HitCount) {
+        m_RightAndroid[p_HitCount-1].SetActive(false);
+        m_RightAndroid[p_HitCount-1].SetActive(true);
+    }
+
+    public void f_LeftNinja(int p_HitCount) {
+        m_LeftNinja[p_HitCount-1].SetActive(false);
+        m_LeftNinja[p_HitCount-1].SetActive(true);
+    }
+
+    public void f_RightNinja(int p_HitCount) {
+        m_RightNinja[p_HitCount-1].SetActive(false);
+        m_RightNinja[p_HitCount-1].SetActive(true);
     }
 
     public void f_LeftBehind() {

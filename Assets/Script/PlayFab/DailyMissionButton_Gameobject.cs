@@ -15,6 +15,7 @@ public class DailyMissionButton_Gameobject : MonoBehaviour {
     //===== PUBLIC =====
     public GameObject m_ClaimButton;
     public GameObject m_DefaultButton;
+    public Button m_Button;
     public int m_Id = 0;
     public Image m_Bar;
     public GameObject m_Checkmark;
@@ -28,7 +29,7 @@ public class DailyMissionButton_Gameobject : MonoBehaviour {
     //				MONOBEHAVIOUR METHOD 
     //=====================================================================
     void Start() {
-
+        m_Button = m_ClaimButton.GetComponent<Button>();
     }
 
     void Update() {
@@ -70,6 +71,7 @@ public class DailyMissionButton_Gameobject : MonoBehaviour {
     //=====================================================================
     public void f_CheckValidToClaim() {
         m_ClaimButton.SetActive(DailyMission_Manager.m_Instance.f_CheckValid(m_Id) || DailyMission_Manager.m_Instance.f_Checkmark(m_Id));
+        m_Button.interactable = DailyMission_Manager.m_Instance.f_CheckValid(m_Id);
         m_DefaultButton.SetActive(!DailyMission_Manager.m_Instance.f_CheckValid(m_Id) && !DailyMission_Manager.m_Instance.f_Checkmark(m_Id));
         if (DailyMission_Manager.m_Instance.f_Checkmark(m_Id)) {
             m_Checkmark.gameObject.SetActive(true);

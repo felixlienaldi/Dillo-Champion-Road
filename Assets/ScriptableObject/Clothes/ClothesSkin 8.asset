@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ClothesSkin 8
   m_EditorClassIdentifier: 
   m_ID: 8
-  m_Locked: 1
+  m_Locked: 0
   m_ComingSoon: 0
   m_Price: 15000
   m_FragPrice: 250

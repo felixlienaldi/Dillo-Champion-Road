@@ -34,7 +34,8 @@ public class Player_GameObject : Character_GameObject{
     public AudioClip m_PlayerDamaged;
     public AudioClip m_NormalBGM;
     public AudioClip m_FeverBGM;
-
+    public AudioClip m_AndroidDamaged;
+    public AudioClip m_NinjaDamaged;
     [Header("Combo System")]
     public int m_Combo;
     public bool m_IsCombo;
@@ -86,6 +87,7 @@ public class Player_GameObject : Character_GameObject{
     private int m_AndroidHit = 0;
     private bool p_Input = false;
     public bool m_Invincible = false;
+    public bool m_Bombing = false;
     bool m_IsTakeDamageCoroutineRunning;
     float m_CurrentTimer;
     //=====================================================================
@@ -164,6 +166,7 @@ public class Player_GameObject : Character_GameObject{
         m_Level = 0;
         m_CurrentTimer = m_Timer;
         m_Invincible = false;
+        m_Bombing = false;
         Audio_Manager.m_Instance.f_ChangeBgm(m_NormalBGM);
         // m_SpriteRenderer.color = Color.white;
         UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
@@ -216,7 +219,7 @@ public class Player_GameObject : Character_GameObject{
         else {
             if (m_Barrier.activeInHierarchy) {
                 m_Barrier.SetActive(false);
-                m_BarrierAfterEffect.SetActive(true);
+                if(GameManager_Manager.m_Instance.m_GameState == Enumerator.GAME_STATE.GAME)  m_BarrierAfterEffect.SetActive(true);
             }
         }
     }
@@ -273,7 +276,7 @@ public class Player_GameObject : Character_GameObject{
     }
 
     public void f_CheckTimer() {
-        if (!m_IsTakeDamageCoroutineRunning) {
+        if (!m_IsTakeDamageCoroutineRunning && !m_Bombing) {
             m_CurrentTimer -= Time.deltaTime;
         }
         if (GameManager_Manager.m_Instance.m_ListActiveEnemies.Count > 0) {
@@ -334,6 +337,22 @@ public class Player_GameObject : Character_GameObject{
         if (m_HitCount > m_MaxHit) m_HitCount = 1;
         m_Animator.SetInteger("Hit",m_HitCount);
         m_Animator.SetTrigger("Punch");
+        if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {
+            if (m_IsAndroid) {
+                FX_Manager.m_Instance.f_RightAndroid(m_HitCount);
+            }
+            else if (m_IsGrandMaster) {
+                FX_Manager.m_Instance.f_RightNinja(m_HitCount);
+            }
+        }
+        else {
+            if (m_IsAndroid) {
+                FX_Manager.m_Instance.f_LeftAndroid(m_HitCount);
+            }
+            else if (m_IsGrandMaster) {
+                FX_Manager.m_Instance.f_LeftNinja(m_HitCount);
+            }
+        }
         if (m_IsFever) {
             MMVibrationManager.Haptic(HapticTypes.HeavyImpact);
         }
@@ -349,7 +368,13 @@ public class Player_GameObject : Character_GameObject{
         m_Combo = 0;
         //m_PerfectHit = 0;
         CameraGameObject_GameObject.m_Instance.f_Reset();
-        Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerDamaged);
+        if (m_IsAndroid) {
+            Audio_Manager.m_Instance.f_PlayOneShot(m_AndroidDamaged);
+        }
+        else if (m_IsGrandMaster) {
+            Audio_Manager.m_Instance.f_PlayOneShot(m_NinjaDamaged);
+        }
+        else Audio_Manager.m_Instance.f_PlayOneShot(m_PlayerDamaged);
         Timing.RunCoroutine(CameraGameObject_GameObject.m_Instance.ie_Shake(0.2f, 3f));
 #if UNITY_ANDROID
         Handheld.Vibrate();
@@ -406,7 +431,7 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_CallFX() {
         if (transform.position.x > GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position.x) {
-            FX_Manager.m_Instance.f_Left(m_IsFever);
+            FX_Manager.m_Instance.f_Left(m_IsFever);           
         }
         else {
             FX_Manager.m_Instance.f_Right(m_IsFever);
@@ -414,7 +439,7 @@ public class Player_GameObject : Character_GameObject{
     }
 
     public void f_TapAttack() {
-            f_Attack(Input.mousePosition.x < Screen.width / 2 ? false : true);
+         if(!m_Bombing)f_Attack(Input.mousePosition.x < Screen.width / 2 ? false : true);
     }
 
     public void f_Attack(bool p_Right) {
@@ -609,14 +634,7 @@ public class Player_GameObject : Character_GameObject{
     }
 
     public void f_BombBeyond() {
-        m_AndroidEffect.SetActive(false);
-        m_AndroidEffect.SetActive(true);
-
-        for (int i = 0; i < 6; i++) {
-            f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
-            Explosion_Manager.m_Instance.f_SpawnExplosion(GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position);
-            GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
-        }
+        Timing.RunCoroutine(ie_Bommbing());
         //for (int i = 0; i < 6; i++) {
         //    GameManager_Manager.m_Instance.f_Spawn(i);
         //}
@@ -639,6 +657,22 @@ public class Player_GameObject : Character_GameObject{
 
     public void f_SetHP(int p_HP) {
         m_CurrentHealthPoint = p_HP;
+    }
+
+    IEnumerator<float> ie_Bommbing() {
+        m_Bombing = true;
+        m_AndroidEffect.SetActive(false);
+        m_AndroidEffect.SetActive(true);
+
+        yield return Timing.WaitForSeconds(.25f);
+
+        for (int i = 0; i < 6; i++) {
+            f_CheckScore(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+            Explosion_Manager.m_Instance.f_SpawnExplosion(GameManager_Manager.m_Instance.m_ListActiveEnemies[0].transform.position);
+            GameManager_Manager.m_Instance.f_NextLine(GameManager_Manager.m_Instance.m_ListActiveEnemies[0]);
+        }
+        yield return Timing.WaitForSeconds(1f);
+        m_Bombing = false;
     }
 
     IEnumerator<float> ie_Invincible() {

@@ -35,6 +35,9 @@ public class Start_Gameobject : MonoBehaviour{
     //=====================================================================
     //				    OTHER METHOD
     //=====================================================================
+    public void f_StartCountdown() {
+        CurrencyManager_Manager.m_Instance.f_RemoveVirtualCurrencyRequest("EN", 1);
+    }
     public void f_PlayCountDown() {
         Audio_Manager.m_Instance.f_PlayOneShot(m_CountdownClip);
     }

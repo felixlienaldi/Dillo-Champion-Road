@@ -61,6 +61,7 @@ public class PlayerStatistic_Manager : MonoBehaviour{
 
     public void f_OnGetStatisticsSuccess(GetPlayerStatisticsResult p_Result) {
         m_ListStatistic = JsonUtility.FromJson<c_ListStatistic>(p_Result.ToJson());
+        DailyMission_Manager.m_Instance.f_ResetToken();
         foreach (StatisticUpdate t_Stats in m_ListStatistic.Statistics) {
             switch (t_Stats.StatisticName) {
                 case "DailyMission1":
@@ -91,7 +92,7 @@ public class PlayerStatistic_Manager : MonoBehaviour{
                     DailyMission_Manager.m_Instance.m_CurrentEnemy = t_Stats.Value;
                     break;
                 case "DailyProgress5":
-                    DailyMission_Manager.m_Instance.m_MissionComplete = t_Stats.Value;
+                    //DailyMission_Manager.m_Instance.m_MissionComplete = t_Stats.Value;
                     break;
                 case "GachaTicket":
                     Fragment_Manager.m_Instance.m_GachaTicket = t_Stats.Value;
@@ -152,6 +153,7 @@ public class PlayerStatistic_Manager : MonoBehaviour{
     public void f_UpdateStatistics(string p_Name, int p_Value) {
         for (int i = 0; i < m_ListStatistic.Statistics.Count; i++) {
             if (m_ListStatistic.Statistics[i].StatisticName == p_Name) {
+ 
                 m_ListStatistic.Statistics[i].Value = p_Value;
             }
         }
