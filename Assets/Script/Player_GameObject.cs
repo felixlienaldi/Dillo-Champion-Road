@@ -171,11 +171,11 @@ public class Player_GameObject : Character_GameObject{
         // m_SpriteRenderer.color = Color.white;
         UIManager_Manager.m_Instance.f_SetFeverFillBar(m_PerfectHit, m_MinimumHit);
         UIManager_Manager.m_Instance.f_SetHpBar(f_GetCurrentHealth());
-        f_CheckTimer();
-        f_Move();
-        f_CheckCombo();
-        f_CheckFever();
-        f_CheckBuff();
+        //f_CheckTimer();
+        //f_Move();
+        //f_CheckCombo();
+        //f_CheckFever();
+        //f_CheckBuff();
     }
 
     public void f_ResetBuffRelated() {

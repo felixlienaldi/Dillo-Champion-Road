@@ -53,6 +53,7 @@ public class Fragment_Manager : MonoBehaviour {
     public Button m_EnergyBuyButton;
     public TextMeshProUGUI m_EnergyBuyButtonText;
     public List<GameObject> m_MenuList;
+    public GameObject m_ButtonToocMuch;
     public GameObject m_BoxButton;
     //===== PRIVATES =====
     float t_RandomIndex;
@@ -365,8 +366,17 @@ public class Fragment_Manager : MonoBehaviour {
     }
     public void f_CheckEnergyButton() {
         if (Player_Manager.m_Instance.m_Berry >= 20) {
-            if (Energy_Manager.m_Instance.m_EnergyAmount <= 5) m_EnergyBuyButton.interactable = true;
-            else m_EnergyBuyButton.interactable = false;
+            if (Energy_Manager.m_Instance.m_EnergyAmount <= 5) {
+                m_EnergyBuyButton.interactable = true;
+                m_EnergyBuyButton.gameObject.SetActive(true);
+                m_ButtonToocMuch.SetActive(false);
+            }
+            else {
+                m_EnergyBuyButton.interactable = false;
+                m_EnergyBuyButton.gameObject.SetActive(false);
+                m_ButtonToocMuch.SetActive(true);
+
+            }
             m_EnergyBuyButtonText.color = Color.white;
         }
         else {

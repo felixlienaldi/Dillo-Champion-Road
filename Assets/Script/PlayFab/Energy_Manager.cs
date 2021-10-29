@@ -41,7 +41,7 @@ public class Energy_Manager : MonoBehaviour{
             if (!m_IsStamCapped) {
                 // リチャージ時間を迎えた場合はスタミナを再取得
                 if (m_NextFreeTicket.Subtract(DateTime.Now).TotalSeconds <= 0) {
-                    if (m_TimerText.isActiveAndEnabled) m_TimerText.gameObject.SetActive(false);
+                   //if (m_TimerText.isActiveAndEnabled) m_TimerText.gameObject.SetActive(false);
                     f_GetInventory();
                 }
                 else {
@@ -60,6 +60,14 @@ public class Energy_Manager : MonoBehaviour{
             if (m_PlayButton.IsInteractable()) m_PlayButton.interactable = false;
             if (m_RetryButton.IsInteractable()) m_RetryButton.interactable = false;
         }
+
+        if (m_EnergyAmount > 5) {
+            if (m_TimerText.isActiveAndEnabled) m_TimerText.gameObject.SetActive(false);
+        }
+        else {
+            if (!m_TimerText.isActiveAndEnabled) m_TimerText.gameObject.SetActive(true);
+        }
+
         m_EnergyAmountText.text = m_EnergyAmount.ToString();
     }
     //=====================================================================
@@ -76,13 +84,12 @@ public class Energy_Manager : MonoBehaviour{
         }
         else {
             if (m_EnergyAmount < p_RechargeDetail.RechargeMax) {
-                if (!m_TimerText.isActiveAndEnabled) m_TimerText.gameObject.SetActive(true);
+                m_IsStamCapped = false;
                 m_NextFreeTicket = DateTime.Now.AddSeconds(p_RechargeDetail.SecondsToRecharge);
                 m_RechargeTime = m_NextFreeTicket.Subtract(DateTime.Now);
-                m_IsStamCapped = false;
+ 
             }
             else {
-                if (m_TimerText.isActiveAndEnabled) m_TimerText.gameObject.SetActive(false);
                 m_IsStamCapped = true;
             }
         }

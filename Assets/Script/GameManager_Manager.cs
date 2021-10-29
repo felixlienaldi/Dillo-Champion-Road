@@ -65,14 +65,12 @@ public class GameManager_Manager : MonoBehaviour{
         UIManager_Manager.m_Instance.f_SetScoreText("" + m_Score);
         m_GameState = GAME_STATE.GAME;
         m_HpUI.gameObject.SetActive(true);
-        m_Player.f_Reset();
         m_ContinueChance = true;
-        f_ApplyBuff();
         for (int i = 0; i < 6; i++) {
             f_Spawn(i);
         }
         m_GamePlayUI.SetActive(true);
-        f_ApplyPotion();
+    
     }
 
     public void f_ApplyBuff() {

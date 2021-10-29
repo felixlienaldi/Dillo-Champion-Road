@@ -23,8 +23,7 @@ MonoBehaviour:
   m_TapFXId: 1
   m_MaxHit: 4
   m_DescriptionLore: Crimson Obsidian - Dillo unlocked the true potential
-  m_DescEffect: ENEMIES BECOME MORE AGGREIVE  & ATTACK HAVE 50% CHANCE TO HIT ENEMY
-    BEHIND
+  m_DescEffect: 'ENEMIES BECOME MORE AGGRESIVE & SCORE MULTIPLIED BY 2X '
   m_HitAudio:
   - {fileID: 8300000, guid: bb81fe6f53c3b29458621898f9c788c9, type: 3}
   - {fileID: 8300000, guid: 674b94370634fca4fbcf253e2152f1f3, type: 3}

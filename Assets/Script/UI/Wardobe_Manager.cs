@@ -46,13 +46,13 @@ public class Wardobe_Manager : MonoBehaviour {
 
     public void f_PreviousClothes() {
         m_CurrentID--;
-        if (m_CurrentID < 0) m_CurrentID = 0;
+        if (m_CurrentID < 0) m_CurrentID = m_Clothes.Count - 1;
         f_OnChangeClothesID();
     }
 
     public void f_NextClothes() {
         m_CurrentID++;
-        if (m_CurrentID >= m_Clothes.Count) m_CurrentID = m_Clothes.Count - 1;
+        if (m_CurrentID >= m_Clothes.Count) m_CurrentID = 0;
         f_OnChangeClothesID();
     }
 
@@ -151,6 +151,8 @@ public class Wardobe_Manager : MonoBehaviour {
                 m_ComingSoon.SetActive(true);
                 m_BuyButton.interactable = false;
                 m_FragBuyButton.interactable = false;
+                m_WearButton.gameObject.SetActive(false);
+                m_BuyButtonObject.gameObject.SetActive(false);
                 m_PriceText.color = Color.white;
                 m_PriceFragText.color = Color.white;
                 m_PriceFragText.text = "-";
