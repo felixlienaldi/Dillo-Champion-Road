@@ -119,6 +119,9 @@ TextureImporter:
   - first:
       213: 2978527246824859
     second: atlas_4k_84
+  - first:
+      213: -868044482986264570
+    second: atlas_4k_85
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1970,6 +1973,27 @@ TextureImporter:
       bones: []
       spriteID: b95308a64f49a0000800000000000000
       internalID: 2978527246824859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_4k_85
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 33
+        width: 646
+        height: 536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608bd5e442614f3f0800000000000000
+      internalID: -868044482986264570
       vertices: []
       indices: 
       edges: []
