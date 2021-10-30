@@ -64,8 +64,8 @@ public class Buff_GameObject : ScriptableObject {
         }
     }
 
-    public float f_GetNextTotalMultiplier() {
-        return m_Value + (m_UpgradeValue * m_Level+1);
+    public float f_GetNextTotalMultiplier() {        
+        return m_Value + (m_UpgradeValue * (m_Level+1));
     }
 
     public float f_GetTotalMultiplier() {

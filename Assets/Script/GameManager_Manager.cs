@@ -71,7 +71,6 @@ public class GameManager_Manager : MonoBehaviour{
         }
         m_GamePlayUI.SetActive(true);
         Player_GameObject.m_Instance.f_ResetHealth();
-    
     }
 
     public void f_ApplyBuff() {
@@ -143,6 +142,7 @@ public class GameManager_Manager : MonoBehaviour{
         Timing.KillCoroutines("Continue");
         m_HpUI.gameObject.SetActive(true);
         Player_GameObject.m_Instance.f_Reset();
+        Player_GameObject.m_Instance.f_ResetHealth();
         m_GameState = GAME_STATE.GAME;
         m_GameOverUI.gameObject.SetActive(false);
         m_ContinueMenu.gameObject.SetActive(false);        
