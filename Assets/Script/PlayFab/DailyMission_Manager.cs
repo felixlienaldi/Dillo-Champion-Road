@@ -89,7 +89,6 @@ public class DailyMission_Manager : MonoBehaviour{
             if (p_Value == 1) m_MissionComplete++;
         }
         else if (p_TokenCode == 2) {
-            Debug.Log(p_Value);
             m_DMToken2 = p_Value;
             if (p_Value == 1) m_MissionComplete++;
         }

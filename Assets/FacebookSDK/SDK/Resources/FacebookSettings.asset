@@ -16,7 +16,7 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 9240218651785630
   appLabels:
   - App Name
   cookie: 1
@@ -24,7 +24,7 @@ MonoBehaviour:
   status: 1
   xfbml: 0
   frictionlessRequests: 1
-  androidKeystorePath: 
+  androidKeystorePath: C:\AndroidSDK\redrain.keystore
   iosURLSuffix: 
   appLinkSchemes:
   - list: []

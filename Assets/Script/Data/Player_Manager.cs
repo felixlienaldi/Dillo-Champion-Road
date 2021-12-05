@@ -18,7 +18,9 @@ public class Player_Manager : MonoBehaviour{
     public string m_Names;
     public string m_Pos;
     public int m_EquipedClothes =0;
+    public int m_MatchCount = 0;
     public bool m_BoughAds = false;
+    public GameObject m_Notice;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -38,4 +40,17 @@ public class Player_Manager : MonoBehaviour{
     //=====================================================================
     //				    OTHER METHOD
     //=====================================================================
+    public void f_AcceptRating() {
+        Application.OpenURL("market://details?id=" + Application.identifier);
+    }
+
+    public void f_OpenRating() {
+        m_MatchCount++;
+        if (m_MatchCount >= 2) {
+            if (!PlayerPrefs.HasKey("Reviewed")) {
+                m_Notice.SetActive(true);
+                PlayerPrefs.SetString("Reviewed","Reviewed");
+            }
+        }
+    }
 }

@@ -78,6 +78,7 @@ public class PlayerData_Manager : MonoBehaviour {
     }
 
     public void f_OnGetPlayerDataSuccess(GetUserDataResult p_Result) {
+        Debug.Log("PlayerDatas");
         m_PlayerDataList = JsonConvert.DeserializeObject<c_PlayerDataList>(p_Result.ToJson());
         GameManager_Manager.m_Instance.m_ListPotion.Clear();
         if (m_PlayerDataList.Data.TryGetValue("ACCURACY", out c_DataDetails t_AccuracyKey)) {
@@ -108,6 +109,7 @@ public class PlayerData_Manager : MonoBehaviour {
             else {
                 Player_Manager.m_Instance.m_BoughAds = true;
                 AdMobBanner_Gameobject.m_Instance.f_HideBanner();
+                IAP_Manager.m_Instance.f_AdRemoved();
             }
 
         }

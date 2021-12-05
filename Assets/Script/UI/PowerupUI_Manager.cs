@@ -86,6 +86,7 @@ public class PowerupUI_Manager : MonoBehaviour {
     }
 
     public void f_Buy() {
+        Player_Manager.m_Instance.m_Berry -= (int)m_ChoosenBuff.f_GetPrice();
         CurrencyManager_Manager.m_Instance.f_RemoveVirtualCurrencyRequest("BE",(int)m_ChoosenBuff.f_GetPrice());
         if (m_ChoosenBuff.f_IsPotion()) {
             m_ChoosenBuff.m_Applied = true;

@@ -168,7 +168,7 @@ public class Wardobe_Manager : MonoBehaviour {
 
     public void f_Buy() {
         m_Clothes[m_CurrentID].m_Locked = false;
-        Player_Manager.m_Instance.m_EquipedClothes = m_Clothes[m_CurrentID].m_ID;
+        //Player_Manager.m_Instance.m_EquipedClothes = m_Clothes[m_CurrentID].m_ID;
         CurrencyManager_Manager.m_Instance.f_RemoveVirtualCurrencyRequest("BE",(int)m_Clothes[m_CurrentID].m_Price);
         Audio_Manager.m_Instance.f_PlayOneShot(m_BoughtClip);
         Audio_Manager.m_Instance.f_PlayOneShot(m_NewEQClip);
@@ -178,7 +178,7 @@ public class Wardobe_Manager : MonoBehaviour {
 
     public void f_BuyWithFrags() {
         m_Clothes[m_CurrentID].m_Locked = false;
-        Player_Manager.m_Instance.m_EquipedClothes = m_Clothes[m_CurrentID].m_ID;
+        //Player_Manager.m_Instance.m_EquipedClothes = m_Clothes[m_CurrentID].m_ID;
         if (m_Clothes[m_CurrentID].m_Type == Enumerator.FRAGMENT_TYPE.BEGINNER) {
             CurrencyManager_Manager.m_Instance.f_RemoveVirtualCurrencyRequest("BF", (int)m_Clothes[m_CurrentID].m_FragPrice);
         }
@@ -215,7 +215,20 @@ public class Wardobe_Manager : MonoBehaviour {
     }
 
     public void f_LoadEquipedSkinData(string p_ID) {
+        //int t_Id = Player_Manager.m_Instance.m_EquipedClothes;
         Player_Manager.m_Instance.m_EquipedClothes = int.Parse(p_ID);
+        m_CurrentID = Player_Manager.m_Instance.m_EquipedClothes;
+        //Player_Manager.m_Instance.m_EquipedClothes = t_Id;
+        Player_GameObject.m_Instance.m_PlayerHitClip.Clear();
+        Player_GameObject.m_Instance.m_PlayerHitClip.AddRange(m_Clothes[m_CurrentID].m_HitAudio);
+        Player_GameObject.m_Instance.m_IsCrimson = m_Clothes[m_CurrentID].m_IsCrimson;
+        Player_GameObject.m_Instance.m_IsAndroid = m_Clothes[m_CurrentID].m_IsAndroid;
+        Player_GameObject.m_Instance.m_IsGrandMaster = m_Clothes[m_CurrentID].m_IsGrandMaster;
+        Player_GameObject.m_Instance.m_MaxHit = m_Clothes[m_CurrentID].m_MaxHit;
+        f_OnChangeClothesID();
+    }
+
+    public void f_Back() {
         m_CurrentID = Player_Manager.m_Instance.m_EquipedClothes;
         Player_GameObject.m_Instance.m_PlayerHitClip.Clear();
         Player_GameObject.m_Instance.m_PlayerHitClip.AddRange(m_Clothes[m_CurrentID].m_HitAudio);

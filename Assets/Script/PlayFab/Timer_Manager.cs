@@ -23,6 +23,7 @@ public class Timer_Manager : MonoBehaviour{
     public bool m_TrackTimer = false;
     //===== PRIVATES =====
     DateTime m_NextTime = new DateTime();
+    DateTime t_Time = new DateTime();
     TimeSpan t_Span;
     //=====================================================================
     //				MONOBEHAVIOUR METHOD 
@@ -73,7 +74,8 @@ public class Timer_Manager : MonoBehaviour{
             Fragment_Manager.m_Instance.m_DailyShopFrags = 2;
         }
         else if (m_Time.Hour >= 18 && m_Time.Hour <= 23) {
-            m_NextTime = new DateTime(m_Time.Year, m_Time.Month, m_Time.AddDays(1).Day, 0, 0, 0);
+            t_Time = m_Time.AddDays(1);
+            m_NextTime = new DateTime(t_Time.Year, t_Time.Month, t_Time.Day, 0, 0, 0);
             m_NextTime = DateTime.Now.AddSeconds(m_NextTime.Subtract(m_Time).TotalSeconds);
             Fragment_Manager.m_Instance.m_DailyShopFrags = 3;
         }

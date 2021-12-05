@@ -46,7 +46,7 @@ public class PostGameManager_Manager : MonoBehaviour{
         DailyMission_Manager.m_Instance.f_AddCurrentMatch();
         DailyMission_Manager.m_Instance.f_Endgame();
         PowerupUI_Manager.m_Instance.f_SaveDataPotion();
-
+        Player_Manager.m_Instance.f_OpenRating();
         m_Highscore.SetActive(GameManager_Manager.m_Instance.m_Score > Player_Manager.m_Instance.m_HighScore);
         if (GameManager_Manager.m_Instance.m_Score > Player_Manager.m_Instance.m_HighScore) {
             PlayerStatistic_Manager.m_Instance.f_UpdateStatistics("Highscore",(int) GameManager_Manager.m_Instance.m_Score);

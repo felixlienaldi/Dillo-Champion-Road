@@ -60,6 +60,7 @@ public class CurrencyManager_Manager : MonoBehaviour{
     /// </summary>
     /// <param name="p_Result">Result details </param>
     public void OnUpdateCurrencySuccess(GetUserInventoryResult p_Result) {
+        Debug.Log("Currecny");
         //m_InventoryData = JsonConvert.DeserializeObject<c_Data>(p_Result.ToJson()); //INI JADI DICTIONARY
         int t_Currency;
         p_Result.VirtualCurrency.TryGetValue("BE", out t_Currency);

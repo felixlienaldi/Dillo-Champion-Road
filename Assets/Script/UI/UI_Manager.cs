@@ -15,6 +15,11 @@ public class UI_Manager : MonoBehaviour{
     //===== PUBLIC =====
     public List<StartMenu_Gameobject> m_StartMenu_Object;
     public List<GameObject> m_HTPTitle;
+    public List<Image> m_Star;
+    public Sprite m_PressedStar;
+    public Sprite m_BlankStar;
+    public Button m_Confirm;
+    public Button m_Reject;
     //===== PRIVATES =====
 
     //=====================================================================
@@ -55,5 +60,18 @@ public class UI_Manager : MonoBehaviour{
                 m_HTPTitle[i].SetActive(false);
             }
         }
+    }
+
+    public void f_PressStar(int p_Amount) {
+        for (int i = 0; i < m_Star.Count; i++) {
+            if (i <= p_Amount - 1) {
+                m_Star[i].sprite = m_PressedStar;
+            }
+            else {
+                m_Star[i].sprite = m_BlankStar;
+            }
+        }
+        m_Confirm.interactable = true;
+        m_Reject.interactable = true;
     }
 }
