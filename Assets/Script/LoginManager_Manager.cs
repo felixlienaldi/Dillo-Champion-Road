@@ -181,12 +181,7 @@ public class LoginManager_Manager : MonoBehaviour{
             if (p_Success) {
                 string t_ServerAuthCode = PlayGamesPlatform.Instance.GetServerAuthCode();
                 m_Google = true;
-                if (m_GuestLoggedIn && !m_IsLinked) {
-                    f_LinkWithGoogle(t_ServerAuthCode);
-                }
-                else if (!m_GuestLoggedIn && !m_IsLinked) {
-                    f_LoginWithGoogle(t_ServerAuthCode);
-                }
+                f_LoginWithGoogle(t_ServerAuthCode);
             }
             else {
                 m_Google = false;
